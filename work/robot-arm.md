@@ -80,6 +80,4 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 
 - [6-DOF robot arm V2 (CM5 + TMC2209)](../projects.md#6-dof-robot-arm-v2-cm5--tmc2209)
 - [Pi robot arm, full CAD design](../projects.md#pi-robot-arm-full-cad-design)
-- [V3 ARM Controller PCB](../projects.md#v3-arm-controller-pcb)
 - [Robot Arm Firmware and ROS2](../projects.md#robot-arm-firmware-and-ros2)
-- [V2 Controller PCB Engineering Change Order](../projects.md#v2-controller-pcb-engineering-change-order)

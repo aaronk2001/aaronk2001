@@ -179,74 +179,6 @@ export const projects = [
  "caseStudy": "robot-arm"
  },
  {
- "id": "pcb-robot-controller",
- "name": "V3 ARM Controller PCB",
- "track": "fabrication",
- "status": "in-progress",
- "year": "2026",
- "summary": "KiCAD-designed four-layer PCB built with SKiDL Python harness. consolidates stepper motor control, ESP32-S3 microcontroller, and regulated 5V/3.3V power rails onto a single compact board sized to fit inside the robot arm base.",
- "body": [
- "The board replaces a tangle of breadboard wires and module carriers with a purpose-built controller that provides four independent TMC2209 stepper driver footprints, UART passthrough for debugging, and USB-C power delivery with reverse-polarity protection.",
- "The ESP32-S3 runs MicroPython and exposes a WiFi REST API for wireless joint commands, mirroring the Pi stack for standalone demo use. The schematic harness is generated from a SKiDL Python script (KiCad 10 + Espressif libs at `kicad-tools/`), producing a versioned netlist instead of a hand-drawn schematic."
- ],
- "tech": [
- "KiCAD",
- "SKiDL",
- "ESP32-S3",
- "TMC2209",
- "PCB Fabrication"
- ],
- "next": [
- "DRC clean + JLCPCB Gerber export",
- "LCSC sourcing pass for the full BOM",
- "PSU to buck to CM5 boot sequence bring-up"
- ],
- "media": {
- "kind": "image",
- "src": "/work/arm-v2-schematic.webp",
- "alt": "V2 PCB Schematic",
- "width": 1600,
- "height": 1000
- },
- "skills": [
- "KiCAD",
- "TMC2209"
- ],
- "caseStudy": "robot-arm"
- },
- {
- "id": "welding-cart",
- "name": "Welding cart build",
- "track": "fabrication",
- "status": "in-progress",
- "year": "2026",
- "summary": "First fabrication project: a steel MIG-welded utility cart purpose-built to organize welding equipment, gas cylinders, and consumables. Covers joint preparation, butt welds, fillet welds, and basic structural design in mild steel square tube.",
- "body": [
- "The cart is fabricated from 1\"×1\" 14-gauge mild steel square tube with a lower shelf and cylinder tie-down bracket. The project is structured as a three-phase welding curriculum: Phase 1 covers basic MIG technique on flat and horizontal joints; Phase 2 adds overhead and vertical joints on the gussets and cross-bracing; Phase 3 finishes with grinding, wire-brushing, and a rust-inhibiting paint system.",
- "Metal prep work. cutting to length with an angle grinder, deburring, and fit-up clamping. precedes each weld pass. Bead width, penetration, and distortion are logged after each session to track skill progression."
- ],
- "tech": [
- "MIG Welding",
- "Steel Fabrication",
- "Angle Grinder"
- ],
- "outcomes": [
- "Phase 1 of 3 complete",
- "Phase 2 in progress"
- ],
- "next": [
- "Phase 2. vertical & overhead joints on gussets",
- "Log bead penetration after each session for trend tracking",
- "Phase 3. grind, wire-brush, rust-inhibiting paint system"
- ],
- "media": {
- "kind": "none"
- },
- "skills": [
- "MIG Welding"
- ]
- },
- {
  "id": "yolov8-hailo",
  "name": "YOLOv8 edge inference on Hailo-8",
  "track": "cv-ml",
@@ -830,38 +762,6 @@ export const projects = [
  "ROS2 Jazzy driver stack"
  ],
  "media": {"kind": "none"},
- "caseStudy": "robot-arm"
- },
- {
- "id": "armv2-pcb-eco",
- "name": "V2 Controller PCB Engineering Change Order",
- "track": "fabrication",
- "status": "complete",
- "year": "2026",
- "summary": "V2 controller engineering change order: corrected 5 V rail, Teensy and buck-rail sheets, BOM CSV, three written design reviews.",
- "body": [
- "The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet. A complete schematic export, Gerber set, and BOM CSV provide the full manufacturing package for fabrication and assembly.",
- "Three written design reviews address critical decisions: Teensy 4.1 connections and pinout verification for stepper drivers and USB, a detailed comparison of MCU options (ESP32-S3 versus Teensy 4.1), and a final review checklist. These reviews confirm electrical correctness and thermal margins before layout."
- ],
- "tech": [
- "KiCAD",
- "Teensy",
- "PCB Design",
- "Schematic Review"
- ],
- "outcomes": [
- "Full schematic export",
- "Corrected 5V rail",
- "BOM CSV",
- "Three design reviews"
- ],
- "media": {
- "kind": "image",
- "src": "/work/arm-v2-schematic.webp",
- "alt": "V2 PCB Schematic",
- "width": 1600,
- "height": 1000
- },
  "caseStudy": "robot-arm"
  },
  {

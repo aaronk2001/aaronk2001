@@ -2,7 +2,7 @@
 
 # Projects
 
-26 projects across robotics, controls, vision and software. [Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
+23 projects across robotics, controls, vision and software. [Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
 
 ## Robotics
 
@@ -230,73 +230,6 @@ Complete SolidWorks and Fusion 360 CAD package for a 3D-printed 6-DOF robot arm 
 The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness under load. SolidWorks handles primary structural design and FEA stress analysis on high-load joints; Fusion 360 covers organic fillets and export workflows.
 
 All joints use captured M3 heat-set inserts for repeatable disassembly. The full assembly is parameterized so link lengths and motor mount offsets can be adjusted without redrawing from scratch. OpenSCAD scripts generate horn adapters and tool-changer mounts, version-controlled alongside the main assembly. PrusaSlicer profiles for PETG and PLA are included for each component with recommended print orientations.
-
-</details>
-
-### V3 ARM Controller PCB
-
-<sub>2026 | In progress</sub>
-
-<img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="480">
-
-KiCAD-designed four-layer PCB built with SKiDL Python harness. consolidates stepper motor control, ESP32-S3 microcontroller, and regulated 5V/3.3V power rails onto a single compact board sized to fit inside the robot arm base.
-
-`KiCAD` `SKiDL` `ESP32-S3` `TMC2209` `PCB Fabrication`
-
-[Case study: Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
-
-<details>
-<summary>How it works</summary>
-
-The board replaces a tangle of breadboard wires and module carriers with a purpose-built controller that provides four independent TMC2209 stepper driver footprints, UART passthrough for debugging, and USB-C power delivery with reverse-polarity protection.
-
-The ESP32-S3 runs MicroPython and exposes a WiFi REST API for wireless joint commands, mirroring the Pi stack for standalone demo use. The schematic harness is generated from a SKiDL Python script (KiCad 10 + Espressif libs at `kicad-tools/`), producing a versioned netlist instead of a hand-drawn schematic.
-
-</details>
-
-### Welding cart build
-
-<sub>2026 | In progress</sub>
-
-First fabrication project: a steel MIG-welded utility cart purpose-built to organize welding equipment, gas cylinders, and consumables. Covers joint preparation, butt welds, fillet welds, and basic structural design in mild steel square tube.
-
-- Phase 1 of 3 complete
-- Phase 2 in progress
-
-`MIG Welding` `Steel Fabrication` `Angle Grinder`
-
-<details>
-<summary>How it works</summary>
-
-The cart is fabricated from 1"×1" 14-gauge mild steel square tube with a lower shelf and cylinder tie-down bracket. The project is structured as a three-phase welding curriculum: Phase 1 covers basic MIG technique on flat and horizontal joints; Phase 2 adds overhead and vertical joints on the gussets and cross-bracing; Phase 3 finishes with grinding, wire-brushing, and a rust-inhibiting paint system.
-
-Metal prep work. cutting to length with an angle grinder, deburring, and fit-up clamping. precedes each weld pass. Bead width, penetration, and distortion are logged after each session to track skill progression.
-
-</details>
-
-### V2 Controller PCB Engineering Change Order
-
-<sub>2026 | Complete</sub>
-
-<img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="480">
-
-V2 controller engineering change order: corrected 5 V rail, Teensy and buck-rail sheets, BOM CSV, three written design reviews.
-
-- Full schematic export
-- Corrected 5V rail
-- BOM CSV
-- Three design reviews
-
-`KiCAD` `Teensy` `PCB Design` `Schematic Review`
-
-[Case study: Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
-
-<details>
-<summary>How it works</summary>
-
-The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet. A complete schematic export, Gerber set, and BOM CSV provide the full manufacturing package for fabrication and assembly.
-
-Three written design reviews address critical decisions: Teensy 4.1 connections and pinout verification for stepper drivers and USB, a detailed comparison of MCU options (ESP32-S3 versus Teensy 4.1), and a final review checklist. These reviews confirm electrical correctness and thermal margins before layout.
 
 </details>
 

@@ -144,17 +144,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
-<a href="projects.md#v3-arm-controller-pcb"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
-
-**[V3 ARM Controller PCB](projects.md#v3-arm-controller-pcb)**
-
-<sub>KiCAD-designed four-layer PCB built with SKiDL Python harness.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
 <a href="projects.md#nexus-desktop-trading-terminal"><img src="assets/projects/nexus-app.webp" alt="NEXUS Trading Terminal" width="260"></a>
 
 **[NEXUS Desktop Trading Terminal](projects.md#nexus-desktop-trading-terminal)**
@@ -162,6 +151,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="260"></a>
@@ -182,8 +173,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools.</sub>
 
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="260"></a>
@@ -193,6 +182,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#local-tts-desktop-app"><img src="assets/projects/tts-app.webp" alt="TTS App" width="260"></a>
@@ -211,8 +202,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>A full automated short-form video pipeline.</sub>
 
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#phantom-clips-local-video-pipeline"><img src="assets/projects/phantom-clips.webp" alt="Phantom home screen: paste a link to cut into clips, approval queue counts and account connectors" width="260"></a>
@@ -222,6 +211,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>YouTube URL to finished 9:16 clip entirely on one machine: yt-dlp ingest, faster-whisper transcription on CUDA, an LLM segment picker, an NVENC render with burned captions, and a keyboard-driven review UI over a SQLite job queue.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#mmm-money-hub"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="260"></a>
@@ -243,7 +234,7 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </tr>
 </table>
 
-**[See all 26 projects, grouped by discipline](projects.md)**
+**[See all 23 projects, grouped by discipline](projects.md)**
 
 ## Skills
 
