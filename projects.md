@@ -2,7 +2,9 @@
 
 # Projects
 
-18 projects across robotics, controls, vision and software. [Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
+18 projects across robotics, controls, vision and software.
+
+[Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
 
 ## Robotics
 
@@ -115,6 +117,8 @@ The Raspberry Pi 4 carrier mounts centrally above the motor base; a modular came
 
 </details>
 
+<sub>[Back to top](#projects)</sub>
+
 ## Controls & Automation
 
 ### Homelab Monitoring Stack
@@ -160,6 +164,8 @@ Most Python PLC libraries stop at a raw tag read. This one wraps ControlLogix / 
 A CLI dashboard renders live tag values without writing any application code. Because a real ControlLogix rack is not something you keep on a desk, the package ships a hardware-free simulator that stands in for the PLC, and that is what the tests and CI run against. the same pattern used to build the fleet telemetry work at Handwrytten before touching production machines.
 
 </details>
+
+<sub>[Back to top](#projects)</sub>
 
 ## Computer Vision & ML
 
@@ -210,6 +216,8 @@ Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes ("scrat
 
 </details>
 
+<sub>[Back to top](#projects)</sub>
+
 ## Fabrication
 
 ### Arcade Cabinet Enclosure
@@ -233,6 +241,8 @@ The cabinet is a vertically-oriented enclosure designed to hold a small arcade m
 A screen mount at the top positions the display at standing eye level; a cable spool holder at the base routes power and signal wires behind the controls panel for a clean installation. The enclosure is sized for 3D printing in sections and post-assembly epoxy bonding.
 
 </details>
+
+<sub>[Back to top](#projects)</sub>
 
 ## Software
 
@@ -363,6 +373,8 @@ A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable eng
 
 `Python` `PySide6` `ONNX` `Piper` `pydantic`
 
+[Source on GitHub](https://github.com/aaronk2001/text-to-speech)
+
 <details>
 <summary>How it works</summary>
 
@@ -446,3 +458,5 @@ Small, deliberately: a YAML curriculum is the source of truth, React renders the
 js-yaml silently coercing date-shaped strings into Date objects (fixed by parsing under JSON_SCHEMA), and Vite emitting a crossorigin attribute that Tauri's asset protocol rejects.
 
 </details>
+
+<sub>[Back to top](#projects)</sub>

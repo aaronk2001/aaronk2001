@@ -56,3 +56,9 @@ A Python bridge to Allen Bradley Studio 5000 exposing tags over EtherNet/IP and 
 ## Related projects
 
 - [plc-python-bridge, Allen Bradley tag I/O](../projects.md#plc-python-bridge-allen-bradley-tag-io)
+
+---
+
+**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+
+[Back to portfolio](../README.md)

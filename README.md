@@ -6,7 +6,13 @@
 
 <p align="center"><a href="assets/resume.pdf"><b>Resume (PDF)</b></a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/aaron-karsten"><b>LinkedIn</b></a> &nbsp;|&nbsp; <a href="projects.md"><b>All projects</b></a></p>
 
+<div align="center">
+
 <table><tr><td align="center"><b>200+</b><br><sub>machines in production</sub></td><td align="center"><b>30,000</b><br><sub>letters per day</sub></td><td align="center"><b>96%</b><br><sub>fleet uptime (OEE)</sub></td><td align="center"><b>10 h to 3.5 h</b><br><sub>mean time to repair</sub></td></tr></table>
+
+</div>
+
+<p align="center"><a href="#about">About</a> &nbsp;|&nbsp; <a href="#selected-work">Selected work</a> &nbsp;|&nbsp; <a href="#experience">Experience</a> &nbsp;|&nbsp; <a href="#projects">Projects</a> &nbsp;|&nbsp; <a href="#skills">Skills</a> &nbsp;|&nbsp; <a href="#contact">Contact</a></p>
 
 > Tempe, AZ. Open to robotics, controls and automation roles, Phoenix metro or remote.
 
@@ -76,6 +82,8 @@ A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable eng
 
 3 pluggable TTS engines<br>Neural ONNX (Piper) primary
 
+<sub>[Source on GitHub](https://github.com/aaronk2001/text-to-speech)</sub>
+
 </td>
 </tr>
 <tr>
@@ -113,92 +121,75 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 ### Robotics Engineer II
 **Handwrytten** | Sep 2023 to Sep 2026<br><sub>Promoted from Robotics Engineer Intern (Sep 2023 to Jun 2024) in 10 months</sub>
 
-Helped scale a proprietary fleet of robotic handwriting machines from 0 to 200+ units producing 30,000 letters/day. 3× output growth. Led the ramp team of 6 (2 engineers, 4 technicians) deploying ~6 machines/week. Designed and built 2 automated inspection machines on Arduino Opta and Portenta Machine Control PLCs, cutting labor cost $100K+/year, and deployed YOLO/PyTorch vision inspecting 30,000 letters/day in real time. Stood up fleet telemetry: live machine status to AWS, an SQL pipeline computing OEE (96% uptime), and Prometheus/Grafana fault detection that cut MTTR from 10 to 3.5 hours. Shipped 4 custom PCBs (EasyEDA) to the fleet and stood up a fabrication cell producing 500+ parts/month, cutting custom-part lead time from 4+ weeks to under 1 week. Installed and supported leased robots at customer sites across the US with a 24-hour response and 90%+ customer uptime.
+- Helped scale a proprietary fleet of robotic handwriting machines from 0 to 200+ units producing 30,000 letters/day. 3× output growth.
+- Led the ramp team of 6 (2 engineers, 4 technicians) deploying ~6 machines/week.
+- Designed and built 2 automated inspection machines on Arduino Opta and Portenta Machine Control PLCs, cutting labor cost $100K+/year, and deployed YOLO/PyTorch vision inspecting 30,000 letters/day in real time.
+- Stood up fleet telemetry: live machine status to AWS, an SQL pipeline computing OEE (96% uptime), and Prometheus/Grafana fault detection that cut MTTR from 10 to 3.5 hours.
+- Shipped 4 custom PCBs (EasyEDA) to the fleet and stood up a fabrication cell producing 500+ parts/month, cutting custom-part lead time from 4+ weeks to under 1 week.
+- Installed and supported leased robots at customer sites across the US with a 24-hour response and 90%+ customer uptime.
 
 `0 to 200+ machines` `30,000 letters/day (3×)` `96% uptime (OEE)` `MTTR 10h to 3.5h` `$100K+/year labor saved` `Field installs at US customer sites: 24h response, 90%+ uptime`
+
+[Read the case study: Robotic fleet at production scale](work/handwrytten-fleet.md)
 
 ### Project Manager, Robotic Glovebox Capstone
 **Los Alamos National Laboratory × ASU** | Aug 2023 to Apr 2024
 
-Led a 3-person team through an 8-month LANL-sponsored project automating glovebox operations with a 6-DOF UR5e. Designed the workcell in SolidWorks, simulated and validated motion in RoboDK, and wrote URScript control routines. Built a flight-stick digital twin via a Python bridge for intuitive teleoperation. Delivered 100% of project milestones.
+- Led a 3-person team through an 8-month LANL-sponsored project automating glovebox operations with a 6-DOF UR5e.
+- Designed the workcell in SolidWorks, simulated and validated motion in RoboDK, and wrote URScript control routines.
+- Built a flight-stick digital twin via a Python bridge for intuitive teleoperation.
+- Delivered 100% of project milestones.
 
 `6-DOF UR5e` `Flight-stick digital twin` `100% milestones` `PM, 3-person team`
+
+[Read the case study: LANL Robotic Glovebox](work/lanl-glovebox.md)
 
 ### B.S.E. Robotics Engineering, Ira A. Fulton Schools of Engineering
 **Arizona State University** | Graduated Dec 2024
 
-Coursework covered kinematics, control systems, embedded systems, computer vision, and machine learning. Senior capstone: the LANL robotic glovebox project above.
+- Coursework covered kinematics, control systems, embedded systems, computer vision, and machine learning.
+- Senior capstone: the LANL robotic glovebox project above.
 
 ## Projects
 
-<table>
-<tr>
-<td width="33%" valign="top">
+**Robotics**
 
-<a href="projects.md#homelab-monitoring-stack"><img src="assets/projects/homelab-monitoring.svg" alt="Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram" width="260"></a>
+| Project | What it is | Status |
+|---|---|---|
+| **[12-Node Pi Homelab](projects.md#12-node-pi-homelab)** | Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. | In progress |
+| **[6-DOF robot arm: CAD, electronics and firmware](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)** | Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. | In progress |
+| **[RobotCar, autonomous FPV rover](projects.md#robotcar-autonomous-fpv-rover)** | A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. | In progress |
 
-**[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)**
+**Controls & Automation**
 
-<sub>Full observability stack for the 12-node Pi cluster on k3s: Prometheus scrapes node metrics, Loki aggregates logs, Grafana renders dashboards, and Alertmanager routes threshold alerts to a Discord webhook.</sub>
+| Project | What it is | Status |
+|---|---|---|
+| **[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)** | Full observability stack for the 12-node Pi cluster on k3s: Prometheus scrapes node metrics, Loki aggregates logs, Grafana renders dashboards, and Alertmanager routes threshold alerts to a Discord webhook. | In progress |
+| **[plc-python-bridge, Allen Bradley tag I/O](projects.md#plc-python-bridge-allen-bradley-tag-io)** | Python library for reading and writing Allen Bradley Logix tags over EtherNet/IP (pycomm3) and OPC-UA (asyncua), with SQLite logging, threshold alerting, a live CLI dashboard, and a hardware-free simulator so it runs in CI. | In progress |
 
-</td>
-<td width="33%" valign="top">
+**Computer Vision & ML**
 
-<a href="projects.md#yolov8-edge-inference-on-hailo-8"><img src="assets/projects/yolov8-hailo.svg" alt="Pipeline from threaded capture through Hailo-8 inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once" width="260"></a>
+| Project | What it is | Status |
+|---|---|---|
+| **[YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8)** | YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5. | In progress<br>[Source](https://github.com/aaronk2001/yolov8-hailo-pi5) |
+| **[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo)** | Open-vocabulary defect inspection on a Pi 5 + Hailo-8 AI HAT. | In progress |
 
-**[YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8)**
+**Fabrication**
 
-<sub>YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5.</sub>
+| Project | What it is | Status |
+|---|---|---|
+| **[Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure)** | SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder. | In progress |
 
-<sub>[Source on GitHub](https://github.com/aaronk2001/yolov8-hailo-pi5)</sub>
+**Software**
 
-</td>
-<td width="33%" valign="top">
+| Project | What it is | Status |
+|---|---|---|
+| **[NEXUS Desktop Trading Terminal](projects.md#nexus-desktop-trading-terminal)** | Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model. | In progress |
+| **[Ascent, career tracker](projects.md#ascent-career-tracker)** | Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track. | In progress<br>[Source](https://github.com/aaronk2001/ascent-career-os) |
+| **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)** | A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop. | In progress<br>[Source](https://github.com/aaronk2001/polymarked) |
+| **[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)** | A full automated short-form video pipeline. | In progress |
 
-<a href="projects.md#nexus-desktop-trading-terminal"><img src="assets/projects/nexus-app.webp" alt="NEXUS Trading Terminal" width="260"></a>
-
-**[NEXUS Desktop Trading Terminal](projects.md#nexus-desktop-trading-terminal)**
-
-<sub>Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="260"></a>
-
-**[Ascent, career tracker](projects.md#ascent-career-tracker)**
-
-<sub>Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track.</sub>
-
-<sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="260"></a>
-
-**[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)**
-
-<sub>A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.</sub>
-
-<sub>[Source on GitHub](https://github.com/aaronk2001/polymarked)</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#phantom-studio-video-automation"><img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="260"></a>
-
-**[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)**
-
-<sub>A full automated short-form video pipeline.</sub>
-
-</td>
-</tr>
-</table>
-
-**[See all 18 projects, grouped by discipline](projects.md)**
+**[Full write-ups for all 18 projects](projects.md)**
 
 ## Skills
 

@@ -79,3 +79,9 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 ## Related projects
 
 - [6-DOF robot arm: CAD, electronics and firmware](../projects.md#6-dof-robot-arm-cad-electronics-and-firmware)
+
+---
+
+**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+
+[Back to portfolio](../README.md)

@@ -122,3 +122,9 @@ Handwrytten runs the largest fleet of robotic handwriting machines in the world 
 ---
 
 <sub>This page only covers details Handwrytten has made public via its Robots page, granted patents (US 11,052,693 & US 11,260,686), and press coverage. Machine internals are intentionally not discussed. Specific QA implementation details are intentionally omitted. Only publicly shareable results are described here. Dashboard internals and screenshots are intentionally not shown. Architecture and results only.</sub>
+
+---
+
+**More case studies:** [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+
+[Back to portfolio](../README.md)

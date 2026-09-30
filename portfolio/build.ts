@@ -80,6 +80,18 @@ const anchor = (s: string) =>
 
 const firstSentence = (s: string) => s.match(/^.*?[.!?](\s|$)/)?.[0].trim() ?? s
 
+// Split prose into sentences without breaking initials like "A. Fulton" or decimals like "3.5".
+const sentences = (s: string) =>
+  s.split(/(?<=[a-z0-9)%+×][.])\s+(?=[A-Z0-9$])/)
+    .map(x => x.trim())
+    .filter(Boolean)
+    .reduce<string[]>((acc, x) => {
+      // fold short fragments ("3× output growth.") into the sentence before
+      if (acc.length && x.length < 30) acc[acc.length - 1] += ` ${x}`
+      else acc.push(x)
+      return acc
+    }, [])
+
 const bullets = (xs: string[]) => xs.map(x => `- ${x}`).join('\n')
 
 const codeList = (xs: string[]) => xs.map(x => `\`${x}\``).join(' ')
@@ -151,32 +163,26 @@ function readme() {
     .map(e => {
       const hl = e.highlights.length ? `\n\n${codeList(e.highlights)}` : ''
       const note = e.note ? `<br><sub>${e.note}</sub>` : ''
-      return `### ${e.role}\n**${e.org}** | ${e.dates}${note}\n\n${e.body}${hl}`
+      const study = caseStudies.find(cs => cs.role.includes(e.org.split(' × ')[0]))
+      const more = study ? `\n\n[Read the case study: ${study.title}](work/${study.slug}.md)` : ''
+      return `### ${e.role}\n**${e.org}** | ${e.dates}${note}\n\n${bullets(sentences(e.body))}${hl}${more}`
     })
     .join('\n\n')
 
-  const trackOrder = Object.keys(TRACKS)
-  const seen = new Set<string>()
-  const featured = shipped
-    .filter(p => imageOf(p.media) && !selectedIds.has(p.id))
-    .sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track))
-    .filter(p => {
-      const src = (p.media as { src: string }).src
-      return !seen.has(src) && !!seen.add(src)
+  const rest = shipped.filter(p => !selectedIds.has(p.id))
+  const projectTables = (Object.keys(TRACKS) as Track[])
+    .map(t => {
+      const ps = rest.filter(p => p.track === t)
+      if (!ps.length) return ''
+      const rows = ps.map(p => {
+        const repo = repoUrl(p.id)
+        const status = p.status === 'complete' ? 'Complete' : 'In progress'
+        return `| **[${p.name}](projects.md#${anchor(p.name)})** | ${firstSentence(p.summary)} | ${status}${repo ? `<br>[Source](${repo})` : ''} |`
+      })
+      return `**${TRACKS[t]}**\n\n| Project | What it is | Status |\n|---|---|---|\n${rows.join('\n')}`
     })
-  const projectGrid = grid(
-    featured.map(p => {
-      const href = `projects.md#${anchor(p.name)}`
-      const repo = repoUrl(p.id)
-      return [
-        `<a href="${href}">${img(p.media, 0, 260)}</a>`,
-        `**[${p.name}](${href})**`,
-        `<sub>${firstSentence(p.summary)}</sub>`,
-        repo && `<sub>[Source on GitHub](${repo})</sub>`,
-      ].filter(Boolean).join('\n\n')
-    }),
-    3,
-  )
+    .filter(Boolean)
+    .join('\n\n')
 
   const skills = skillClusters
     .map(c => {
@@ -201,7 +207,13 @@ function readme() {
 
 <p align="center">${links}</p>
 
+<div align="center">
+
 ${outcomeTable(proofStats)}
+
+</div>
+
+<p align="center">${['About', 'Selected work', 'Experience', 'Projects', 'Skills', 'Contact'].map(h => `<a href="#${anchor(h)}">${h}</a>`).join(' &nbsp;|&nbsp; ')}</p>
 
 > ${hero.availability}
 
@@ -226,9 +238,9 @@ ${exp}
 
 ## Projects
 
-${projectGrid}
+${projectTables}
 
-**[See all ${shipped.length} projects, grouped by discipline](projects.md)**
+**[Full write-ups for all ${shipped.length} projects](projects.md)**
 
 ## Skills
 
@@ -299,7 +311,13 @@ ${outcomeTable(cs.outcomes)}
 ${codeList(cs.tech)}
 
 ${chapters}
-${related.length ? `\n## Related projects\n\n${related.join('\n')}\n` : ''}${cs.disclosure ? `\n---\n\n<sub>${cs.disclosure}</sub>\n` : ''}`
+${related.length ? `\n## Related projects\n\n${related.join('\n')}\n` : ''}${cs.disclosure ? `\n---\n\n<sub>${cs.disclosure}</sub>\n` : ''}
+---
+
+**More case studies:** ${caseStudies.filter(o => o.slug !== cs.slug).map(o => `[${o.title}](${o.slug}.md)`).join(' | ')}
+
+[Back to portfolio](../README.md)
+`
 }
 
 function projectsPage() {
@@ -326,7 +344,7 @@ function projectsPage() {
           p.body.length ? `<details>\n<summary>How it works</summary>\n\n${p.body.join('\n\n')}\n\n</details>` : '',
         ].filter(Boolean).join('\n\n')
       })
-      return `## ${TRACKS[t]}\n\n${entries.join('\n\n')}`
+      return `## ${TRACKS[t]}\n\n${entries.join('\n\n')}\n\n<sub>[Back to top](#projects)</sub>`
     })
     .filter(Boolean)
 
@@ -339,7 +357,9 @@ function projectsPage() {
 
 # Projects
 
-${shipped.length} projects across robotics, controls, vision and software. ${toc}
+${shipped.length} projects across robotics, controls, vision and software.
+
+${toc}
 
 ${sections.join('\n\n')}
 `

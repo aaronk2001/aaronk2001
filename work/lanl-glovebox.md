@@ -31,3 +31,9 @@ An 8-month LANL-sponsored capstone automating glovebox operations with a 6-DOF U
 - A flight-stick digital twin: a Python bridge maps joystick input onto a simulated twin and the physical arm, giving operators direct, intuitive teleoperation.
 
 <table><tr><td align="center"><b>100%</b><br><sub>milestones delivered</sub></td><td align="center"><b>6-DOF</b><br><sub>UR5e deployed</sub></td><td align="center"><b>Flight-stick</b><br><sub>digital twin control</sub></td><td align="center"><b>8 months</b><br><sub>capstone timeline</sub></td></tr></table>
+
+---
+
+**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md)
+
+[Back to portfolio](../README.md)
