@@ -67,7 +67,7 @@ export const projects = [
  "Wire Loki log shipping to pi-monitor",
  "Per-node hardening checklist (SSH, ufw, fail2ban)"
  ],
- "media": {"kind": "image", "src": "/projects/server-rack-enclosure.webp", "alt": "CAD render of the Pi rack enclosure that houses the fleet", "width": 800, "height": 500},
+ "media": {"kind": "none"},
  "skills": [
  "Ansible",
  "Docker",
@@ -104,7 +104,7 @@ export const projects = [
  "Order CM5-16GB + LRS-350-24 + Adafruit 736 slip-ring + 6× AS5048A",
  "ARMPray CAD revisions: encoder pockets, ISO 9409 flange, hollow cable channels"
  ],
- "media": {"kind": "image", "src": "/work/arm-v4-render.webp", "alt": "V4 six-axis robot arm, rendered from the CAD model", "width": 1800, "height": 1350},
+ "media": {"kind": "none"},
  "skills": [
  "Python",
  "ROS2",
@@ -169,7 +169,7 @@ export const projects = [
  "FEA pass on J2/J3 high-load joints",
  "Print first PETG test piece + dimensional check"
  ],
- "media": {"kind": "image", "src": "/work/arm-v4-render.webp", "alt": "V4 six-axis robot arm, rendered from the CAD model", "width": 1800, "height": 1350},
+ "media": {"kind": "none"},
  "skills": [
  "SolidWorks",
  "Fusion 360",
@@ -356,7 +356,7 @@ export const projects = [
  "Fuse ultrasonic + vision for intersection handling",
  "Log lane-offset error traces for PID tuning"
  ],
- "media": {"kind": "image", "src": "/projects/picar-chassis.webp", "alt": "CAD render of the rover chassis parts: motor base, top plate and camera mount", "width": 800, "height": 500},
+ "media": {"kind": "none"},
  "skills": [
  "Python",
  "OpenCV",
@@ -829,7 +829,7 @@ export const projects = [
  "PROTOCOL.md",
  "ROS2 Jazzy driver stack"
  ],
- "media": {"kind": "image", "src": "/work/arm-v4-render.webp", "alt": "V4 six-axis robot arm, rendered from the CAD model", "width": 1800, "height": 1350},
+ "media": {"kind": "none"},
  "caseStudy": "robot-arm"
  },
  {
@@ -886,7 +886,7 @@ export const projects = [
  "Full assembly",
  "12-node vertical stack"
  ],
- "media": {"kind": "image", "src": "/projects/server-rack-enclosure.webp", "alt": "CAD parts for the Pi rack: four-bay frame with shelf trays, side bracket and vented base plate", "width": 1600, "height": 1000}
+ "media": {"kind": "none"}
  },
  {
  "id": "picar-chassis",
@@ -910,7 +910,7 @@ export const projects = [
  "Camera mount",
  "FPV rover assembly"
  ],
- "media": {"kind": "image", "src": "/projects/picar-chassis.webp", "alt": "CAD parts for the rover chassis: motor base, deck plate and camera mount", "width": 1600, "height": 1000},
+ "media": {"kind": "none"},
  "caseStudy": "pi-fleet-edge-ml"
  },
  {
@@ -935,7 +935,7 @@ export const projects = [
  "Screen mount",
  "Cable spool holder"
  ],
- "media": {"kind": "image", "src": "/projects/arcade-cabinet.webp", "alt": "CAD parts for the arcade cabinet: control panel with joystick and button bores, sidewall and screen mount", "width": 1600, "height": 1000}
+ "media": {"kind": "none"}
  }
 ] satisfies Project[]
 

@@ -138,7 +138,7 @@ export const caseStudies = [
       {"value": "ROS2 Jazzy", "label": "driver stack"}
     ],
     "tech": ["SolidWorks", "Fusion 360", "KiCAD", "Teensy 4.1", "ROS2 Jazzy", "Python", "OpenCV"],
-    "media": {"kind": "image", "src": "/work/arm-v4-render.webp", "alt": "V4 six-axis robot arm, rendered from the CAD model", "width": 1800, "height": 1350},
+    "media": {"kind": "none"},
     "chapters": [
       {
         "id": "robot-arm-cad",
@@ -163,7 +163,7 @@ export const caseStudies = [
           {"value": "Parametric", "label": "assembly for rapid iteration"},
           {"value": "Print-ready", "label": "STL pack with orientations"}
         ],
-        "media": {"kind": "image", "src": "/work/arm-v4-render.webp", "alt": "V4 six-axis robot arm, rendered from the CAD model", "width": 1800, "height": 1350}
+        "media": {"kind": "none"}
       },
       {
         "id": "robot-arm-v3-controller",

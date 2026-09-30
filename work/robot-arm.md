@@ -5,8 +5,6 @@
 **V4 design, Teensy controller, ROS2 driver stack**<br>
 <sub>2026 | Design, electronics and firmware</sub>
 
-<p align="center"><img src="../assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="720"></p>
-
 A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 design uses closed-loop NEMA-17 steppers with TMC2209 drivers, a custom Teensy 4.1 controller, and inverse-kinematics control with vision-guided pick-and-place.
 
 <table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>24</b><br><sub>schematic sheets</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>ROS2 Jazzy</b><br><sub>driver stack</sub></td></tr></table>
@@ -14,8 +12,6 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 `SolidWorks` `Fusion 360` `KiCAD` `Teensy 4.1` `ROS2 Jazzy` `Python` `OpenCV`
 
 ## CAD and mechanical design
-
-<p align="center"><img src="../assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="720"></p>
 
 **Problem**
 

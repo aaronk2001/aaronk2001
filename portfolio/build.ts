@@ -174,11 +174,7 @@ function readme() {
 
   const portrait = imageOf(about.portrait)
 
-  return `<p align="center">
-  ${img({ kind: 'image', src: '/work/arm-v4-render.webp', alt: 'V4 six-axis robot arm, rendered from CAD', width: 1800, height: 1350 }, 0, 640)}
-</p>
-
-<h1 align="center">${site.name}</h1>
+  return `<h1 align="center">${site.name}</h1>
 
 <p align="center"><b>${site.role}</b> | ${site.location}</p>
 

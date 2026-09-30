@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from CAD" width="640">
-</p>
-
 <h1 align="center">Aaron Karsten</h1>
 
 <p align="center"><b>Robotics and Automation Engineer</b> | Tempe, AZ</p>
@@ -48,7 +44,7 @@ The work I care most about sits where hardware and software meet. Hardware is th
 </td>
 <td width="50%" valign="top">
 
-<a href="work/robot-arm.md"><img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="400"></a>
+<a href="work/robot-arm.md"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="400"></a>
 
 ### [Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
 
@@ -63,7 +59,7 @@ V4 design, Teensy controller, ROS2 driver stack
 <tr>
 <td width="50%" valign="top">
 
-<a href="work/pi-fleet-edge-ml.md"><img src="assets/projects/server-rack-enclosure.webp" alt="CAD render of the Pi rack enclosure that houses the fleet" width="400"></a>
+<a href="work/pi-fleet-edge-ml.md"><img src="assets/projects/homelab-monitoring.svg" alt="Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram" width="400"></a>
 
 ### [Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
 
@@ -128,35 +124,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <tr>
 <td width="33%" valign="top">
 
-<a href="projects.md#12-node-pi-homelab"><img src="assets/projects/server-rack-enclosure.webp" alt="CAD render of the Pi rack enclosure that houses the fleet" width="260"></a>
-
-**[12-Node Pi Homelab](projects.md#12-node-pi-homelab)**
-
-<sub>Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#6-dof-robot-arm-v2-cm5--tmc2209"><img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="260"></a>
-
-**[6-DOF robot arm V2 (CM5 + TMC2209)](projects.md#6-dof-robot-arm-v2-cm5--tmc2209)**
-
-<sub>Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#robotcar-autonomous-rover"><img src="assets/projects/picar-chassis.webp" alt="CAD render of the rover chassis parts: motor base, top plate and camera mount" width="260"></a>
-
-**[RobotCar, autonomous rover](projects.md#robotcar-autonomous-rover)**
-
-<sub>A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
 <a href="projects.md#homelab-monitoring-stack"><img src="assets/projects/homelab-monitoring.svg" alt="Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram" width="260"></a>
 
 **[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)**
@@ -172,6 +139,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 
 <sub>YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5.</sub>
 
+<sub>[Source on GitHub](https://github.com/aaronk2001/yolov8-hailo-pi5)</sub>
+
 </td>
 <td width="33%" valign="top">
 
@@ -184,15 +153,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 </tr>
 <tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#arcade-cabinet-enclosure"><img src="assets/projects/arcade-cabinet.webp" alt="CAD parts for the arcade cabinet: control panel with joystick and button bores, sidewall and screen mount" width="260"></a>
-
-**[Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure)**
-
-<sub>SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder.</sub>
-
-</td>
 <td width="33%" valign="top">
 
 <a href="projects.md#nexus-desktop-trading-terminal"><img src="assets/projects/nexus-app.webp" alt="NEXUS Trading Terminal" width="260"></a>
@@ -213,8 +173,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
 
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#walrus-local-ollama-agent-desktop"><img src="assets/projects/walrus.webp" alt="Walrus desktop app: a local Ollama agent chat with the model picker in the header" width="260"></a>
@@ -224,6 +182,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="260"></a>
@@ -242,8 +202,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (neural-ONNX Piper, Windows SAPI5, eSpeak-NG), a global clipboard hotkey, and a typed, tested codebase.</sub>
 
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#phantom-studio-video-automation-engine"><img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="260"></a>
@@ -253,6 +211,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>A full automated short-form video pipeline.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#phantom-clips-local-video-pipeline"><img src="assets/projects/phantom-clips.webp" alt="Phantom home screen: paste a link to cut into clips, approval queue counts and account connectors" width="260"></a>
@@ -271,8 +231,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Local-first Monarch-style personal-finance app for spending tracking and insights.</sub>
 
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#plc-track-desktop-learning-tracker"><img src="assets/projects/plc-track-app.webp" alt="PLC Track week 1 view: objective, vocabulary, lab path and deliverable checklist" width="260"></a>

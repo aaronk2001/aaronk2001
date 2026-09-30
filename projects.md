@@ -36,8 +36,6 @@ Each machine posts live status to AWS, processed through an SQL pipeline into OE
 
 <sub>2026 | In progress</sub>
 
-<img src="assets/projects/server-rack-enclosure.webp" alt="CAD render of the Pi rack enclosure that houses the fleet" width="480">
-
 Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. Services include k3s Kubernetes, Grafana dashboards, Prometheus metrics, and Pi-hole DNS filtering. all declaratively versioned in git.
 
 `Ansible` `Docker` `k3s` `Grafana` `Prometheus` `Linux` `Raspberry Pi 4/5`
@@ -57,8 +55,6 @@ Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, 
 
 <sub>2026 | In progress</sub>
 
-<img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="480">
-
 Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. Forward/inverse kinematics solver, vision-guided pick-and-place, and a Flask REST API for external control.
 
 `Python` `ROS2` `TMC2209` `OpenCV` `Flask` `SciPy` `Raspberry Pi 4/5`
@@ -77,8 +73,6 @@ ROS2 Jazzy nodes handle real-time joint state publishing and trajectory interpol
 ### RobotCar, autonomous rover
 
 <sub>2026 | In progress</sub>
-
-<img src="assets/projects/picar-chassis.webp" alt="CAD render of the rover chassis parts: motor base, top plate and camera mount" width="480">
 
 A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. Seven modules span vision, control, obstacle avoidance, video streaming, and a live web UI.
 
@@ -101,8 +95,6 @@ Steering and throttle commands publish to a local MQTT broker at 30 Hz; a motor-
 ### Robot Arm Firmware and ROS2
 
 <sub>2026 | In progress</sub>
-
-<img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="480">
 
 ESP32-S3 firmware in PlatformIO with motion, safety and protocol modules. ROS2 Jazzy workspace with joint limits, launch files, and xbox/keyboard teleop.
 
@@ -188,7 +180,7 @@ YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a
 
 `YOLOv8` `Python` `Hailo-8 NPU` `HailoRT` `ByteTrack` `Raspberry Pi 5` `OpenCV` `ONNX`
 
-[Case study: Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
+[Source on GitHub](https://github.com/aaronk2001/yolov8-hailo-pi5) | [Case study: Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
 
 <details>
 <summary>How it works</summary>
@@ -225,8 +217,6 @@ Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes ("scrat
 ### Pi robot arm, full CAD design
 
 <sub>2026 | In progress</sub>
-
-<img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="480">
 
 Complete SolidWorks and Fusion 360 CAD package for a 3D-printed 6-DOF robot arm designed to mount on a Raspberry Pi 5. All components are parametric, print-ready STLs with assembly drawings and a full bill of materials.
 
@@ -314,8 +304,6 @@ Three written design reviews address critical decisions: Teensy 4.1 connections 
 
 <sub>2026 | Complete</sub>
 
-<img src="assets/projects/server-rack-enclosure.webp" alt="CAD parts for the Pi rack: four-bay frame with shelf trays, side bracket and vented base plate" width="480">
-
 SolidWorks rack design for the 12-node Pi cluster: pi4_rack part, side-wall bases, and assembly.
 
 - pi4_rack part
@@ -337,8 +325,6 @@ Side-wall bases add structural support and cable management channels for Etherne
 ### FPV Rover Chassis Design
 
 <sub>2026 | Complete</sub>
-
-<img src="assets/projects/picar-chassis.webp" alt="CAD parts for the rover chassis: motor base, deck plate and camera mount" width="480">
 
 SolidWorks chassis for the FPV rover: motor base, Pi mount, TT gearmotor, camera mount, assembly.
 
@@ -363,8 +349,6 @@ The Raspberry Pi 4 carrier mounts centrally above the motor base; a modular came
 ### Arcade Cabinet Enclosure
 
 <sub>2026 | In progress</sub>
-
-<img src="assets/projects/arcade-cabinet.webp" alt="CAD parts for the arcade cabinet: control panel with joystick and button bores, sidewall and screen mount" width="480">
 
 SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder.
 
