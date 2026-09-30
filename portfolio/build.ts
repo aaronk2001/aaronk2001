@@ -136,9 +136,15 @@ function readme() {
     })
     .join('\n\n')
 
+  const trackOrder = Object.keys(TRACKS)
+  const seen = new Set<string>()
   const featured = shipped
     .filter(p => imageOf(p.media))
-    .sort((a, b) => Number(!!repoUrl(b.id)) - Number(!!repoUrl(a.id)))
+    .sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track))
+    .filter(p => {
+      const src = (p.media as { src: string }).src
+      return !seen.has(src) && !!seen.add(src)
+    })
   const projectGrid = grid(
     featured.map(p => {
       const href = `projects.md#${anchor(p.name)}`

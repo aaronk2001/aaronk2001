@@ -19,18 +19,18 @@ export const experience = [
  {
  "org": "Los Alamos National Laboratory × ASU",
  "role": "Project Manager, Robotic Glovebox Capstone",
- "dates": "Aug 2023. Apr 2024",
+ "dates": "Aug 2023 to Apr 2024",
  "body": "Led a 3-person team through an 8-month LANL-sponsored project automating glovebox operations with a 6-DOF UR5e. Designed the workcell in SolidWorks, simulated and validated motion in RoboDK, and wrote URScript control routines. Built a flight-stick digital twin via a Python bridge for intuitive teleoperation. Delivered 100% of project milestones.",
  "highlights": [
  "6-DOF UR5e",
  "Flight-stick digital twin",
  "100% milestones",
- "PM. 3-person team"
+ "PM, 3-person team"
  ]
  },
  {
  "org": "Arizona State University",
- "role": "B.S.E. Robotics Engineering. Ira A. Fulton Schools of Engineering",
+ "role": "B.S.E. Robotics Engineering, Ira A. Fulton Schools of Engineering",
  "dates": "Graduated Dec 2024",
  "body": "Coursework covered kinematics, control systems, embedded systems, computer vision, and machine learning. Senior capstone: the LANL robotic glovebox project above.",
  "highlights": []

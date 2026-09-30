@@ -113,13 +113,13 @@ Helped scale a proprietary fleet of robotic handwriting machines from 0 to 200+ 
 `0 to 200+ machines` `30,000 letters/day (3×)` `96% uptime (OEE)` `MTTR 10h to 3.5h` `$100K+/year labor saved` `Field installs at US customer sites: 24h response, 90%+ uptime`
 
 ### Project Manager, Robotic Glovebox Capstone
-**Los Alamos National Laboratory × ASU** | Aug 2023. Apr 2024
+**Los Alamos National Laboratory × ASU** | Aug 2023 to Apr 2024
 
 Led a 3-person team through an 8-month LANL-sponsored project automating glovebox operations with a 6-DOF UR5e. Designed the workcell in SolidWorks, simulated and validated motion in RoboDK, and wrote URScript control routines. Built a flight-stick digital twin via a Python bridge for intuitive teleoperation. Delivered 100% of project milestones.
 
-`6-DOF UR5e` `Flight-stick digital twin` `100% milestones` `PM. 3-person team`
+`6-DOF UR5e` `Flight-stick digital twin` `100% milestones` `PM, 3-person team`
 
-### B.S.E. Robotics Engineering. Ira A. Fulton Schools of Engineering
+### B.S.E. Robotics Engineering, Ira A. Fulton Schools of Engineering
 **Arizona State University** | Graduated Dec 2024
 
 Coursework covered kinematics, control systems, embedded systems, computer vision, and machine learning. Senior capstone: the LANL robotic glovebox project above.
@@ -128,17 +128,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 
 <table>
 <tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="260"></a>
-
-**[Ascent, career tracker](projects.md#ascent-career-tracker)**
-
-<sub>Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track.</sub>
-
-<sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
-
-</td>
 <td width="33%" valign="top">
 
 <a href="projects.md#12-node-pi-homelab"><img src="assets/projects/server-rack-enclosure.webp" alt="CAD render of the Pi rack enclosure that houses the fleet" width="260"></a>
@@ -157,37 +146,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy.</sub>
 
 </td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#pi-robot-arm-full-cad-design"><img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="260"></a>
-
-**[Pi robot arm, full CAD design](projects.md#pi-robot-arm-full-cad-design)**
-
-<sub>Complete SolidWorks and Fusion 360 CAD package for a 3D-printed 6-DOF robot arm designed to mount on a Raspberry Pi 5.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#v3-arm-controller-pcb"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
-
-**[V3 ARM Controller PCB](projects.md#v3-arm-controller-pcb)**
-
-<sub>KiCAD-designed four-layer PCB built with SKiDL Python harness.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#yolov8-edge-inference-on-hailo-8"><img src="assets/projects/yolov8-hailo.svg" alt="Pipeline from threaded capture through Hailo-8 inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once" width="260"></a>
-
-**[YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8)**
-
-<sub>YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5.</sub>
-
-</td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#robotcar-autonomous-rover"><img src="assets/projects/picar-chassis.webp" alt="CAD render of the rover chassis parts: motor base, top plate and camera mount" width="260"></a>
@@ -197,6 +155,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#homelab-monitoring-stack"><img src="assets/projects/homelab-monitoring.svg" alt="Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram" width="260"></a>
@@ -208,11 +168,51 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
+<a href="projects.md#yolov8-edge-inference-on-hailo-8"><img src="assets/projects/yolov8-hailo.svg" alt="Pipeline from threaded capture through Hailo-8 inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once" width="260"></a>
+
+**[YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8)**
+
+<sub>YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5.</sub>
+
+</td>
+<td width="33%" valign="top">
+
+<a href="projects.md#v3-arm-controller-pcb"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
+
+**[V3 ARM Controller PCB](projects.md#v3-arm-controller-pcb)**
+
+<sub>KiCAD-designed four-layer PCB built with SKiDL Python harness.</sub>
+
+</td>
+</tr>
+<tr>
+<td width="33%" valign="top">
+
+<a href="projects.md#arcade-cabinet-enclosure"><img src="assets/projects/arcade-cabinet.webp" alt="CAD parts for the arcade cabinet: control panel with joystick and button bores, sidewall and screen mount" width="260"></a>
+
+**[Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure)**
+
+<sub>SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder.</sub>
+
+</td>
+<td width="33%" valign="top">
+
 <a href="projects.md#nexus-desktop-trading-terminal"><img src="assets/projects/nexus-app.webp" alt="NEXUS Trading Terminal" width="260"></a>
 
 **[NEXUS Desktop Trading Terminal](projects.md#nexus-desktop-trading-terminal)**
 
 <sub>Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model.</sub>
+
+</td>
+<td width="33%" valign="top">
+
+<a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="260"></a>
+
+**[Ascent, career tracker](projects.md#ascent-career-tracker)**
+
+<sub>Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track.</sub>
+
+<sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
 
 </td>
 </tr>
@@ -282,53 +282,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 **[PLC Track, desktop learning tracker](projects.md#plc-track-desktop-learning-tracker)**
 
 <sub>A Tauri 2 + React desktop app that tracks progress through the controls learning path from a YAML curriculum file.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#robot-arm-firmware-and-ros2"><img src="assets/work/arm-v4-render.webp" alt="V4 six-axis robot arm, rendered from the CAD model" width="260"></a>
-
-**[Robot Arm Firmware and ROS2](projects.md#robot-arm-firmware-and-ros2)**
-
-<sub>ESP32-S3 firmware in PlatformIO with motion, safety and protocol modules.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#v2-controller-pcb-engineering-change-order"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
-
-**[V2 Controller PCB Engineering Change Order](projects.md#v2-controller-pcb-engineering-change-order)**
-
-<sub>V2 controller engineering change order: corrected 5 V rail, Teensy and buck-rail sheets, BOM CSV, three written design reviews.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#pi-cluster-server-rack-enclosure"><img src="assets/projects/server-rack-enclosure.webp" alt="CAD parts for the Pi rack: four-bay frame with shelf trays, side bracket and vented base plate" width="260"></a>
-
-**[Pi Cluster Server Rack Enclosure](projects.md#pi-cluster-server-rack-enclosure)**
-
-<sub>SolidWorks rack design for the 12-node Pi cluster: pi4_rack part, side-wall bases, and assembly.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#fpv-rover-chassis-design"><img src="assets/projects/picar-chassis.webp" alt="CAD parts for the rover chassis: motor base, deck plate and camera mount" width="260"></a>
-
-**[FPV Rover Chassis Design](projects.md#fpv-rover-chassis-design)**
-
-<sub>SolidWorks chassis for the FPV rover: motor base, Pi mount, TT gearmotor, camera mount, assembly.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#arcade-cabinet-enclosure"><img src="assets/projects/arcade-cabinet.webp" alt="CAD parts for the arcade cabinet: control panel with joystick and button bores, sidewall and screen mount" width="260"></a>
-
-**[Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure)**
-
-<sub>SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder.</sub>
 
 </td>
 </tr>
