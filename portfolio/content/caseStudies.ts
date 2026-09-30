@@ -215,7 +215,7 @@ export const caseStudies = [
         ]
       }
     ],
-    "projectIds": ["robot-arm-v2", "robot-arm-cad", "pcb-robot-controller", "robot-arm-firmware-ros2", "armv2-pcb-eco"]
+    "projectIds": ["robot-arm-v2"]
   },
   {
     "slug": "pi-fleet-edge-ml",
@@ -353,7 +353,7 @@ export const caseStudies = [
         ]
       }
     ],
-    "projectIds": ["pi-fleet", "homelab-monitoring", "yolov8-hailo", "edge-defect-detection", "server-rack-enclosure"]
+    "projectIds": ["pi-fleet", "homelab-monitoring", "yolov8-hailo", "edge-defect-detection"]
   },
   {
     "slug": "plc-controls",

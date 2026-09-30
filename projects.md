@@ -2,7 +2,7 @@
 
 # Projects
 
-23 projects across robotics, controls, vision and software. [Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
+18 projects across robotics, controls, vision and software. [Robotics](#robotics) | [Controls & Automation](#controls--automation) | [Computer Vision & ML](#computer-vision--ml) | [Fabrication](#fabrication) | [Software](#software)
 
 ## Robotics
 
@@ -36,9 +36,11 @@ Each machine posts live status to AWS, processed through an SQL pipeline into OE
 
 <sub>2026 | In progress</sub>
 
-Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. Services include k3s Kubernetes, Grafana dashboards, Prometheus metrics, and Pi-hole DNS filtering. all declaratively versioned in git.
+Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. Services include k3s Kubernetes, Grafana dashboards, Prometheus metrics, and Pi-hole DNS filtering. all declaratively versioned in git. Housed in a 3D-printed rack I designed in SolidWorks.
 
-`Ansible` `Docker` `k3s` `Grafana` `Prometheus` `Linux` `Raspberry Pi 4/5`
+- 12 nodes in a custom SolidWorks rack
+
+`Ansible` `Docker` `k3s` `Grafana` `Prometheus` `Linux` `Raspberry Pi 4/5` `SolidWorks` `Mechanical Design` `3D Printing`
 
 [Case study: Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
 
@@ -49,15 +51,23 @@ Every node is provisioned from a clean Raspberry Pi OS image using idempotent An
 
 Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility. Pi-hole runs as a cluster-wide DNS resolver.
 
+The enclosure is a server-rack-compatible cabinet designed to house all 12 Raspberry Pi 4 and Pi 5 units in a vertical stack. The pi4_rack part provides mounting slots for each compute node with airflow channels for passive cooling between each tier.
+
+Side-wall bases add structural support and cable management channels for Ethernet and power distribution. The full assembly includes aluminum mounting rails, power-distribution busbar clips, and preparation for future network switch and storage integration at the enclosure base.
+
 </details>
 
-### 6-DOF robot arm V2 (CM5 + TMC2209)
+### 6-DOF robot arm: CAD, electronics and firmware
 
 <sub>2026 | In progress</sub>
 
-Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. Forward/inverse kinematics solver, vision-guided pick-and-place, and a Flask REST API for external control.
+Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. Forward/inverse kinematics solver, vision-guided pick-and-place, and a Flask REST API for external control. Full SolidWorks/Fusion 360 CAD for 3D printing, plus ESP32-S3 firmware (motion, safety, protocol modules) and a ROS2 Jazzy driver stack with teleop.
 
-`Python` `ROS2` `TMC2209` `OpenCV` `Flask` `SciPy` `Raspberry Pi 4/5`
+- Parametric, print-ready CAD for all 6 axes
+- ESP32-S3 firmware: motion, safety and protocol modules
+- ROS2 Jazzy driver stack with joint limits and teleop
+
+`Python` `ROS2` `TMC2209` `OpenCV` `Flask` `SciPy` `Raspberry Pi 4/5` `SolidWorks` `Fusion 360` `3D Printing` `OpenSCAD` `C++` `PlatformIO` `ESP32-S3` `Motion Control`
 
 [Case study: Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
 
@@ -68,20 +78,29 @@ The V2 platform replaces the V1 servo stack with closed-loop steppers driven by 
 
 ROS2 Jazzy nodes handle real-time joint state publishing and trajectory interpolation; a Flask REST API exposes pose commands, joint-space moves, and gripper control for external schedulers. The vision pipeline detects object centroids in the camera frame, transforms them to robot-frame coordinates via a calibrated homography, and passes pick targets into the IK solver.
 
+The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness under load. SolidWorks handles primary structural design and FEA stress analysis on high-load joints; Fusion 360 covers organic fillets and export workflows.
+
+All joints use captured M3 heat-set inserts for repeatable disassembly. The full assembly is parameterized so link lengths and motor mount offsets can be adjusted without redrawing from scratch. OpenSCAD scripts generate horn adapters and tool-changer mounts, version-controlled alongside the main assembly. PrusaSlicer profiles for PETG and PLA are included for each component with recommended print orientations.
+
+The firmware is organized into four modules: motion.cpp handles joint trajectory interpolation and velocity control; safety.cpp enforces joint limits and fault detection; protocol.cpp manages the serial command framing; and PROTOCOL.md documents the serial and CAN interfaces. All modules build under PlatformIO targeting the ESP32-S3, producing a unified binary.
+
+The ROS2 Jazzy driver stack includes arm_bringup and arm_description packages with launch files and joint_limits.yaml for hardware constraints. Xbox controller and keyboard teleop nodes provide real-time joystick and keystroke input for manual control during commissioning and debugging.
+
 </details>
 
-### RobotCar, autonomous rover
+### RobotCar, autonomous FPV rover
 
 <sub>2026 | In progress</sub>
 
-A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. Seven modules span vision, control, obstacle avoidance, video streaming, and a live web UI.
+A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. Seven modules span vision, control, obstacle avoidance, video streaming, and a live web UI. The chassis (motor base, Pi mount, camera mount) is my own SolidWorks design.
 
 - 7-module autonomous rover
 - OpenCV lane detection to MQTT to PID
 - 30 Hz steering loop
 - Live web UI + PID tuner
+- Own SolidWorks chassis: motor base, Pi and camera mounts
 
-`Python` `OpenCV` `MQTT` `Raspberry Pi 4/5` `PID`
+`Python` `OpenCV` `MQTT` `Raspberry Pi 4/5` `PID` `SolidWorks` `Mechanical Design` `3D Printing`
 
 <details>
 <summary>How it works</summary>
@@ -90,30 +109,9 @@ RobotCar is a from-scratch autonomous ground vehicle on a Raspberry Pi 4 (SunFou
 
 Steering and throttle commands publish to a local MQTT broker at 30 Hz; a motor-controller node converts them to differential PWM through an H-bridge. Additional modules add ultrasonic obstacle avoidance, an MJPEG video stream, and a Flask web UI with live PID-tuning sliders. The codebase is organized into seven production modules. vision, controller, obstacle, streaming, web, car, and config .
 
-</details>
+The chassis is a two-wheel differential-drive design built around TT gearmotors. The motor base holds both motors in aligned sockets; a ballcaster rear wheel provides the third contact point for stability.
 
-### Robot Arm Firmware and ROS2
-
-<sub>2026 | In progress</sub>
-
-ESP32-S3 firmware in PlatformIO with motion, safety and protocol modules. ROS2 Jazzy workspace with joint limits, launch files, and xbox/keyboard teleop.
-
-- motion.cpp
-- safety.cpp
-- protocol.cpp
-- PROTOCOL.md
-- ROS2 Jazzy driver stack
-
-`C++` `PlatformIO` `ESP32-S3` `ROS2` `Python` `Motion Control`
-
-[Case study: Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
-
-<details>
-<summary>How it works</summary>
-
-The firmware is organized into four modules: motion.cpp handles joint trajectory interpolation and velocity control; safety.cpp enforces joint limits and fault detection; protocol.cpp manages the serial command framing; and PROTOCOL.md documents the serial and CAN interfaces. All modules build under PlatformIO targeting the ESP32-S3, producing a unified binary.
-
-The ROS2 Jazzy driver stack includes arm_bringup and arm_description packages with launch files and joint_limits.yaml for hardware constraints. Xbox controller and keyboard teleop nodes provide real-time joystick and keystroke input for manual control during commissioning and debugging.
+The Raspberry Pi 4 carrier mounts centrally above the motor base; a modular camera mount points forward for lane-detection computer vision in the fpv-robot-cv pipeline. The assembly uses print-in-place snap joints for rapid prototyping iteration.
 
 </details>
 
@@ -213,71 +211,6 @@ Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes ("scrat
 </details>
 
 ## Fabrication
-
-### Pi robot arm, full CAD design
-
-<sub>2026 | In progress</sub>
-
-Complete SolidWorks and Fusion 360 CAD package for a 3D-printed 6-DOF robot arm designed to mount on a Raspberry Pi 5. All components are parametric, print-ready STLs with assembly drawings and a full bill of materials.
-
-`SolidWorks` `Fusion 360` `3D Printing` `OpenSCAD`
-
-[Case study: Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
-
-<details>
-<summary>How it works</summary>
-
-The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness under load. SolidWorks handles primary structural design and FEA stress analysis on high-load joints; Fusion 360 covers organic fillets and export workflows.
-
-All joints use captured M3 heat-set inserts for repeatable disassembly. The full assembly is parameterized so link lengths and motor mount offsets can be adjusted without redrawing from scratch. OpenSCAD scripts generate horn adapters and tool-changer mounts, version-controlled alongside the main assembly. PrusaSlicer profiles for PETG and PLA are included for each component with recommended print orientations.
-
-</details>
-
-### Pi Cluster Server Rack Enclosure
-
-<sub>2026 | Complete</sub>
-
-SolidWorks rack design for the 12-node Pi cluster: pi4_rack part, side-wall bases, and assembly.
-
-- pi4_rack part
-- Side-wall bases
-- Full assembly
-- 12-node vertical stack
-
-`SolidWorks` `Mechanical Design` `3D Printing`
-
-<details>
-<summary>How it works</summary>
-
-The enclosure is a server-rack-compatible cabinet designed to house all 12 Raspberry Pi 4 and Pi 5 units in a vertical stack. The pi4_rack part provides mounting slots for each compute node with airflow channels for passive cooling between each tier.
-
-Side-wall bases add structural support and cable management channels for Ethernet and power distribution. The full assembly includes aluminum mounting rails, power-distribution busbar clips, and preparation for future network switch and storage integration at the enclosure base.
-
-</details>
-
-### FPV Rover Chassis Design
-
-<sub>2026 | Complete</sub>
-
-SolidWorks chassis for the FPV rover: motor base, Pi mount, TT gearmotor, camera mount, assembly.
-
-- Motor base design
-- Pi mount
-- Camera mount
-- FPV rover assembly
-
-`SolidWorks` `Mechanical Design` `3D Printing`
-
-[Case study: Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
-
-<details>
-<summary>How it works</summary>
-
-The chassis is a two-wheel differential-drive design built around TT gearmotors. The motor base holds both motors in aligned sockets; a ballcaster rear wheel provides the third contact point for stability.
-
-The Raspberry Pi 4 carrier mounts centrally above the motor base; a modular camera mount points forward for lane-detection computer vision in the fpv-robot-cv pipeline. The assembly uses print-in-place snap joints for rapid prototyping iteration.
-
-</details>
 
 ### Arcade Cabinet Enclosure
 
@@ -437,20 +370,22 @@ A global Ctrl+Alt+S hotkey reads the clipboard from any window. Configuration is
 
 </details>
 
-### Phantom Studio, video automation engine
+### Phantom Studio, video automation
 
-<sub>2026 | Complete</sub>
+<sub>2026 | In progress</sub>
 
 <img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="480">
 
-A full automated short-form video pipeline. script to TTS voiceover to Whisper-aligned captions to multi-clip + music compositing to multi-aspect render. wrapped in a Python + Electron desktop app. Built well outside my core lane to stretch into media + ML tooling.
+A full automated short-form video pipeline. script to TTS voiceover to Whisper-aligned captions to multi-clip + music compositing to multi-aspect render. wrapped in a Python + Electron desktop app. Built well outside my core lane to stretch into media + ML tooling. A second pipeline turns a YouTube URL into a captioned 9:16 clip on one machine: yt-dlp, faster-whisper on CUDA, an LLM segment picker and NVENC render.
 
 - Script to render, fully automated
 - 9:16 / 16:9 / 1:1 output
 - $0 local-default generation
 - 172 tests passing
+- One SQLite job table instead of a task broker
+- Nothing uploads without an explicit approval
 
-`Python` `Electron` `MoviePy` `Whisper` `ffmpeg` `SQLite`
+`Python` `Electron` `MoviePy` `Whisper` `ffmpeg` `SQLite` `faster-whisper` `yt-dlp` `ffmpeg / NVENC` `FastAPI`
 
 <details>
 <summary>How it works</summary>
@@ -458,25 +393,6 @@ A full automated short-form video pipeline. script to TTS voiceover to Whisper-a
 Phantom Studio is the project I built to push outside robotics and learn an end-to-end media pipeline. A Python engine (MoviePy v2) composes short-form videos: it generates a voiceover (Edge TTS), transcribes and time-aligns captions with Whisper ASR, stitches multiple clips with background music, and renders to 9:16, 16:9, and 1:1.
 
 An Electron + Python desktop shell drives it, with SQLite-backed job state, scheduling, Telegram failure alerts, a clip cache, and a one-click PyInstaller build. It defaults to fully local, $0 generation and degrades gracefully when heavier models exceed the laptop's memory budget. 172 tests passing, ffmpeg/ASR/render pipeline end to end.
-
-</details>
-
-### Phantom Clips, local video pipeline
-
-<sub>2026 | In progress</sub>
-
-<img src="assets/projects/phantom-clips.webp" alt="Phantom home screen: paste a link to cut into clips, approval queue counts and account connectors" width="480">
-
-YouTube URL to finished 9:16 clip entirely on one machine: yt-dlp ingest, faster-whisper transcription on CUDA, an LLM segment picker, an NVENC render with burned captions, and a keyboard-driven review UI over a SQLite job queue.
-
-- Milestones M0-M6 built (Aug 2026)
-- One SQLite job table instead of a task broker
-- Nothing uploads without an explicit approval
-
-`Python` `faster-whisper` `yt-dlp` `ffmpeg / NVENC` `SQLite` `FastAPI`
-
-<details>
-<summary>How it works</summary>
 
 A single-user desktop pipeline with no Redis and no Celery. one worker polling a SQLite jobs table, which is all the concurrency the problem actually needs.
 

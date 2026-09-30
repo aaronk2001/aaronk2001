@@ -121,4 +121,3 @@ A 12-node Raspberry Pi 4 and Pi 5 cluster running k3s Kubernetes, with Prometheu
 - [Homelab Monitoring Stack](../projects.md#homelab-monitoring-stack)
 - [YOLOv8 edge inference on Hailo-8](../projects.md#yolov8-edge-inference-on-hailo-8)
 - [AI HAT + VLM Defect Demo](../projects.md#ai-hat--vlm-defect-demo)
-- [Pi Cluster Server Rack Enclosure](../projects.md#pi-cluster-server-rack-enclosure)

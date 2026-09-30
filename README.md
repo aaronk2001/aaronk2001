@@ -195,24 +195,13 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
-<a href="projects.md#phantom-studio-video-automation-engine"><img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="260"></a>
+<a href="projects.md#phantom-studio-video-automation"><img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="260"></a>
 
-**[Phantom Studio, video automation engine](projects.md#phantom-studio-video-automation-engine)**
+**[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)**
 
 <sub>A full automated short-form video pipeline.</sub>
 
 </td>
-<td width="33%" valign="top">
-
-<a href="projects.md#phantom-clips-local-video-pipeline"><img src="assets/projects/phantom-clips.webp" alt="Phantom home screen: paste a link to cut into clips, approval queue counts and account connectors" width="260"></a>
-
-**[Phantom Clips, local video pipeline](projects.md#phantom-clips-local-video-pipeline)**
-
-<sub>YouTube URL to finished 9:16 clip entirely on one machine: yt-dlp ingest, faster-whisper transcription on CUDA, an LLM segment picker, an NVENC render with burned captions, and a keyboard-driven review UI over a SQLite job queue.</sub>
-
-</td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#mmm-money-hub"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="260"></a>
@@ -222,6 +211,8 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 <sub>Local-first Monarch-style personal-finance app for spending tracking and insights.</sub>
 
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 
 <a href="projects.md#plc-track-desktop-learning-tracker"><img src="assets/projects/plc-track-app.webp" alt="PLC Track week 1 view: objective, vocabulary, lab path and deliverable checklist" width="260"></a>
@@ -234,7 +225,7 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </tr>
 </table>
 
-**[See all 23 projects, grouped by discipline](projects.md)**
+**[See all 18 projects, grouped by discipline](projects.md)**
 
 ## Skills
 
