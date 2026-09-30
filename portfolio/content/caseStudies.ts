@@ -127,17 +127,17 @@ export const caseStudies = [
     "slug": "robot-arm",
     "flagship": true,
     "title": "Six-axis robot arm, from CAD to firmware",
-    "subtitle": "V4 design, Teensy controller, ROS2 driver stack",
+    "subtitle": "Parametric CAD, Teensy 4.1 controller board, ESP32-S3 firmware, ROS2 kinematics",
     "period": "2026",
     "role": "Design, electronics and firmware",
-    "summary": "A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 design uses closed-loop NEMA-17 steppers with TMC2209 drivers, a custom Teensy 4.1 controller, and inverse-kinematics control with vision-guided pick-and-place.",
+    "summary": "A 6-axis robot arm taken from parametric CAD through a custom controller board to firmware: closed-loop NEMA-17 steppers on TMC2209 drivers, a Teensy 4.1 controller board, ESP32-S3 firmware and a ROS2 kinematics package. Vision-guided pick-and-place is next.",
     "outcomes": [
       {"value": "6", "label": "axes"},
-      {"value": "24", "label": "schematic sheets"},
+      {"value": "6x TMC2209", "label": "stepper drivers"},
       {"value": "65", "label": "STEP files"},
       {"value": "ROS2 Jazzy", "label": "driver stack"}
     ],
-    "tech": ["SolidWorks", "Fusion 360", "KiCAD", "Teensy 4.1", "ROS2 Jazzy", "Python", "OpenCV"],
+    "tech": ["SolidWorks", "Fusion 360", "KiCAD", "Teensy 4.1", "ROS2 Jazzy", "Python", "ESP32-S3"],
     "media": {"kind": "none"},
     "chapters": [
       {
@@ -167,7 +167,7 @@ export const caseStudies = [
       },
       {
         "id": "robot-arm-v3-controller",
-        "title": "V3 controller board",
+        "title": "Controller board",
         "problem": [
           "Coordinating six independent stepper motors requires precise timing, real-time fault detection, and bidirectional communication with high-level controllers.",
           "A breadboard of modules adds latency and debug friction compared to a single integrated board."
@@ -177,14 +177,12 @@ export const caseStudies = [
           "Power delivery for six stepper motors plus microcontroller needs stable 5V and 3.3V rails with thermal headroom."
         ],
         "built": [
-          "A four-layer KiCAD-designed PCB consolidates stepper motor control, Teensy 4.1 microcontroller, and regulated 5V and 3.3V power rails onto a single compact board.",
-          "Four independent TMC2209 stepper driver footprints provide current control and diagnostics for each motor.",
-          "The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet.",
-          "Three written design reviews address Teensy connections, MCU comparison (ESP32-S3 versus Teensy 4.1), and final checklist. These confirm electrical correctness and thermal margins."
+          "The V2 board (EasyEDA) puts a Teensy 4.1, six TMC2209 stepper driver channels, CAN, limit-switch inputs and regulated 12 V, 5 V and 3.3 V rails on one board.",
+                    "The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet.",
+          "Three written design reviews cover the Teensy connections, an ESP32-S3 versus Teensy 4.1 comparison, and a final checklist. V3 moves to an ESP32-S3, with the netlist generated from Python (SKiDL) into KiCad."
         ],
         "outcomes": [
-          {"value": "4-layer", "label": "board design"},
-          {"value": "24", "label": "schematic sheets"},
+          {"value": "3 rails", "label": "12 V, 5 V, 3.3 V"},
           {"value": "6x TMC2209", "label": "stepper drivers"},
           {"value": "3 design reviews", "label": "with decision trade-offs"}
         ],
@@ -221,22 +219,22 @@ export const caseStudies = [
     "slug": "pi-fleet-edge-ml",
     "flagship": true,
     "title": "Twelve-node Pi cluster with edge inference",
-    "subtitle": "Kubernetes, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry",
+    "subtitle": "Ansible, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry",
     "period": "2026",
     "role": "Infrastructure and ML",
-    "summary": "A 12-node Raspberry Pi 4 and Pi 5 cluster running k3s Kubernetes, with Prometheus/Grafana observability. A Hailo-8 AI HAT runs real-time YOLOv8 object detection (26 TOPS) while Florence-2 vision-language models ground defects on production parts.",
+    "summary": "A 12-node Raspberry Pi 4 and Pi 5 fleet provisioned with Ansible, with Prometheus/Grafana observability and a two-node k3s cluster. A Hailo-8 AI HAT runs real-time YOLOv8 detection at 144.7 FPS, and a Florence-2 vision-language defect demo is in progress.",
     "outcomes": [
       {"value": "12", "label": "nodes"},
       {"value": "26 TOPS", "label": "Hailo-8 NPU"},
-      {"value": "11", "label": "Ansible playbooks"},
-      {"value": "k3s", "label": "orchestration"}
+      {"value": "9", "label": "Ansible playbooks"},
+      {"value": "144.7 FPS", "label": "YOLOv8n on the Hailo-8"}
     ],
-    "tech": ["Kubernetes (k3s)", "Ansible", "Prometheus", "Grafana", "Hailo-8 NPU", "YOLOv8", "Raspberry Pi 4/5", "Docker"],
+    "tech": ["Ansible", "k3s", "Prometheus", "Grafana", "Hailo-8 NPU", "YOLOv8", "Raspberry Pi 4/5", "Docker"],
     "media": {"kind": "none"},
     "chapters": [
       {
         "id": "pi-fleet",
-        "title": "Infrastructure and Kubernetes",
+        "title": "Infrastructure as code",
         "problem": [
           "Running a distributed robotics pipeline requires managing multiple Raspberry Pi units across SSH, Docker images, and configuration files.",
           "Without infrastructure as code, each node becomes a snowflake and test environments don't mirror production."
@@ -247,13 +245,12 @@ export const caseStudies = [
         ],
         "built": [
           "Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment.",
-          "k3s provides lightweight Kubernetes orchestration for containerized workloads, with Helm charts tracked in the repository.",
+          "Two nodes run a small k3s cluster for container experiments.",
           "Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility."
         ],
         "outcomes": [
           {"value": "12", "label": "nodes (Pi 4 and Pi 5)"},
-          {"value": "11", "label": "Ansible playbooks"},
-          {"value": "k3s", "label": "Kubernetes on edge"}
+          {"value": "9", "label": "Ansible playbooks"}
         ]
       },
       {
@@ -268,10 +265,10 @@ export const caseStudies = [
           "Alert rules must be specific enough to catch real issues without flooding on false positives."
         ],
         "built": [
-          "Prometheus pulls metrics from every node at 30-second intervals; Grafana renders dashboards with node-level CPU, memory, disk, and network health.",
-          "AlertManager triggers on CPU above 80%, memory above 85%, disk above 90%, and network errors. Each alert includes context and a runbook link.",
-          "Loki (optional) ships container logs to a central store for historical analysis and debugging.",
-          "The stack is fully containerized so upgrades roll across the fleet with zero downtime."
+          "Prometheus scrapes every node every 15 seconds; file-provisioned Grafana dashboards cover the fleet overview, NAS health, AI HAT metrics and the media server.",
+          "Alert rules fire on a node going down, root disk under 20% free, CPU above 90% and board temperature above 75 °C; Alertmanager sends them to Telegram.",
+          "Loki is deployed as a datasource; shipping logs to it is the next step.",
+          "The whole stack is one Docker Compose file, so a rebuild is a single command."
         ],
         "outcomes": [
           {"value": "Prometheus", "label": "metrics collection"},

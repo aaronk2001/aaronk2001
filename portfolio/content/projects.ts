@@ -48,12 +48,12 @@ export const projects = [
   "track": "robotics",
   "status": "in-progress",
   "year": "2026",
-  "summary": "Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. Services include k3s Kubernetes, Grafana dashboards, Prometheus metrics, and Pi-hole DNS filtering. all declaratively versioned in git. Housed in a 3D-printed rack I designed in SolidWorks.",
+  "summary": "Infrastructure-as-code for a 12-node Raspberry Pi 4/5 fleet: 9 Ansible playbooks and Docker Compose provision every node, with Prometheus metrics, Grafana dashboards and Pi-hole DNS, plus a two-node k3s cluster for container experiments. Housed in a 3D-printed rack I designed in SolidWorks.",
   "body": [
-   "Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment. k3s provides lightweight Kubernetes orchestration for containerized workloads, with Helm charts tracked in the repository.",
+   "Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment. Two nodes run a small k3s cluster for container experiments.",
    "Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility. Pi-hole runs as a cluster-wide DNS resolver.",
-   "The enclosure is a server-rack-compatible cabinet designed to house all 12 Raspberry Pi 4 and Pi 5 units in a vertical stack. The pi4_rack part provides mounting slots for each compute node with airflow channels for passive cooling between each tier.",
-   "Side-wall bases add structural support and cable management channels for Ethernet and power distribution. The full assembly includes aluminum mounting rails, power-distribution busbar clips, and preparation for future network switch and storage integration at the enclosure base."
+   "The rack is a SolidWorks design that holds the Pi 4 and Pi 5 nodes in a vertical stack: a pi4_rack part with a mounting slot per node, a base, and side-wall bases.",
+   "Side walls leave room for Ethernet and power runs, and the whole stack prints on a hobby FDM printer."
   ],
   "tech": [
    "Ansible",
@@ -94,11 +94,11 @@ export const projects = [
   "track": "robotics",
   "status": "in-progress",
   "year": "2026",
-  "summary": "Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. Forward/inverse kinematics solver, vision-guided pick-and-place, and a Flask REST API for external control. Full SolidWorks/Fusion 360 CAD for 3D printing, plus ESP32-S3 firmware (motion, safety, protocol modules) and a ROS2 Jazzy driver stack with teleop.",
+  "summary": "Second-revision 6-DOF robot arm: closed-loop NEMA-17 steppers on TMC2209 drivers, a custom Teensy 4.1 controller board, and ESP32-S3 firmware with motion, safety and protocol modules. A ROS2 workspace adds a DH-parameter kinematics package with an inverse-kinematics solver, plus teleop. Full parametric CAD for 3D printing.",
   "body": [
-   "The V2 platform replaces the V1 servo stack with closed-loop steppers driven by TMC2209 silent drivers, giving repeatability and torque margin for sub-mm positioning. The kinematics engine computes joint angles for arbitrary end-effector poses using SciPy numerical optimization with configurable DH parameters.",
-   "ROS2 Jazzy nodes handle real-time joint state publishing and trajectory interpolation; a Flask REST API exposes pose commands, joint-space moves, and gripper control for external schedulers. The vision pipeline detects object centroids in the camera frame, transforms them to robot-frame coordinates via a calibrated homography, and passes pick targets into the IK solver.",
-   "The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness under load. SolidWorks handles primary structural design and FEA stress analysis on high-load joints; Fusion 360 covers organic fillets and export workflows.",
+   "The V2 platform replaces the V1 servo stack with closed-loop steppers driven by TMC2209 silent drivers. The kinematics package models the arm with DH parameters and solves inverse kinematics with a damped least-squares Jacobian in NumPy, within per-joint limits.",
+   "The ESP32-S3 firmware is split into motion, safety and protocol modules with a written serial protocol, and the ROS2 workspace wraps the IK solver as a service. Vision-guided pick-and-place is the planned next step.",
+   "The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness under load. SolidWorks handles primary structural design; Fusion 360 covers organic fillets and export workflows.",
    "All joints use captured M3 heat-set inserts for repeatable disassembly. The full assembly is parameterized so link lengths and motor mount offsets can be adjusted without redrawing from scratch. OpenSCAD scripts generate horn adapters and tool-changer mounts, version-controlled alongside the main assembly. PrusaSlicer profiles for PETG and PLA are included for each component with recommended print orientations.",
    "The firmware is organized into four modules: motion.cpp handles joint trajectory interpolation and velocity control; safety.cpp enforces joint limits and fault detection; protocol.cpp manages the serial command framing; and PROTOCOL.md documents the serial and CAN interfaces. All modules build under PlatformIO targeting the ESP32-S3, producing a unified binary.",
    "The ROS2 Jazzy driver stack includes arm_bringup and arm_description packages with launch files and joint_limits.yaml for hardware constraints. Xbox controller and keyboard teleop nodes provide real-time joystick and keystroke input for manual control during commissioning and debugging."
@@ -107,9 +107,6 @@ export const projects = [
    "Python",
    "ROS2",
    "TMC2209",
-   "OpenCV",
-   "Flask",
-   "SciPy",
    "Raspberry Pi 4/5",
    "SolidWorks",
    "Fusion 360",
@@ -118,7 +115,8 @@ export const projects = [
    "C++",
    "PlatformIO",
    "ESP32-S3",
-   "Motion Control"
+   "Motion Control",
+   "NumPy"
   ],
   "next": [
    "Bench-test IK solver against URDF in Gazebo Harmonic",
@@ -320,21 +318,21 @@ export const projects = [
   "track": "controls",
   "status": "in-progress",
   "year": "2026",
-  "summary": "Full observability stack for the 12-node Pi cluster on k3s: Prometheus scrapes node metrics, Loki aggregates logs, Grafana renders dashboards, and Alertmanager routes threshold alerts to a Discord webhook.",
+  "summary": "Prometheus, Grafana, Alertmanager and Loki in one Docker Compose file for the 12-node Pi fleet, with provisioned dashboards and critical alerts sent to Telegram.",
   "body": [
-   "The stack deploys via Helm charts managed in the pi-fleet repository, keeping monitoring infrastructure in sync with the application layer through a single Ansible playbook. Prometheus is configured with per-node scrape jobs for the Node Exporter, cAdvisor container metrics, and custom application metrics exposed by robot-control services.",
-   "Loki aggregates systemd journal logs from all 12 nodes via Promtail agents, enabling cross-node log correlation. Grafana dashboards cover cluster-wide resource utilization, per-pod CPU/memory, and robot service error rates. Alertmanager rules fire on node memory pressure above 80%, disk fill rate projections exceeding 7 days, and any robot service crash loop. Alert payloads include direct deep-links to the relevant Grafana panel."
+   "Prometheus scrapes node_exporter on every node every 15 seconds. Grafana is provisioned from files, so a rebuild needs no clicking: dashboards cover the fleet overview, NAS health, AI HAT metrics and the media server.",
+   "Alert rules fire on a node going down, root disk under 20% free, CPU above 90% and board temperature above 75 °C, and Alertmanager routes them to a Telegram bot. Loki is deployed as a datasource; shipping logs to it is the next step."
   ],
   "tech": [
    "Prometheus",
    "Grafana",
-   "k3s",
-   "Docker",
+   "Alertmanager",
+   "Loki",
+   "Docker Compose",
    "Linux"
   ],
   "next": [
-   "Helm chart commit for the full stack",
-   "Discord webhook on Alertmanager for node-down + memory-pressure",
+   "Ship logs to Loki with Promtail",
    "SLO burn-rate dashboard for robot-control services"
   ],
   "media": {
@@ -592,7 +590,7 @@ export const projects = [
    "9:16 / 16:9 / 1:1 output",
    "$0 local-default generation",
    "172 tests passing",
-    "One SQLite job table instead of a task broker",
+   "One SQLite job table instead of a task broker",
    "Nothing uploads without an explicit approval"
   ],
   "next": [

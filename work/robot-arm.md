@@ -2,14 +2,14 @@
 
 # Six-axis robot arm, from CAD to firmware
 
-**V4 design, Teensy controller, ROS2 driver stack**<br>
+**Parametric CAD, Teensy 4.1 controller board, ESP32-S3 firmware, ROS2 kinematics**<br>
 <sub>2026 | Design, electronics and firmware</sub>
 
-A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 design uses closed-loop NEMA-17 steppers with TMC2209 drivers, a custom Teensy 4.1 controller, and inverse-kinematics control with vision-guided pick-and-place.
+A 6-axis robot arm taken from parametric CAD through a custom controller board to firmware: closed-loop NEMA-17 steppers on TMC2209 drivers, a Teensy 4.1 controller board, ESP32-S3 firmware and a ROS2 kinematics package. Vision-guided pick-and-place is next.
 
-<table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>24</b><br><sub>schematic sheets</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>ROS2 Jazzy</b><br><sub>driver stack</sub></td></tr></table>
+<table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>ROS2 Jazzy</b><br><sub>driver stack</sub></td></tr></table>
 
-`SolidWorks` `Fusion 360` `KiCAD` `Teensy 4.1` `ROS2 Jazzy` `Python` `OpenCV`
+`SolidWorks` `Fusion 360` `KiCAD` `Teensy 4.1` `ROS2 Jazzy` `Python` `ESP32-S3`
 
 ## CAD and mechanical design
 
@@ -32,7 +32,7 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 
 <table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>Parametric</b><br><sub>assembly for rapid iteration</sub></td><td align="center"><b>Print-ready</b><br><sub>STL pack with orientations</sub></td></tr></table>
 
-## V3 controller board
+## Controller board
 
 <p align="center"><img src="../assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="720"></p>
 
@@ -48,12 +48,11 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 
 **What I built**
 
-- A four-layer KiCAD-designed PCB consolidates stepper motor control, Teensy 4.1 microcontroller, and regulated 5V and 3.3V power rails onto a single compact board.
-- Four independent TMC2209 stepper driver footprints provide current control and diagnostics for each motor.
+- The V2 board (EasyEDA) puts a Teensy 4.1, six TMC2209 stepper driver channels, CAN, limit-switch inputs and regulated 12 V, 5 V and 3.3 V rails on one board.
 - The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet.
-- Three written design reviews address Teensy connections, MCU comparison (ESP32-S3 versus Teensy 4.1), and final checklist. These confirm electrical correctness and thermal margins.
+- Three written design reviews cover the Teensy connections, an ESP32-S3 versus Teensy 4.1 comparison, and a final checklist. V3 moves to an ESP32-S3, with the netlist generated from Python (SKiDL) into KiCad.
 
-<table><tr><td align="center"><b>4-layer</b><br><sub>board design</sub></td><td align="center"><b>24</b><br><sub>schematic sheets</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>3 design reviews</b><br><sub>with decision trade-offs</sub></td></tr></table>
+<table><tr><td align="center"><b>3 rails</b><br><sub>12 V, 5 V, 3.3 V</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>3 design reviews</b><br><sub>with decision trade-offs</sub></td></tr></table>
 
 ## Firmware and ROS2
 

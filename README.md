@@ -156,15 +156,15 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 
 | Project | What it is | Status |
 |---|---|---|
-| **[12-Node Pi Homelab](projects.md#12-node-pi-homelab)** | Infrastructure-as-code for a 12-node Raspberry Pi cluster managed entirely through Ansible playbooks and Docker Compose. | In progress |
-| **[6-DOF robot arm: CAD, electronics and firmware](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)** | Second-revision 6-DOF robot arm built around a Raspberry Pi CM5 carrier, TMC2209 stepper drivers, and ROS2 Jazzy. | In progress |
+| **[12-Node Pi Homelab](projects.md#12-node-pi-homelab)** | Infrastructure-as-code for a 12-node Raspberry Pi 4/5 fleet: 9 Ansible playbooks and Docker Compose provision every node, with Prometheus metrics, Grafana dashboards and Pi-hole DNS, plus a two-node k3s cluster for container experiments. | In progress |
+| **[6-DOF robot arm: CAD, electronics and firmware](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)** | Second-revision 6-DOF robot arm: closed-loop NEMA-17 steppers on TMC2209 drivers, a custom Teensy 4.1 controller board, and ESP32-S3 firmware with motion, safety and protocol modules. | In progress |
 | **[RobotCar, autonomous FPV rover](projects.md#robotcar-autonomous-fpv-rover)** | A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. | In progress |
 
 **Controls & Automation**
 
 | Project | What it is | Status |
 |---|---|---|
-| **[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)** | Full observability stack for the 12-node Pi cluster on k3s: Prometheus scrapes node metrics, Loki aggregates logs, Grafana renders dashboards, and Alertmanager routes threshold alerts to a Discord webhook. | In progress |
+| **[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)** | Prometheus, Grafana, Alertmanager and Loki in one Docker Compose file for the 12-node Pi fleet, with provisioned dashboards and critical alerts sent to Telegram. | In progress |
 | **[plc-python-bridge, Allen Bradley tag I/O](projects.md#plc-python-bridge-allen-bradley-tag-io)** | Python library for reading and writing Allen Bradley Logix tags over EtherNet/IP (pycomm3) and OPC-UA (asyncua), with SQLite logging, threshold alerting, a live CLI dashboard, and a hardware-free simulator so it runs in CI. | In progress |
 
 **Computer Vision & ML**

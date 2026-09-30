@@ -2,16 +2,16 @@
 
 # Twelve-node Pi cluster with edge inference
 
-**Kubernetes, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry**<br>
+**Ansible, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry**<br>
 <sub>2026 | Infrastructure and ML</sub>
 
-A 12-node Raspberry Pi 4 and Pi 5 cluster running k3s Kubernetes, with Prometheus/Grafana observability. A Hailo-8 AI HAT runs real-time YOLOv8 object detection (26 TOPS) while Florence-2 vision-language models ground defects on production parts.
+A 12-node Raspberry Pi 4 and Pi 5 fleet provisioned with Ansible, with Prometheus/Grafana observability and a two-node k3s cluster. A Hailo-8 AI HAT runs real-time YOLOv8 detection at 144.7 FPS, and a Florence-2 vision-language defect demo is in progress.
 
-<table><tr><td align="center"><b>12</b><br><sub>nodes</sub></td><td align="center"><b>26 TOPS</b><br><sub>Hailo-8 NPU</sub></td><td align="center"><b>11</b><br><sub>Ansible playbooks</sub></td><td align="center"><b>k3s</b><br><sub>orchestration</sub></td></tr></table>
+<table><tr><td align="center"><b>12</b><br><sub>nodes</sub></td><td align="center"><b>26 TOPS</b><br><sub>Hailo-8 NPU</sub></td><td align="center"><b>9</b><br><sub>Ansible playbooks</sub></td><td align="center"><b>144.7 FPS</b><br><sub>YOLOv8n on the Hailo-8</sub></td></tr></table>
 
-`Kubernetes (k3s)` `Ansible` `Prometheus` `Grafana` `Hailo-8 NPU` `YOLOv8` `Raspberry Pi 4/5` `Docker`
+`Ansible` `k3s` `Prometheus` `Grafana` `Hailo-8 NPU` `YOLOv8` `Raspberry Pi 4/5` `Docker`
 
-## Infrastructure and Kubernetes
+## Infrastructure as code
 
 **Problem**
 
@@ -26,10 +26,10 @@ A 12-node Raspberry Pi 4 and Pi 5 cluster running k3s Kubernetes, with Prometheu
 **What I built**
 
 - Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment.
-- k3s provides lightweight Kubernetes orchestration for containerized workloads, with Helm charts tracked in the repository.
+- Two nodes run a small k3s cluster for container experiments.
 - Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility.
 
-<table><tr><td align="center"><b>12</b><br><sub>nodes (Pi 4 and Pi 5)</sub></td><td align="center"><b>11</b><br><sub>Ansible playbooks</sub></td><td align="center"><b>k3s</b><br><sub>Kubernetes on edge</sub></td></tr></table>
+<table><tr><td align="center"><b>12</b><br><sub>nodes (Pi 4 and Pi 5)</sub></td><td align="center"><b>9</b><br><sub>Ansible playbooks</sub></td></tr></table>
 
 ## Observability and alerting
 
@@ -45,10 +45,10 @@ A 12-node Raspberry Pi 4 and Pi 5 cluster running k3s Kubernetes, with Prometheu
 
 **What I built**
 
-- Prometheus pulls metrics from every node at 30-second intervals; Grafana renders dashboards with node-level CPU, memory, disk, and network health.
-- AlertManager triggers on CPU above 80%, memory above 85%, disk above 90%, and network errors. Each alert includes context and a runbook link.
-- Loki (optional) ships container logs to a central store for historical analysis and debugging.
-- The stack is fully containerized so upgrades roll across the fleet with zero downtime.
+- Prometheus scrapes every node every 15 seconds; file-provisioned Grafana dashboards cover the fleet overview, NAS health, AI HAT metrics and the media server.
+- Alert rules fire on a node going down, root disk under 20% free, CPU above 90% and board temperature above 75 °C; Alertmanager sends them to Telegram.
+- Loki is deployed as a datasource; shipping logs to it is the next step.
+- The whole stack is one Docker Compose file, so a rebuild is a single command.
 
 <table><tr><td align="center"><b>Prometheus</b><br><sub>metrics collection</sub></td><td align="center"><b>Grafana</b><br><sub>visualization</sub></td><td align="center"><b>AlertManager</b><br><sub>firing alerts</sub></td><td align="center"><b>12-node visibility</b><br><sub>in one UI</sub></td></tr></table>
 
