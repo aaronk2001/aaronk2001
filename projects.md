@@ -247,7 +247,7 @@ All joints use captured M3 heat-set inserts for repeatable disassembly. The full
 
 <sub>2026 | In progress</sub>
 
-<img src="assets/work/arm-v2-schematic.svg" alt="V2 PCB Schematic" width="480">
+<img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="480">
 
 KiCAD-designed four-layer PCB built with SKiDL Python harness. consolidates stepper motor control, ESP32-S3 microcontroller, and regulated 5V/3.3V power rails onto a single compact board sized to fit inside the robot arm base.
 
@@ -288,7 +288,7 @@ Metal prep work. cutting to length with an angle grinder, deburring, and fit-up 
 
 <sub>2026 | Complete</sub>
 
-<img src="assets/work/arm-v2-schematic.svg" alt="V2 PCB Schematic" width="480">
+<img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="480">
 
 V2 controller engineering change order: corrected 5 V rail, Teensy and buck-rail sheets, BOM CSV, three written design reviews.
 

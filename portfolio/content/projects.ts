@@ -203,7 +203,7 @@ export const projects = [
  ],
  "media": {
  "kind": "image",
- "src": "/work/arm-v2-schematic.svg",
+ "src": "/work/arm-v2-schematic.webp",
  "alt": "V2 PCB Schematic",
  "width": 1600,
  "height": 1000
@@ -857,7 +857,7 @@ export const projects = [
  ],
  "media": {
  "kind": "image",
- "src": "/work/arm-v2-schematic.svg",
+ "src": "/work/arm-v2-schematic.webp",
  "alt": "V2 PCB Schematic",
  "width": 1600,
  "height": 1000

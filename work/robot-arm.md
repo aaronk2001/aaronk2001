@@ -38,7 +38,7 @@ A complete 6-axis robot arm from SolidWorks CAD to ROS2 Jazzy firmware. The V4 d
 
 ## V3 controller board
 
-<p align="center"><img src="../assets/work/arm-v2-schematic.svg" alt="V2 PCB schematic diagram" width="720"></p>
+<p align="center"><img src="../assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="720"></p>
 
 **Problem**
 

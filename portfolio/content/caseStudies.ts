@@ -188,7 +188,7 @@ export const caseStudies = [
           {"value": "6x TMC2209", "label": "stepper drivers"},
           {"value": "3 design reviews", "label": "with decision trade-offs"}
         ],
-        "media": {"kind": "image", "src": "/work/arm-v2-schematic.svg", "alt": "V2 PCB schematic diagram", "width": 1600, "height": 1000}
+        "media": {"kind": "image", "src": "/work/arm-v2-schematic.webp", "alt": "V2 PCB schematic diagram", "width": 1600, "height": 1000}
       },
       {
         "id": "robot-arm-firmware-ros2",

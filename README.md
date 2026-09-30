@@ -170,7 +170,7 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
-<a href="projects.md#v3-arm-controller-pcb"><img src="assets/work/arm-v2-schematic.svg" alt="V2 PCB Schematic" width="260"></a>
+<a href="projects.md#v3-arm-controller-pcb"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
 
 **[V3 ARM Controller PCB](projects.md#v3-arm-controller-pcb)**
 
@@ -295,7 +295,7 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
-<a href="projects.md#v2-controller-pcb-engineering-change-order"><img src="assets/work/arm-v2-schematic.svg" alt="V2 PCB Schematic" width="260"></a>
+<a href="projects.md#v2-controller-pcb-engineering-change-order"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB Schematic" width="260"></a>
 
 **[V2 Controller PCB Engineering Change Order](projects.md#v2-controller-pcb-engineering-change-order)**
 
