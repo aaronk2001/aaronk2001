@@ -351,49 +351,6 @@ export const projects = [
   "caseStudy": "pi-fleet-edge-ml"
  },
  {
-  "id": "nexus-app",
-  "name": "NEXUS Desktop Trading Terminal",
-  "track": "software",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model.",
-  "body": [
-   "Next.js 16 trading terminal that surfaces the Linda research stack as a polished UI. Live candlestick charts (configurable time ranges) backed by Polygon, signal accuracy metrics persisted across sessions, a price-alerts subsystem with localStorage persistence and live-price triggers, an options-chain viewer with Greeks, and a tabbed equity-research view (chart / options / DCF).",
-   "Investor persona voting (Ramsey / Buffett / Cuban) layered on top of the predictions engine. CSV export of the trading history. Macro indicator bar streams live economic data into the dashboard. A shared SQLite database bridges the research backend to the desktop apps in the ecosystem. Built around the unified NEXUS Dark design system (OLED black + electric blue + glass cards + tabular numerals) shared across the three-app ecosystem."
-  ],
-  "tech": [
-   "Next.js",
-   "TypeScript",
-   "Bun",
-   "Polygon",
-   "SQLite",
-   "Claude API"
-  ],
-  "outcomes": [
-   "nexus-web merged into the Electron app (Jun 2026)",
-   "Multi-agent debate desk, paper-only",
-   "Torch loaded lazily to fit 16GB"
-  ],
-  "next": [
-   "Consolidate `lib/agents/` debate framework into Finance agent/nexus-app (Electron)",
-   "Migrate persona voting + signal accuracy chart to the Electron host",
-   "Decommission this Next.js port after the merge"
-  ],
-  "media": {
-   "kind": "image",
-   "src": "/projects/nexus-app.webp",
-   "alt": "NEXUS Trading Terminal",
-   "width": 800,
-   "height": 500
-  },
-  "skills": [
-   "Next.js",
-   "TypeScript",
-   "Bun",
-   "Claude API"
-  ]
- },
- {
   "id": "career-planner",
   "name": "Ascent, career tracker",
   "track": "software",
@@ -441,9 +398,9 @@ export const projects = [
   "track": "software",
   "status": "complete",
   "year": "2026",
-  "summary": "Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools. file ops, shell, web fetch, and clipboard. Ships as a desktop shortcut so the agent is one click away with no cloud round-trip.",
+  "summary": "Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools: file read, write and edit, shell, web fetch, web search, and a todo list. Ships as a desktop shortcut so the agent is one click away with no cloud round-trip.",
   "body": [
-   "Walrus packages a local LLM agent into a native Windows app: a Tauri 2 shell wraps a React + Bun frontend that streams chat from a local Ollama server, exposing a 7-tool agent loop (read_file, write_file, list_dir, run_shell, web_fetch, get_clipboard, set_clipboard) for everyday workflows that should not leave the machine.",
+   "Walrus packages a local LLM agent into a native Windows app: a Tauri 2 shell wraps a React + Bun frontend that streams chat from a local Ollama server, exposing a 7-tool agent loop (read_file, write_file, edit_file, bash, web_fetch, web_search, todo_write) for everyday workflows that should not leave the machine.",
    "Default model is qwen3:4b. small enough to run on the laptop's 4GB VRAM budget. Hardened against the i5-1240P + 16GB RAM envelope: tool calls stream incrementally, conversations persist to a Tauri appData store, and the desktop shortcut launches `dev.bat` so the user never has to remember a CLI. Built as the local-first counterweight to the Claude API agents."
   ],
   "tech": [
@@ -480,9 +437,9 @@ export const projects = [
   "track": "software",
   "status": "in-progress",
   "year": "2026",
-  "summary": "A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.",
+  "summary": "A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.",
   "body": [
-   "PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into eight independent packages: core, ingester, scoring, watcher, executor, telegram_bot, api, and app, communicating through typed schemas.",
+   "PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into ten packages: core, ingester, scoring, watcher, executor, telegram_bot, api, app, dashboard and llm, communicating through typed schemas.",
    "Async SQLAlchemy and Alembic manage a SQLite (WAL) store; httpx drives concurrent ingestion; a supervisor runs the watcher, a localhost-only FastAPI dashboard, and a long-polling Telegram bot in one event loop with graceful shutdown and a system-tray icon. A paper-trading ledger tracks every fill with risk-cap validation. A scoring engine computes a confidence-weighted 0-100 score with profit factor, Sharpe-like ratio, drawdown, and sample-size calibration."
   ],
   "tech": [
@@ -494,7 +451,7 @@ export const projects = [
    "uv"
   ],
   "outcomes": [
-   "8-package uv monorepo",
+   "10-package uv monorepo",
    "Watcher + API + bot in one event loop",
    "262 paper fills in a live supervisor run",
    "16+ unit tests",
@@ -525,9 +482,9 @@ export const projects = [
   "track": "software",
   "status": "complete",
   "year": "2026",
-  "summary": "A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (neural-ONNX Piper, Windows SAPI5, eSpeak-NG), a global clipboard hotkey, and a typed, tested codebase. No cloud, no telemetry.",
+  "summary": "A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (Supertonic, neural-ONNX Piper, Windows SAPI5), a global clipboard hotkey, and a typed, tested codebase. No cloud, no telemetry.",
   "body": [
-   "A native desktop app built around a clean engine abstraction: a TTSEngine ABC with adapters for Piper (neural ONNX, CPU-only), Windows SAPI5, and eSpeak-NG, selected at runtime through a registry. The Qt (PySide6) UI provides a main window, an in-app voice browser that downloads Piper voice models on demand, a first-run wizard, and a tray icon.",
+   "A native desktop app built around a clean engine abstraction: a TTSEngine ABC with adapters for Supertonic, Piper (neural ONNX, CPU-only) and Windows SAPI5, selected at runtime through a registry. The Qt (PySide6) UI provides a main window, an in-app voice browser that downloads Piper voice models on demand, a first-run wizard, and a tray icon.",
    "A global Ctrl+Alt+S hotkey reads the clipboard from any window. Configuration is pydantic-validated under %APPDATA%; audio plays through QAudioSink with optional WAV/MP3/OGG export via ffmpeg. The codebase ships with pytest, ruff, and mypy, and installs a Desktop/Start-Menu shortcut through a one-shot PowerShell script."
   ],
   "tech": [
@@ -569,7 +526,7 @@ export const projects = [
   "summary": "A full automated short-form video pipeline. script to TTS voiceover to Whisper-aligned captions to multi-clip + music compositing to multi-aspect render. wrapped in a Python + Electron desktop app. Built well outside my core lane to stretch into media + ML tooling. A second pipeline turns a YouTube URL into a captioned 9:16 clip on one machine: yt-dlp, faster-whisper on CUDA, an LLM segment picker and NVENC render.",
   "body": [
    "Phantom Studio is the project I built to push outside robotics and learn an end-to-end media pipeline. A Python engine (MoviePy v2) composes short-form videos: it generates a voiceover (Edge TTS), transcribes and time-aligns captions with Whisper ASR, stitches multiple clips with background music, and renders to 9:16, 16:9, and 1:1.",
-   "An Electron + Python desktop shell drives it, with SQLite-backed job state, scheduling, Telegram failure alerts, a clip cache, and a one-click PyInstaller build. It defaults to fully local, $0 generation and degrades gracefully when heavier models exceed the laptop's memory budget. 172 tests passing, ffmpeg/ASR/render pipeline end to end.",
+   "An Electron + Python desktop shell drives it, with SQLite-backed job state, scheduling, Telegram failure alerts, a clip cache, and a one-click PyInstaller build. It defaults to fully local, $0 generation and degrades gracefully when heavier models exceed the laptop's memory budget. 200+ automated tests, ffmpeg/ASR/render pipeline end to end.",
    "A single-user desktop pipeline with no Redis and no Celery. one worker polling a SQLite jobs table, which is all the concurrency the problem actually needs.",
    "Stages run independently from the CLI or get driven by the UI through that table: yt-dlp ingest cached by video id, faster-whisper distil-large-v3 on CUDA for word-level timing, an LLM pass that ranks segments and prints timestamped links so the picks can be checked against the source, then an NVENC 9:16 render with ASS captions burned in."
   ],
@@ -589,7 +546,7 @@ export const projects = [
    "Script to render, fully automated",
    "9:16 / 16:9 / 1:1 output",
    "$0 local-default generation",
-   "172 tests passing",
+   "200+ automated tests",
    "One SQLite job table instead of a task broker",
    "Nothing uploads without an explicit approval"
   ],
@@ -714,7 +671,7 @@ export const projects = [
    "Vitest"
   ],
   "outcomes": [
-   "77 tests green",
+   "700 tests across 46 files",
    "Rule engine grounds every LLM claim",
    "Packaged .exe verified, not just dev mode"
   ],

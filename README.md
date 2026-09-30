@@ -67,7 +67,7 @@ Autonomous financial research agent that combines the Claude API, live market da
 
 <sub>2026 | Complete</sub>
 
-Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools.
+Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools: file read, write and edit, shell, web fetch, web search, and a todo list.
 
 </td>
 <td width="50%" valign="top">
@@ -78,7 +78,7 @@ Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3
 
 <sub>2026 | Complete</sub>
 
-A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (neural-ONNX Piper, Windows SAPI5, eSpeak-NG), a global clipboard hotkey, and a typed, tested codebase.
+A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (Supertonic, neural-ONNX Piper, Windows SAPI5), a global clipboard hotkey, and a typed, tested codebase.
 
 3 pluggable TTS engines<br>Neural ONNX (Piper) primary
 
@@ -97,7 +97,7 @@ A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable eng
 
 Local-first Monarch-style personal-finance app for spending tracking and insights.
 
-77 tests green<br>Rule engine grounds every LLM claim
+700 tests across 46 files<br>Rule engine grounds every LLM claim
 
 </td>
 <td width="50%" valign="top">
@@ -184,16 +184,15 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 
 | Project | What it is | Status |
 |---|---|---|
-| **[NEXUS Desktop Trading Terminal](projects.md#nexus-desktop-trading-terminal)** | Trading terminal merged into a single Electron desktop app: live candlestick charts, a signal-accuracy ledger, an options chain with Greeks, DCF equity research, and a multi-agent debate desk (analysts to bull/bear to trader to risk) running paper-only on a local model. | In progress |
 | **[Ascent, career tracker](projects.md#ascent-career-tracker)** | Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track. | In progress<br>[Source](https://github.com/aaronk2001/ascent-career-os) |
-| **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)** | A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop. | In progress<br>[Source](https://github.com/aaronk2001/polymarked) |
+| **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)** | A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop. | In progress<br>[Source](https://github.com/aaronk2001/polymarked) |
 | **[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)** | A full automated short-form video pipeline. | In progress |
 
-**[Full write-ups for all 18 projects](projects.md)**
+**[Full write-ups for all 17 projects](projects.md)**
 
 ## Skills
 
-**Robotics & Systems:** **ROS2**, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 4/5**, MicroPython, PCA9685<br>
+**Robotics & Systems:** ROS2, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 4/5**, MicroPython, PCA9685<br>
 **Computer Vision & ML:** YOLOv8, **OpenCV**, ONNX, Label Studio<br>
 **Controls & Automation:** Studio 5000 / RSLogix, Allen Bradley, EtherNet/IP, Modbus, SCADA<br>
 **Fabrication:** **KiCAD**, **SolidWorks**, Fusion 360, **3D Printing**, OpenSCAD, Sheet Metal<br>

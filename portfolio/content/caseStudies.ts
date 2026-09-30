@@ -8,7 +8,7 @@ export const caseStudies = [
     "subtitle": "0 to 200+ proprietary handwriting machines, 30,000 letters per day",
     "period": "Sep 2023 to Sep 2026",
     "role": "Robotics Engineer II, Handwrytten",
-    "summary": "Handwrytten runs the largest fleet of robotic handwriting machines in the world (granted patents US 11,052,693 & US 11,260,686). I helped take the current generation of proprietary machines from 0 to 200+ units in production, tripling output from 10,000 to 30,000 letters per day.",
+    "summary": "Handwrytten describes its fleet as the largest of its kind in the world (granted patents US 11,052,693 & US 11,260,686). I helped take the current generation of proprietary machines from 0 to 200+ units in production, tripling output from 10,000 to 30,000 letters per day.",
     "outcomes": [
       {"value": "0 to 200+", "label": "machines in production"},
       {"value": "30,000", "label": "letters/day, 3x growth"},

@@ -5,7 +5,7 @@
 **0 to 200+ proprietary handwriting machines, 30,000 letters per day**<br>
 <sub>Sep 2023 to Sep 2026 | Robotics Engineer II, Handwrytten</sub>
 
-Handwrytten runs the largest fleet of robotic handwriting machines in the world (granted patents US 11,052,693 & US 11,260,686). I helped take the current generation of proprietary machines from 0 to 200+ units in production, tripling output from 10,000 to 30,000 letters per day.
+Handwrytten describes its fleet as the largest of its kind in the world (granted patents US 11,052,693 & US 11,260,686). I helped take the current generation of proprietary machines from 0 to 200+ units in production, tripling output from 10,000 to 30,000 letters per day.
 
 <table><tr><td align="center"><b>0 to 200+</b><br><sub>machines in production</sub></td><td align="center"><b>30,000</b><br><sub>letters/day, 3x growth</sub></td><td align="center"><b>96%</b><br><sub>fleet uptime via OEE</sub></td><td align="center"><b>3-person</b><br><sub>steady-state support team</sub></td></tr></table>
 

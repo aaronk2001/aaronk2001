@@ -8,8 +8,8 @@ export const skillClusters = [
  {
  "name": "ROS2",
  "url": "https://docs.ros.org",
- "level": "core",
- "note": "Senior-design SLAM stack + Robot Arm V2 controller.",
+ "level": "working",
+ "note": "Robot arm ROS2 Jazzy workspace: kinematics, bringup, teleop.",
  "projects": [
  "robot-arm-v2"
  ]
@@ -18,7 +18,7 @@ export const skillClusters = [
  "name": "Python",
  "url": "https://docs.python.org/3/",
  "level": "core",
- "note": "Daily driver. Linda agent, fleet ops, every script.",
+ "note": "Daily driver. The fleet control app, telemetry pipelines, every script.",
  "projects": [
  "linda-agent",
  "handwrytten-fleet"
@@ -234,7 +234,7 @@ export const skillClusters = [
  "name": "KiCAD",
  "url": "https://docs.kicad.org",
  "level": "core",
- "note": "4 custom PCBs shipped to the production fleet. V3 ARM Controller in flight.",
+ "note": "V3 arm controller, generated from Python (SKiDL). The 4 production PCBs were EasyEDA.",
  "projects": [
  "pcb-robot-controller",
  "robot-arm-v2"
@@ -391,18 +391,17 @@ export const skillClusters = [
  "name": "Next.js",
  "url": "https://nextjs.org/docs",
  "level": "working",
- "note": "This site + Nexus Web trading terminal.",
- "projects": [
- "nexus-app"
- ]
+ "note": "Earlier Next.js 16 version of this portfolio and the NEXUS trading terminal."
  },
  {
  "name": "TypeScript",
  "url": "https://www.typescriptlang.org/docs/",
  "level": "core",
- "note": "Strict TS across portfolio + Nexus Web app.",
+ "note": "Strict TS across Linda, Walrus, MMM and this portfolio's generator.",
  "projects": [
- "nexus-app"
+ "linda-agent",
+ "walrus",
+ "mmm-money-hub"
  ]
  },
  {
