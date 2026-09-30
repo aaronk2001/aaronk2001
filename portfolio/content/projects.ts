@@ -697,7 +697,7 @@ export const projects = [
  "Flash the OpenPLC runtime to the Opta / PMC stations",
  "Mirror the finished logic into Studio 5000"
  ],
- "media": {"kind": "image", "src": "/projects/plc-virtual-lab.webp", "alt": "The PLC Virtual Lab plan in PLC Track: four weeks from toolchain and scan cycle to a conveyor-sort capstone", "width": 800, "height": 500},
+ "media": {"kind": "none"},
  "skills": [
  "Modbus",
  "Studio 5000 / RSLogix",

@@ -76,8 +76,6 @@ Kubernetes, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry
 </td>
 <td width="50%" valign="top">
 
-<a href="work/plc-controls.md"><img src="assets/projects/plc-virtual-lab.webp" alt="The PLC Virtual Lab plan in PLC Track: four weeks from toolchain and scan cycle to a conveyor-sort capstone" width="400"></a>
-
 ### [PLC integration and a controls lab](work/plc-controls.md)
 
 <sub>2026 | Controls</sub>
