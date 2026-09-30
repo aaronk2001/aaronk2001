@@ -34,8 +34,6 @@ Handwrytten runs the largest fleet of robotic handwriting machines in the world 
 - 4 custom PCBs designed in EasyEDA and shipped fleet-wide: a Pi HAT robot controller, a power-distribution/logic board, a stepper motor driver board, and a Pico relay board.
 - An in-house fabrication cell (FDM printing, laser cutting) producing 500+ parts/month, cutting custom-part lead time from 4+ weeks to under 1 week.
 
-<table><tr><td align="center"><b>0 to 200+</b><br><sub>machines in production</sub></td><td align="center"><b>30,000</b><br><sub>letters/day, 3x growth</sub></td><td align="center"><b>96%</b><br><sub>fleet uptime via OEE</sub></td><td align="center"><b>3-person</b><br><sub>steady-state support team</sub></td></tr></table>
-
 **Video**
 
 <table>

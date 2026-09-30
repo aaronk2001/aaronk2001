@@ -248,7 +248,7 @@ function caseStudyPage(cs: CaseStudy) {
         `**Problem**\n\n${bullets(ch.problem)}`,
         `**Constraints**\n\n${bullets(ch.constraints)}`,
         `**What I built**\n\n${bullets(ch.built)}`,
-        ch.outcomes.length ? outcomeTable(ch.outcomes) : '',
+        ch.outcomes.length && JSON.stringify(ch.outcomes) !== JSON.stringify(cs.outcomes) ? outcomeTable(ch.outcomes) : '',
         ch.videos?.length
           ? `**Video**\n\n${grid(
               ch.videos.map(
