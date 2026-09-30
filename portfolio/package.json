@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-readme",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "1.2.23",
+    "typescript": "5.9.3"
+  }
+}
