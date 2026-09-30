@@ -337,6 +337,8 @@ A single-process desktop agent with an event-driven architecture: a uv-workspace
 
 `Python` `asyncio` `SQLAlchemy` `FastAPI` `SQLite` `uv`
 
+[Source on GitHub](https://github.com/aaronk2001/polymarked)
+
 <details>
 <summary>How it works</summary>
 

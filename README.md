@@ -44,54 +44,65 @@ The work I care most about sits where hardware and software meet. Hardware is th
 </td>
 <td width="50%" valign="top">
 
-<a href="work/robot-arm.md"><img src="assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="400"></a>
+### [Linda, financial research agent](projects.md#linda-financial-research-agent)
 
-### [Six-axis robot arm, from CAD to firmware](work/robot-arm.md)
+<sub>2026 | Complete</sub>
 
-<sub>2026 | Design, electronics and firmware</sub>
-
-V4 design, Teensy controller, ROS2 driver stack
-
-<b>6</b> axes<br><b>24</b> schematic sheets
+Autonomous financial research agent that combines the Claude API, live market data feeds, and Exa web search to answer complex investment questions in a conversational CLI.
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-<a href="work/pi-fleet-edge-ml.md"><img src="assets/projects/homelab-monitoring.svg" alt="Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram" width="400"></a>
+<a href="projects.md#walrus-local-ollama-agent-desktop"><img src="assets/projects/walrus.webp" alt="Walrus desktop app: a local Ollama agent chat with the model picker in the header" width="400"></a>
 
-### [Twelve-node Pi cluster with edge inference](work/pi-fleet-edge-ml.md)
+### [Walrus, local Ollama agent desktop](projects.md#walrus-local-ollama-agent-desktop)
 
-<sub>2026 | Infrastructure and ML</sub>
+<sub>2026 | Complete</sub>
 
-Kubernetes, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry
-
-<b>12</b> nodes<br><b>26 TOPS</b> Hailo-8 NPU
+Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools.
 
 </td>
 <td width="50%" valign="top">
 
-### [PLC integration and a controls lab](work/plc-controls.md)
+<a href="projects.md#local-tts-desktop-app"><img src="assets/projects/tts-app.webp" alt="TTS App" width="400"></a>
 
-<sub>2026 | Controls</sub>
+### [Local TTS Desktop App](projects.md#local-tts-desktop-app)
 
-Allen Bradley bridge, Modbus, OPC-UA, hardware-free CI
+<sub>2026 | Complete</sub>
 
-<b>EtherNet/IP + OPC-UA</b> one interface<br><b>Simulator</b> hardware-free CI
+A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (neural-ONNX Piper, Windows SAPI5, eSpeak-NG), a global clipboard hotkey, and a typed, tested codebase.
+
+3 pluggable TTS engines<br>Neural ONNX (Piper) primary
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### [LANL Robotic Glovebox](work/lanl-glovebox.md)
+<a href="projects.md#mmm-money-hub"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="400"></a>
 
-<sub>Aug 2023 to Apr 2024 | Project Manager, 3-person team, ASU capstone sponsored by Los Alamos National Laboratory</sub>
+### [MMM: money hub](projects.md#mmm-money-hub)
 
-UR5e glovebox automation with a flight-stick digital twin
+<sub>2026 | Complete</sub>
 
-<b>100%</b> project milestones delivered<br><b>6-DOF</b> UR5e workcell
+Local-first Monarch-style personal-finance app for spending tracking and insights.
+
+77 tests green<br>Rule engine grounds every LLM claim
+
+</td>
+<td width="50%" valign="top">
+
+<a href="projects.md#plc-track-desktop-learning-tracker"><img src="assets/projects/plc-track-app.webp" alt="PLC Track week 1 view: objective, vocabulary, lab path and deliverable checklist" width="400"></a>
+
+### [PLC Track, desktop learning tracker](projects.md#plc-track-desktop-learning-tracker)
+
+<sub>2026 | Complete</sub>
+
+A Tauri 2 + React desktop app that tracks progress through the controls learning path from a YAML curriculum file.
+
+Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 
 </td>
 </tr>
@@ -166,31 +177,13 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 </td>
 <td width="33%" valign="top">
 
-<a href="projects.md#walrus-local-ollama-agent-desktop"><img src="assets/projects/walrus.webp" alt="Walrus desktop app: a local Ollama agent chat with the model picker in the header" width="260"></a>
-
-**[Walrus, local Ollama agent desktop](projects.md#walrus-local-ollama-agent-desktop)**
-
-<sub>Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools.</sub>
-
-</td>
-<td width="33%" valign="top">
-
 <a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="260"></a>
 
 **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)**
 
 <sub>A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (8 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.</sub>
 
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#local-tts-desktop-app"><img src="assets/projects/tts-app.webp" alt="TTS App" width="260"></a>
-
-**[Local TTS Desktop App](projects.md#local-tts-desktop-app)**
-
-<sub>A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (neural-ONNX Piper, Windows SAPI5, eSpeak-NG), a global clipboard hotkey, and a typed, tested codebase.</sub>
+<sub>[Source on GitHub](https://github.com/aaronk2001/polymarked)</sub>
 
 </td>
 <td width="33%" valign="top">
@@ -200,26 +193,6 @@ Coursework covered kinematics, control systems, embedded systems, computer visio
 **[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)**
 
 <sub>A full automated short-form video pipeline.</sub>
-
-</td>
-<td width="33%" valign="top">
-
-<a href="projects.md#mmm-money-hub"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="260"></a>
-
-**[MMM: money hub](projects.md#mmm-money-hub)**
-
-<sub>Local-first Monarch-style personal-finance app for spending tracking and insights.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-<a href="projects.md#plc-track-desktop-learning-tracker"><img src="assets/projects/plc-track-app.webp" alt="PLC Track week 1 view: objective, vocabulary, lab path and deliverable checklist" width="260"></a>
-
-**[PLC Track, desktop learning tracker](projects.md#plc-track-desktop-learning-tracker)**
-
-<sub>A Tauri 2 + React desktop app that tracks progress through the controls learning path from a YAML curriculum file.</sub>
 
 </td>
 </tr>

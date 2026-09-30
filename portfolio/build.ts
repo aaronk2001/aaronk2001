@@ -106,19 +106,44 @@ function readme() {
     `<a href="projects.md"><b>All projects</b></a>`,
   ].join(' &nbsp;|&nbsp; ')
 
+  // Selected work = finished things only: flagship case studies whose projects are all complete,
+  // then complete projects those studies don't already cover.
+  const doneStudies = caseStudies.filter(
+    cs => cs.flagship && cs.projectIds.length > 0 &&
+      cs.projectIds.every(id => projects.find(p => p.id === id)?.status === 'complete'),
+  )
+  const covered = new Set(doneStudies.flatMap(cs => cs.projectIds))
+  const doneProjects = shipped.filter(p => p.status === 'complete' && !covered.has(p.id))
+  const selectedIds = new Set([...covered, ...doneProjects.map(p => p.id)])
+
   const work = grid(
-    caseStudies.map(cs => {
-      const href = `work/${cs.slug}.md`
-      const pic = img(studyImage(cs), 0, 400)
-      const top = cs.outcomes.slice(0, 2).map(o => `<b>${o.value}</b> ${o.label}`).join('<br>')
-      return [
-        pic && `<a href="${href}">${pic}</a>`,
-        `### [${cs.title}](${href})`,
-        `<sub>${cs.period} | ${cs.role}</sub>`,
-        cs.subtitle,
-        top,
-      ].filter(Boolean).join('\n\n')
-    }),
+    [
+      ...doneStudies.map(cs => {
+        const href = `work/${cs.slug}.md`
+        const pic = img(studyImage(cs), 0, 400)
+        const top = cs.outcomes.slice(0, 2).map(o => `<b>${o.value}</b> ${o.label}`).join('<br>')
+        return [
+          pic && `<a href="${href}">${pic}</a>`,
+          `### [${cs.title}](${href})`,
+          `<sub>${cs.period} | ${cs.role}</sub>`,
+          cs.subtitle,
+          top,
+        ].filter(Boolean).join('\n\n')
+      }),
+      ...doneProjects.map(p => {
+        const href = `projects.md#${anchor(p.name)}`
+        const pic = img(p.media, 0, 400)
+        const repo = repoUrl(p.id)
+        return [
+          pic && `<a href="${href}">${pic}</a>`,
+          `### [${p.name}](${href})`,
+          `<sub>${p.year} | Complete</sub>`,
+          firstSentence(p.summary),
+          (p.outcomes ?? []).slice(0, 2).join('<br>'),
+          repo && `<sub>[Source on GitHub](${repo})</sub>`,
+        ].filter(Boolean).join('\n\n')
+      }),
+    ],
     2,
   )
 
@@ -133,7 +158,7 @@ function readme() {
   const trackOrder = Object.keys(TRACKS)
   const seen = new Set<string>()
   const featured = shipped
-    .filter(p => imageOf(p.media))
+    .filter(p => imageOf(p.media) && !selectedIds.has(p.id))
     .sort((a, b) => trackOrder.indexOf(a.track) - trackOrder.indexOf(b.track))
     .filter(p => {
       const src = (p.media as { src: string }).src
