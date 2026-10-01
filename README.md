@@ -1,35 +1,24 @@
-<h1 align="center">Aaron Karsten</h1>
+<img src="assets/aaron-portrait.jpg" alt="Aaron Karsten" width="190" align="right">
 
-<p align="center"><b>Robotics and Automation Engineer</b> | Tempe, AZ</p>
+# Aaron Karsten
 
-<p align="center">I took a fleet of robotic handwriting machines from zero to 200+ units. I build the PLC automation, vision QA, custom PCBs, and telemetry that keep production running.</p>
+**Robotics and Automation Engineer** | Tempe, AZ
 
-<p align="center"><a href="assets/resume.pdf"><b>Resume (PDF)</b></a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/aaron-karsten"><b>LinkedIn</b></a> &nbsp;|&nbsp; <a href="projects.md"><b>All projects</b></a></p>
+I took a fleet of robotic handwriting machines from zero to 200+ units.
 
-<div align="center">
+**[Resume](assets/resume.pdf)** &nbsp;|&nbsp; **[LinkedIn](https://www.linkedin.com/in/aaron-karsten)**
+
+<br clear="right">
 
 <table><tr><td align="center"><b>200+</b><br><sub>machines in production</sub></td><td align="center"><b>30,000</b><br><sub>letters per day</sub></td><td align="center"><b>96%</b><br><sub>fleet uptime (OEE)</sub></td><td align="center"><b>10 h to 3.5 h</b><br><sub>mean time to repair</sub></td></tr></table>
 
-</div>
-
-<p align="center"><a href="#about">About</a> &nbsp;|&nbsp; <a href="#selected-work">Selected work</a> &nbsp;|&nbsp; <a href="#experience">Experience</a> &nbsp;|&nbsp; <a href="#projects">Projects</a> &nbsp;|&nbsp; <a href="#skills">Skills</a> &nbsp;|&nbsp; <a href="#contact">Contact</a></p>
-
-> Tempe, AZ. Open to robotics, controls and automation roles, Phoenix metro or remote.
-
 ## About
-
-<table><tr>
-<td width="28%" valign="top"><img src="assets/aaron-portrait.jpg" alt="Aaron Karsten" width="220"></td>
-<td valign="top">
 
 I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and ran the telemetry that keeps it all in production.
 
 My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.
 
 The work I care most about sits where hardware and software meet. Hardware is the harder thing to fake, and the discipline that keeps software honest. My Handwrytten role ended in September 2026, so I’m looking for the next one. Robotics, controls, or automation engineering, in the Phoenix metro or remote.
-
-</td>
-</tr></table>
 
 ## Selected work
 
@@ -132,8 +121,6 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 - Shipped 4 custom PCBs (EasyEDA) to the fleet and stood up a fabrication cell producing 500+ parts/month, cutting custom-part lead time from 4+ weeks to under 1 week.
 - Installed and supported leased robots at customer sites across the US with a 24-hour response and 90%+ customer uptime.
 
-`0 to 200+ machines` `30,000 letters/day (3×)` `96% uptime (OEE)` `MTTR 10h to 3.5h` `$100K+/year labor saved` `Field installs at US customer sites: 24h response, 90%+ uptime`
-
 [Read the case study: Robotic fleet at production scale](work/handwrytten-fleet.md)
 
 ### Project Manager, Robotic Glovebox Capstone
@@ -144,8 +131,6 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 - Built a flight-stick digital twin via a Python bridge for intuitive teleoperation.
 - Delivered 100% of project milestones.
 
-`6-DOF UR5e` `Flight-stick digital twin` `100% milestones` `PM, 3-person team`
-
 [Read the case study: LANL Robotic Glovebox](work/lanl-glovebox.md)
 
 ### B.S.E. Robotics Engineering, Ira A. Fulton Schools of Engineering
@@ -154,45 +139,17 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 - Coursework covered kinematics, control systems, embedded systems, computer vision, and machine learning.
 - Senior capstone: the LANL robotic glovebox project above.
 
-## Projects
+## In progress
 
-**Robotics**
+| Discipline | Projects |
+|---|---|
+| **Robotics** | [12-Node Pi Homelab](projects.md#12-node-pi-homelab)<br>[6-DOF robot arm](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
+| **Controls & Automation** | [Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)<br>[plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tag-io) |
+| **Computer Vision & ML** | [YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo) |
+| **Fabrication** | [Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure) |
+| **Software** | [Ascent](projects.md#ascent-career-tracker) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[PolyMarked](projects.md#polymarked-autonomous-agent) <sub>([code](https://github.com/aaronk2001/polymarked))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation) |
 
-| Project | What it is | Status |
-|---|---|---|
-| **[12-Node Pi Homelab](projects.md#12-node-pi-homelab)** | Infrastructure-as-code for a 12-node Raspberry Pi 4/5 fleet: 9 Ansible playbooks and Docker Compose provision every node, with Prometheus metrics, Grafana dashboards and Pi-hole DNS, plus a two-node k3s cluster for container experiments. | In progress |
-| **[6-DOF robot arm: CAD, electronics and firmware](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)** | Second-revision 6-DOF robot arm: closed-loop NEMA-17 steppers on TMC2209 drivers, a custom Teensy 4.1 controller board, and ESP32-S3 firmware with motion, safety and protocol modules. | In progress |
-| **[RobotCar, autonomous FPV rover](projects.md#robotcar-autonomous-fpv-rover)** | A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. | In progress |
-
-**Controls & Automation**
-
-| Project | What it is | Status |
-|---|---|---|
-| **[Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)** | Prometheus, Grafana, Alertmanager and Loki in one Docker Compose file for the 12-node Pi fleet, with provisioned dashboards and critical alerts sent to Telegram. | In progress |
-| **[plc-python-bridge, Allen Bradley tag I/O](projects.md#plc-python-bridge-allen-bradley-tag-io)** | Python library for reading and writing Allen Bradley Logix tags over EtherNet/IP (pycomm3) and OPC-UA (asyncua), with SQLite logging, threshold alerting, a live CLI dashboard, and a hardware-free simulator so it runs in CI. | In progress |
-
-**Computer Vision & ML**
-
-| Project | What it is | Status |
-|---|---|---|
-| **[YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8)** | YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5. | In progress<br>[Source](https://github.com/aaronk2001/yolov8-hailo-pi5) |
-| **[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo)** | Open-vocabulary defect inspection on a Pi 5 + Hailo-8 AI HAT. | In progress |
-
-**Fabrication**
-
-| Project | What it is | Status |
-|---|---|---|
-| **[Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure)** | SolidWorks arcade cabinet enclosure: controls panel, side walls, screen mount, spool holder. | In progress |
-
-**Software**
-
-| Project | What it is | Status |
-|---|---|---|
-| **[Ascent, career tracker](projects.md#ascent-career-tracker)** | Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track. | In progress<br>[Source](https://github.com/aaronk2001/ascent-career-os) |
-| **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)** | A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop. | In progress<br>[Source](https://github.com/aaronk2001/polymarked) |
-| **[Phantom, short-form video automation](projects.md#phantom-short-form-video-automation)** | One desktop app that turns long videos into short-form clips and posts them: paste a YouTube, TikTok or Instagram link, and it downloads, transcribes, picks the best moments with a local LLM, and renders captioned 9:16 clips. | In progress |
-
-**[Full write-ups for all 17 projects](projects.md)**
+**[Write-ups for all 17 projects](projects.md)**
 
 ## Skills
 
@@ -223,4 +180,4 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 
 ## Contact
 
-Open to conversations about robotics, controls, and automation roles. Reach me on [LinkedIn](https://www.linkedin.com/in/aaron-karsten) or grab the [resume](assets/resume.pdf). Based in Tempe, AZ.
+Tempe, AZ. Open to robotics, controls and automation roles, Phoenix metro or remote. Reach me on [LinkedIn](https://www.linkedin.com/in/aaron-karsten), or read the [Resume](assets/resume.pdf).

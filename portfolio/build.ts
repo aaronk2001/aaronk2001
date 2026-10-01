@@ -112,11 +112,7 @@ function grid(cells: string[], cols: number) {
 }
 
 function readme() {
-  const links = [
-    `<a href="assets/resume.pdf"><b>Resume (PDF)</b></a>`,
-    `<a href="${contact.linkedin}"><b>LinkedIn</b></a>`,
-    `<a href="projects.md"><b>All projects</b></a>`,
-  ].join(' &nbsp;|&nbsp; ')
+  const links = `**[Resume](assets/resume.pdf)** &nbsp;|&nbsp; **[LinkedIn](${contact.linkedin})**`
 
   // Selected work = finished things only: flagship case studies whose projects are all complete,
   // then complete projects those studies don't already cover.
@@ -161,28 +157,28 @@ function readme() {
 
   const exp = experience
     .map(e => {
-      const hl = e.highlights.length ? `\n\n${codeList(e.highlights)}` : ''
       const note = e.note ? `<br><sub>${e.note}</sub>` : ''
       const study = caseStudies.find(cs => cs.role.includes(e.org.split(' × ')[0]))
       const more = study ? `\n\n[Read the case study: ${study.title}](work/${study.slug}.md)` : ''
-      return `### ${e.role}\n**${e.org}** | ${e.dates}${note}\n\n${bullets(sentences(e.body))}${hl}${more}`
+      return `### ${e.role}\n**${e.org}** | ${e.dates}${note}\n\n${bullets(sentences(e.body))}${more}`
     })
     .join('\n\n')
 
+  // Everything not in Selected work is unfinished: one compact row per discipline, details live in projects.md.
   const rest = shipped.filter(p => !selectedIds.has(p.id))
-  const projectTables = (Object.keys(TRACKS) as Track[])
+  const shortName = (p: Project) => p.name.split(/[:,]/)[0].trim()
+  const inProgress = (Object.keys(TRACKS) as Track[])
     .map(t => {
       const ps = rest.filter(p => p.track === t)
       if (!ps.length) return ''
-      const rows = ps.map(p => {
+      const items = ps.map(p => {
         const repo = repoUrl(p.id)
-        const status = p.status === 'complete' ? 'Complete' : 'In progress'
-        return `| **[${p.name}](projects.md#${anchor(p.name)})** | ${firstSentence(p.summary)} | ${status}${repo ? `<br>[Source](${repo})` : ''} |`
+        return `[${shortName(p)}](projects.md#${anchor(p.name)})${repo ? ` <sub>([code](${repo}))</sub>` : ''}`
       })
-      return `**${TRACKS[t]}**\n\n| Project | What it is | Status |\n|---|---|---|\n${rows.join('\n')}`
+      return `| **${TRACKS[t]}** | ${items.join('<br>')} |`
     })
     .filter(Boolean)
-    .join('\n\n')
+    .join('\n')
 
   const skills = skillClusters
     .map(c => {
@@ -199,34 +195,21 @@ function readme() {
 
   const portrait = imageOf(about.portrait)
 
-  return `<h1 align="center">${site.name}</h1>
+  return `${portrait ? `<img src="${asset(portrait.kind === 'image' ? portrait.src : '', 0)}" alt="${portrait.alt}" width="190" align="right">\n\n` : ''}# ${site.name}
 
-<p align="center"><b>${site.role}</b> | ${site.location}</p>
+**${site.role}** | ${site.location}
 
-<p align="center">${hero.valueLine}</p>
+${firstSentence(hero.valueLine)}
 
-<p align="center">${links}</p>
+${links}
 
-<div align="center">
+<br clear="right">
 
 ${outcomeTable(proofStats)}
 
-</div>
-
-<p align="center">${['About', 'Selected work', 'Experience', 'Projects', 'Skills', 'Contact'].map(h => `<a href="#${anchor(h)}">${h}</a>`).join(' &nbsp;|&nbsp; ')}</p>
-
-> ${hero.availability}
-
 ## About
 
-<table><tr>
-<td width="28%" valign="top">${portrait ? img(portrait, 0, 220) : ''}</td>
-<td valign="top">
-
 ${about.paragraphs.join('\n\n')}
-
-</td>
-</tr></table>
 
 ## Selected work
 
@@ -236,11 +219,13 @@ ${work}
 
 ${exp}
 
-## Projects
+## In progress
 
-${projectTables}
+| Discipline | Projects |
+|---|---|
+${inProgress}
 
-**[Full write-ups for all ${shipped.length} projects](projects.md)**
+**[Write-ups for all ${shipped.length} projects](projects.md)**
 
 ## Skills
 
@@ -261,7 +246,7 @@ ${now.items.map(i => `- **${i.title}:** ${i.detail}`).join('\n')}
 
 ## Contact
 
-${contact.body} Reach me on [LinkedIn](${contact.linkedin}) or grab the [resume](assets/resume.pdf). Based in ${contact.location}.
+${hero.availability} Reach me on [LinkedIn](${contact.linkedin}), or read the [Resume](assets/resume.pdf).
 `
 }
 
