@@ -61,13 +61,17 @@ Autonomous financial research agent that combines the Claude API, live market da
 <tr>
 <td width="50%" valign="top">
 
-<a href="projects.md#walrus-local-ollama-agent-desktop"><img src="assets/projects/walrus.webp" alt="Walrus desktop app: a local Ollama agent chat with the model picker in the header" width="400"></a>
+<a href="projects.md#walrus-local-coding-agent-for-the-terminal"><img src="assets/projects/walrus.webp" alt="Walrus in a terminal, reading a project and asking before it edits" width="400"></a>
 
-### [Walrus, local Ollama agent desktop](projects.md#walrus-local-ollama-agent-desktop)
+### [Walrus, local coding agent for the terminal](projects.md#walrus-local-coding-agent-for-the-terminal)
 
 <sub>2026 | Complete</sub>
 
-Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools: file read, write and edit, shell, web fetch, web search, and a todo list.
+A Claude Code-style coding agent for the terminal that runs entirely on local Ollama models: 11 built-in tools, skills, subagents and MCP, with the default qwen3:1.7b fitting in 4 GB of VRAM.
+
+11 built-in tools, skills, subagents and MCP<br>Tool-call repair makes 1.7B models usable
+
+<sub>[Source on GitHub](https://github.com/aaronk2001/walrus)</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -186,7 +190,7 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 |---|---|---|
 | **[Ascent, career tracker](projects.md#ascent-career-tracker)** | Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track. | In progress<br>[Source](https://github.com/aaronk2001/ascent-career-os) |
 | **[PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)** | A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop. | In progress<br>[Source](https://github.com/aaronk2001/polymarked) |
-| **[Phantom Studio, video automation](projects.md#phantom-studio-video-automation)** | A full automated short-form video pipeline. | In progress |
+| **[Phantom, short-form video automation](projects.md#phantom-short-form-video-automation)** | One desktop app that turns long videos into short-form clips and posts them: paste a YouTube, TikTok or Instagram link, and it downloads, transcribes, picks the best moments with a local LLM, and renders captioned 9:16 clips. | In progress |
 
 **[Full write-ups for all 17 projects](projects.md)**
 

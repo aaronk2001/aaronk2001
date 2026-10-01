@@ -288,22 +288,29 @@ An embedded Claude-API chat panel pulls live data and summarizes documents on de
 
 </details>
 
-### Walrus, local Ollama agent desktop
+### Walrus, local coding agent for the terminal
 
 <sub>2026 | Complete</sub>
 
-<img src="assets/projects/walrus.webp" alt="Walrus desktop app: a local Ollama agent chat with the model picker in the header" width="480">
+<img src="assets/projects/walrus.webp" alt="Walrus in a terminal, reading a project and asking before it edits" width="480">
 
-Tauri 2 + React + Bun desktop app that runs a fully local agent on Ollama (qwen3:4b) with 7 tools: file read, write and edit, shell, web fetch, web search, and a todo list. Ships as a desktop shortcut so the agent is one click away with no cloud round-trip.
+A Claude Code-style coding agent for the terminal that runs entirely on local Ollama models: 11 built-in tools, skills, subagents and MCP, with the default qwen3:1.7b fitting in 4 GB of VRAM.
 
-`Tauri 2` `React` `TypeScript` `Bun` `Ollama` `Rust`
+- 11 built-in tools, skills, subagents and MCP
+- Tool-call repair makes 1.7B models usable
+- Embedding-based skill routing keeps context small
+- MIT-licensed, CI on every push
+
+`TypeScript` `Bun` `Ink` `Ollama` `MCP`
+
+[Source on GitHub](https://github.com/aaronk2001/walrus)
 
 <details>
 <summary>How it works</summary>
 
-Walrus packages a local LLM agent into a native Windows app: a Tauri 2 shell wraps a React + Bun frontend that streams chat from a local Ollama server, exposing a 7-tool agent loop (read_file, write_file, edit_file, bash, web_fetch, web_search, todo_write) for everyday workflows that should not leave the machine.
+Small models misname tools, send arguments as JSON strings, or print a call as plain text instead of emitting it. Walrus repairs all of that before a tool runs, falls back to a whitespace-tolerant match when an edit gets indentation wrong, and tells the model exactly which argument is missing.
 
-Default model is qwen3:4b. small enough to run on the laptop's 4GB VRAM budget. Hardened against the i5-1240P + 16GB RAM envelope: tool calls stream incrementally, conversations persist to a Tauri appData store, and the desktop shortcut launches `dev.bat` so the user never has to remember a CLI. Built as the local-first counterweight to the Claude API agents.
+Skill descriptions are embedded once and each request carries only the closest few, so small context windows stay small. Edits, shell commands and web fetches wait for approval with a diff. Sessions resume, context auto-compacts at 80%, and a hub switches models, skills, agents and MCP servers. Built with Bun and TypeScript, MIT-licensed, CI on every push.
 
 </details>
 
@@ -361,33 +368,29 @@ A global Ctrl+Alt+S hotkey reads the clipboard from any window. Configuration is
 
 </details>
 
-### Phantom Studio, video automation
+### Phantom, short-form video automation
 
 <sub>2026 | In progress</sub>
 
 <img src="assets/projects/phantom-studio.webp" alt="Phantom Studio Make a video form: topic, platform, visual style and source clips" width="480">
 
-A full automated short-form video pipeline. script to TTS voiceover to Whisper-aligned captions to multi-clip + music compositing to multi-aspect render. wrapped in a Python + Electron desktop app. Built well outside my core lane to stretch into media + ML tooling. A second pipeline turns a YouTube URL into a captioned 9:16 clip on one machine: yt-dlp, faster-whisper on CUDA, an LLM segment picker and NVENC render.
+One desktop app that turns long videos into short-form clips and posts them: paste a YouTube, TikTok or Instagram link, and it downloads, transcribes, picks the best moments with a local LLM, and renders captioned 9:16 clips. A Studio mode builds videos from a script, and a tray worker runs it 24/7.
 
-- Script to render, fully automated
-- 9:16 / 16:9 / 1:1 output
-- $0 local-default generation
+- Link to captioned 9:16 clips on one machine
+- Script-to-video Studio mode
+- 24/7 tray worker, about 184 MB idle
+- Human-paced posting: 2/day per account, jittered
 - 200+ automated tests
-- One SQLite job table instead of a task broker
-- Nothing uploads without an explicit approval
+- $0 local-default generation
 
-`Python` `Electron` `MoviePy` `Whisper` `ffmpeg` `SQLite` `faster-whisper` `yt-dlp` `ffmpeg / NVENC` `FastAPI`
+`Python` `FastAPI` `faster-whisper` `yt-dlp` `ffmpeg / NVENC` `Ollama` `SQLite` `Patchright`
 
 <details>
 <summary>How it works</summary>
 
-Phantom Studio is the project I built to push outside robotics and learn an end-to-end media pipeline. A Python engine (MoviePy v2) composes short-form videos: it generates a voiceover (Edge TTS), transcribes and time-aligns captions with Whisper ASR, stitches multiple clips with background music, and renders to 9:16, 16:9, and 1:1.
+The clip pipeline runs on one machine: yt-dlp ingest, faster-whisper transcription on CUDA (CPU fallback), a local Ollama model choosing segments, and an NVENC render with burned captions (x264 fallback). Studio mode goes the other way: script to TTS voiceover, Whisper-aligned captions, multi-clip and music compositing, and 9:16, 16:9 or 1:1 output.
 
-An Electron + Python desktop shell drives it, with SQLite-backed job state, scheduling, Telegram failure alerts, a clip cache, and a one-click PyInstaller build. It defaults to fully local, $0 generation and degrades gracefully when heavier models exceed the laptop's memory budget. 200+ automated tests, ffmpeg/ASR/render pipeline end to end.
-
-A single-user desktop pipeline with no Redis and no Celery. one worker polling a SQLite jobs table, which is all the concurrency the problem actually needs.
-
-Stages run independently from the CLI or get driven by the UI through that table: yt-dlp ingest cached by video id, faster-whisper distil-large-v3 on CUDA for word-level timing, an LLM pass that ranks segments and prints timestamped links so the picks can be checked against the source, then an NVENC 9:16 render with ASS captions burned in.
+Accounts link by logging in inside a real browser window, with no platform API keys. A tray worker keeps the app running when the window closes (about 184 MB idle) and posts on a human-paced schedule: at most 2 posts a day per account, jittered times, one post at a time, and a Telegram ping per post. Everything defaults to free local models.
 
 </details>
 
