@@ -32,9 +32,7 @@ A 6-axis robot arm taken from parametric CAD through a custom controller board t
 
 <table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>Parametric</b><br><sub>assembly for rapid iteration</sub></td><td align="center"><b>Print-ready</b><br><sub>STL pack with orientations</sub></td></tr></table>
 
-## Controller board
 
-<p align="center"><img src="../assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="720"></p>
 
 **Problem**
 
