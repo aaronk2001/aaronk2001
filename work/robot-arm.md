@@ -34,8 +34,6 @@ A 6-axis robot arm taken from parametric CAD through a custom controller board t
 
 ## Controller board
 
-<p align="center"><img src="../assets/work/arm-v2-schematic.webp" alt="V2 PCB schematic diagram" width="720"></p>
-
 **Problem**
 
 - Coordinating six independent stepper motors requires precise timing, real-time fault detection, and bidirectional communication with high-level controllers.
