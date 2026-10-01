@@ -79,6 +79,6 @@ A 6-axis robot arm taken from parametric CAD through a custom controller board t
 
 ---
 
-**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
 
 [Back to portfolio](../README.md)

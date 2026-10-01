@@ -15,12 +15,10 @@ const ROOT = path.resolve(import.meta.dir, '..')
 
 // GitHub repo per project id. Only repos that are public at build time get linked.
 const REPOS: Record<string, string> = {
-  'pi-fleet': 'homelab',
   'robot-arm-v2': 'robot-arm',
   'linda-agent': 'linda',
   'yolov8-hailo': 'yolov8-hailo-pi5',
   'fpv-robot-cv': 'robotcar',
-  'homelab-monitoring': 'homelab-monitoring-stack',
   'career-planner': 'ascent-career-os',
   walrus: 'walrus',
   polymarked: 'polymarked',

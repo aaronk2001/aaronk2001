@@ -141,8 +141,8 @@ export const now = {
  "detail": "SKiDL to KiCad netlist, ESP32-S3 motor drive"
  },
  {
- "title": "Edge ML on Hailo-8",
- "detail": "YOLOv8 + VLM defect inspection (26 TOPS)"
+ "title": "Edge ML on Hailo-8L",
+ "detail": "YOLOv8 + VLM defect inspection (13 TOPS)"
  }
  ]
 } satisfies NowBlock
@@ -150,7 +150,7 @@ export const now = {
 export const about = {
  "paragraphs": [
  "I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and ran the telemetry that keeps it all in production.",
- "My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.",
+ "My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8L, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.",
  "The work I care most about sits where hardware and software meet. Hardware is the harder thing to fake, and the discipline that keeps software honest. My Handwrytten role ended in September 2026, so I’m looking for the next one. Robotics, controls, or automation engineering, in the Phoenix metro or remote."
  ],
  "portrait": {

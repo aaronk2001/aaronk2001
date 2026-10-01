@@ -16,7 +16,7 @@ I took a fleet of robotic handwriting machines from zero to 200+ units.
 
 I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and ran the telemetry that keeps it all in production.
 
-My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.
+My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8L, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.
 
 The work I care most about sits where hardware and software meet. Hardware is the harder thing to fake, and the discipline that keeps software honest. My Handwrytten role ended in September 2026, so I’m looking for the next one. Robotics, controls, or automation engineering, in the Phoenix metro or remote.
 
@@ -39,11 +39,17 @@ The work I care most about sits where hardware and software meet. Hardware is th
 </td>
 <td width="50%" valign="top">
 
-### [Linda, financial research agent](projects.md#linda-financial-research-agent)
+<a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="400"></a>
 
-<sub>2026 | Complete</sub>
+### [Ascent, career tracker](projects.md#ascent-career-tracker)
 
-Autonomous financial research agent that combines the Claude API, live market data feeds, and Exa web search to answer complex investment questions in a conversational CLI.
+<sub>2026 | In progress</sub>
+
+Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track.
+
+Single source of truth for the job sprint<br>Local Ollama resume tailor to .docx
+
+<sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
 
 </td>
 </tr>
@@ -145,21 +151,21 @@ A single-process desktop agent with an event-driven architecture: a uv-workspace
 
 | Discipline | Projects |
 |---|---|
-| **Robotics** | [12-Node Pi Homelab](projects.md#12-node-pi-homelab)<br>[6-DOF robot arm](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
-| **Controls & Automation** | [Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)<br>[plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tag-io) |
-| **Computer Vision & ML** | [YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo) |
+| **Robotics** | [6-DOF robot arm](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
+| **Controls & Automation** | [plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tag-io) |
+| **Computer Vision & ML** | [YOLOv8 edge inference on Hailo-8L](projects.md#yolov8-edge-inference-on-hailo-8l) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo) |
 | **Fabrication** | [Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure) |
-| **Software** | [Ascent](projects.md#ascent-career-tracker) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation) |
+| **Software** | [Phantom](projects.md#phantom-short-form-video-automation) |
 
-**[Write-ups for all 17 projects](projects.md)**
+**[Write-ups for all 15 projects](projects.md)**
 
 ## Skills
 
-**Robotics & Systems:** ROS2, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 4/5**, MicroPython, PCA9685<br>
+**Robotics & Systems:** ROS2, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 5**, MicroPython, PCA9685<br>
 **Computer Vision & ML:** YOLOv8, **OpenCV**, ONNX, Label Studio<br>
 **Controls & Automation:** Studio 5000 / RSLogix, Allen Bradley, EtherNet/IP, Modbus, SCADA<br>
 **Fabrication:** **KiCAD**, **SolidWorks**, Fusion 360, **3D Printing**, OpenSCAD, Sheet Metal<br>
-**Foundations:** **Linux**, **Git**, Docker, Ansible, Prometheus, Grafana, **Flask**, Next.js, **TypeScript**, Bun, PostgreSQL, **SQLite**, **Claude API**, Ollama
+**Foundations:** **Linux**, **Git**, Docker, Prometheus, Grafana, **Flask**, Next.js, **TypeScript**, Bun, PostgreSQL, **SQLite**, **Claude API**, Ollama
 
 <details>
 <summary><b>Education and certifications</b></summary>
@@ -178,7 +184,7 @@ A single-process desktop agent with an event-driven architecture: a uv-workspace
 
 - **CODESYS + Factory I/O controls sprint:** ladder and ST against simulated plants
 - **V3 ARM controller PCB:** SKiDL to KiCad netlist, ESP32-S3 motor drive
-- **Edge ML on Hailo-8:** YOLOv8 + VLM defect inspection (26 TOPS)
+- **Edge ML on Hailo-8L:** YOLOv8 + VLM defect inspection (13 TOPS)
 
 ## Contact
 

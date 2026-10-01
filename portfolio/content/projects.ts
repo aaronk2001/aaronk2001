@@ -43,52 +43,6 @@ export const projects = [
   "caseStudy": "handwrytten-fleet"
  },
  {
-  "id": "pi-fleet",
-  "name": "12-Node Pi Homelab",
-  "track": "robotics",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "Infrastructure-as-code for a 12-node Raspberry Pi 4/5 fleet: 9 Ansible playbooks and Docker Compose provision every node, with Prometheus metrics, Grafana dashboards and Pi-hole DNS, plus a two-node k3s cluster for container experiments. Housed in a 3D-printed rack I designed in SolidWorks.",
-  "body": [
-   "Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment. Two nodes run a small k3s cluster for container experiments.",
-   "Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility. Pi-hole runs as a cluster-wide DNS resolver.",
-   "The rack is a SolidWorks design that holds the Pi 4 and Pi 5 nodes in a vertical stack: a pi4_rack part with a mounting slot per node, a base, and side-wall bases.",
-   "Side walls leave room for Ethernet and power runs, and the whole stack prints on a hobby FDM printer."
-  ],
-  "tech": [
-   "Ansible",
-   "Docker",
-   "k3s",
-   "Grafana",
-   "Prometheus",
-   "Linux",
-   "Raspberry Pi 4/5",
-   "SolidWorks",
-   "Mechanical Design",
-   "3D Printing"
-  ],
-  "next": [
-   "Commit baseline Ansible playbook covering all 12 nodes",
-   "Wire Loki log shipping to pi-monitor",
-   "Per-node hardening checklist (SSH, ufw, fail2ban)"
-  ],
-  "media": {
-   "kind": "none"
-  },
-  "skills": [
-   "Ansible",
-   "Docker",
-   "Linux",
-   "Raspberry Pi 4/5",
-   "Prometheus",
-   "Grafana"
-  ],
-  "caseStudy": "pi-fleet-edge-ml",
-  "outcomes": [
-   "12 nodes in a custom SolidWorks rack"
-  ]
- },
- {
   "id": "robot-arm-v2",
   "name": "6-DOF robot arm: CAD, electronics and firmware",
   "track": "robotics",
@@ -107,7 +61,7 @@ export const projects = [
    "Python",
    "ROS2",
    "TMC2209",
-   "Raspberry Pi 4/5",
+   "Raspberry Pi 5",
    "SolidWorks",
    "Fusion 360",
    "3D Printing",
@@ -135,7 +89,7 @@ export const projects = [
    "ROS2",
    "TMC2209",
    "OpenCV",
-   "Raspberry Pi 4/5",
+   "Raspberry Pi 5",
    "SolidWorks",
    "Fusion 360",
    "3D Printing",
@@ -147,208 +101,6 @@ export const projects = [
    "ESP32-S3 firmware: motion, safety and protocol modules",
    "ROS2 Jazzy driver stack with joint limits and teleop"
   ]
- },
- {
-  "id": "linda-agent",
-  "name": "Linda, financial research agent",
-  "track": "software",
-  "status": "complete",
-  "year": "2026",
-  "summary": "Autonomous financial research agent that combines the Claude API, live market data feeds, and Exa web search to answer complex investment questions in a conversational CLI. 15 tools spanning equity data, news search, DCF, and portfolio analysis.",
-  "body": [
-   "Linda is a TypeScript agent on Node.js that treats financial research as a tool-use problem. Given a natural-language question, it dynamically selects from 15 tools spanning equity data fetching, news search, DCF calculation, and portfolio analysis. The Claude API powers all reasoning and tool-selection decisions, while Exa Search and Polygon ground responses in current web sources.",
-   "Results stream to a rich terminal UI with inline citations. Ollama integration provides a local fallback model for offline runs. The architecture is modular. new data sources and calculation tools can be added without touching the core agent loop. Built as a clean demonstration of agentic tool-use architecture. reasoning, dynamic tool selection, and grounded retrieval. in production TypeScript."
-  ],
-  "tech": [
-   "TypeScript",
-   "Node.js",
-   "Claude API",
-   "Exa Search",
-   "Ollama",
-   "Polygon"
-  ],
-  "next": [
-   "Polygon options-chain tool (Greeks + IV surface)",
-   "Local Ollama fallback for offline DCF reasoning",
-   "Persistent eval harness for tool-selection accuracy regression"
-  ],
-  "media": {
-   "kind": "none"
-  },
-  "skills": [
-   "TypeScript",
-   "Claude API",
-   "Ollama"
-  ]
- },
- {
-  "id": "yolov8-hailo",
-  "name": "YOLOv8 edge inference on Hailo-8",
-  "track": "cv-ml",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8 NPU on a Raspberry Pi 5. Profiling showed the network group being re-activated on every frame; opening it once at startup took throughput from 81 to 145 FPS (640x640, 6.8 ms p50).",
-  "body": [
-   "Starting from an Ultralytics YOLOv8n checkpoint, the model is exported to ONNX and then compiled to a Hailo Executable Format using the Hailo Model Zoo compiler with quantization-aware calibration on a representative COCO subset. The compiled HEF runs entirely on the Hailo-8 AI HAT+ (26 TOPS) over PCIe with NMS on the chip, leaving the CPU free for capture, tracking and drawing.",
-   "The first working pipeline entered the network group activation and opened the inference streams on every frame, to dodge a HAILO_STREAM_NOT_ACTIVATED race. Opening both once at startup, in the right order, took a reproducible 500-frame benchmark from 80.99 to 144.74 FPS (p50 12.06 to 6.84 ms, p95 13.10 to 7.31 ms). A second bug drew every box with x and y swapped; the decoder returns x0,y0,x1,y1 and the drawing code read y0,x0,y1,x1.",
-   "The live pipeline runs capture, inference and tracking on separate threads, infers only frames it has not seen, and updates ByteTrack once per inferred frame so the logged FPS is real throughput. On a USB webcam it ran 60 s at 15.0 FPS with every frame inferred: camera-bound, not NPU-bound."
-  ],
-  "tech": [
-   "YOLOv8",
-   "Python",
-   "Hailo-8 NPU",
-   "HailoRT",
-   "ByteTrack",
-   "Raspberry Pi 5",
-   "OpenCV",
-   "ONNX"
-  ],
-  "outcomes": [
-   "144.74 FPS on the Hailo-8, up from 80.99 (yolov8n, 640x640)",
-   "6.84 ms p50, 7.31 ms p95 inference latency",
-   "Box-order bug found and fixed (x/y swapped on every detection)",
-   "USB webcam live pipeline: 60 s at 15.0 FPS, camera-bound"
-  ],
-  "next": [
-   "Measure the Pi CSI camera path and tracking on a busy scene",
-   "Record a hero clip of live tracking",
-   "Compile yolov8s.hef and benchmark against yolov8n on the Hailo-8"
-  ],
-  "media": {
-   "kind": "image",
-   "src": "/projects/yolov8-hailo.svg",
-   "alt": "Pipeline from threaded capture through Hailo-8 inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once",
-   "width": 800,
-   "height": 500
-  },
-  "skills": [
-   "YOLOv8",
-   "Python",
-   "Hailo-8 NPU",
-   "OpenCV",
-   "ONNX",
-   "Raspberry Pi 4/5"
-  ],
-  "caseStudy": "pi-fleet-edge-ml"
- },
- {
-  "id": "edge-defect-detection",
-  "name": "AI HAT + VLM Defect Demo",
-  "track": "cv-ml",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "Open-vocabulary defect inspection on a Pi 5 + Hailo-8 AI HAT. Florence-2 vision-language model replaces a traditional YOLO fine-tune. prompt it with \"scratch, crack, missing pin\" and it grounds the defect on the part. No labeled dataset required to ship the first demo.",
-  "body": [
-   "The pipeline pivots away from a classic YOLO fine-tune toward open-vocabulary defect grounding with Microsoft Florence-2 base. The DaViT vision tower exports to ONNX and compiles to a Hailo-8 HEF (26 TOPS, AI HAT) so the encoder runs on the NPU while the language head and decoder run on the Pi 5 CPU at roughly 2 to 4 seconds per frame. Well-matched to a defect inspection station rather than a real-time line.",
-   "Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes (\"scratch, crack, chip, missing pin, dent\") and return bounding boxes plus natural-language explanations. A systemd service runs Flask dashboard for interactive image upload, with Docker Compose staging the full inference pipeline. A CPU-only fallback path runs Florence-2 entirely on the Pi 5 CPU if HEF compilation of the vision tower stalls."
-  ],
-  "tech": [
-   "Florence-2 VLM",
-   "Python",
-   "Hailo-8 NPU",
-   "PyTorch",
-   "Flask",
-   "Docker"
-  ],
-  "next": [
-   "Compile Florence-2 DaViT vision tower to Hailo-8 HEF",
-   "Capture a 50-frame MVTec hazelnut subset on the Pi 5 camera rig",
-   "Build a prompt-engineering harness for defect-class wording variants",
-   "Confusion matrix + per-class recall report vs hand-labeled ground truth",
-   "CPU-only Moondream2 fallback path if the Hailo compile stalls"
-  ],
-  "media": {
-   "kind": "none"
-  },
-  "skills": [
-   "Python",
-   "Hailo-8 NPU",
-   "PyTorch",
-   "Docker"
-  ],
-  "caseStudy": "pi-fleet-edge-ml"
- },
- {
-  "id": "fpv-robot-cv",
-  "name": "RobotCar, autonomous FPV rover",
-  "track": "robotics",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "A working Raspberry Pi-4 autonomous rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID over an H-bridge. Seven modules span vision, control, obstacle avoidance, video streaming, and a live web UI. The chassis (motor base, Pi mount, camera mount) is my own SolidWorks design.",
-  "body": [
-   "RobotCar is a from-scratch autonomous ground vehicle on a Raspberry Pi 4 (SunFounder HAT). The vision module applies adaptive thresholding and a bird's-eye perspective warp to isolate lane markings, then computes the lane-center offset as a PID error signal.",
-   "Steering and throttle commands publish to a local MQTT broker at 30 Hz; a motor-controller node converts them to differential PWM through an H-bridge. Additional modules add ultrasonic obstacle avoidance, an MJPEG video stream, and a Flask web UI with live PID-tuning sliders. The codebase is organized into seven production modules. vision, controller, obstacle, streaming, web, car, and config .",
-   "The chassis is a two-wheel differential-drive design built around TT gearmotors. The motor base holds both motors in aligned sockets; a ballcaster rear wheel provides the third contact point for stability.",
-   "The Raspberry Pi 4 carrier mounts centrally above the motor base; a modular camera mount points forward for lane-detection computer vision in the fpv-robot-cv pipeline. The assembly uses print-in-place snap joints for rapid prototyping iteration."
-  ],
-  "tech": [
-   "Python",
-   "OpenCV",
-   "MQTT",
-   "Raspberry Pi 4/5",
-   "PID",
-   "SolidWorks",
-   "Mechanical Design",
-   "3D Printing"
-  ],
-  "outcomes": [
-   "7-module autonomous rover",
-   "OpenCV lane detection to MQTT to PID",
-   "30 Hz steering loop",
-   "Live web UI + PID tuner",
-   "Own SolidWorks chassis: motor base, Pi and camera mounts"
-  ],
-  "next": [
-   "Record a full autonomous lap on the marked track",
-   "Fuse ultrasonic + vision for intersection handling",
-   "Log lane-offset error traces for PID tuning"
-  ],
-  "media": {
-   "kind": "none"
-  },
-  "skills": [
-   "Python",
-   "OpenCV",
-   "Raspberry Pi 4/5"
-  ]
- },
- {
-  "id": "homelab-monitoring",
-  "name": "Homelab Monitoring Stack",
-  "track": "controls",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "Prometheus, Grafana, Alertmanager and Loki in one Docker Compose file for the 12-node Pi fleet, with provisioned dashboards and critical alerts sent to Telegram.",
-  "body": [
-   "Prometheus scrapes node_exporter on every node every 15 seconds. Grafana is provisioned from files, so a rebuild needs no clicking: dashboards cover the fleet overview, NAS health, AI HAT metrics and the media server.",
-   "Alert rules fire on a node going down, root disk under 20% free, CPU above 90% and board temperature above 75 °C, and Alertmanager routes them to a Telegram bot. Loki is deployed as a datasource; shipping logs to it is the next step."
-  ],
-  "tech": [
-   "Prometheus",
-   "Grafana",
-   "Alertmanager",
-   "Loki",
-   "Docker Compose",
-   "Linux"
-  ],
-  "next": [
-   "Ship logs to Loki with Promtail",
-   "SLO burn-rate dashboard for robot-control services"
-  ],
-  "media": {
-   "kind": "image",
-   "src": "/projects/homelab-monitoring.svg",
-   "alt": "Diagram of the monitoring stack: 12 Pis scraped by Prometheus, feeding Grafana dashboards and Alertmanager alerts to Telegram",
-   "width": 800,
-   "height": 500
-  },
-  "skills": [
-   "Prometheus",
-   "Grafana",
-   "Docker",
-   "Linux"
-  ],
-  "caseStudy": "pi-fleet-edge-ml"
  },
  {
   "id": "career-planner",
@@ -390,6 +142,170 @@ export const projects = [
    "Flask",
    "Python",
    "Claude API"
+  ],
+  "featured": true
+ },
+ {
+  "id": "linda-agent",
+  "name": "Linda, financial research agent",
+  "track": "software",
+  "status": "complete",
+  "year": "2026",
+  "summary": "Autonomous financial research agent that combines the Claude API, live market data feeds, and Exa web search to answer complex investment questions in a conversational CLI. 15 tools spanning equity data, news search, DCF, and portfolio analysis.",
+  "body": [
+   "Linda is a TypeScript agent on Node.js that treats financial research as a tool-use problem. Given a natural-language question, it dynamically selects from 15 tools spanning equity data fetching, news search, DCF calculation, and portfolio analysis. The Claude API powers all reasoning and tool-selection decisions, while Exa Search and Polygon ground responses in current web sources.",
+   "Results stream to a rich terminal UI with inline citations. Ollama integration provides a local fallback model for offline runs. The architecture is modular. new data sources and calculation tools can be added without touching the core agent loop. Built as a clean demonstration of agentic tool-use architecture. reasoning, dynamic tool selection, and grounded retrieval. in production TypeScript."
+  ],
+  "tech": [
+   "TypeScript",
+   "Node.js",
+   "Claude API",
+   "Exa Search",
+   "Ollama",
+   "Polygon"
+  ],
+  "next": [
+   "Polygon options-chain tool (Greeks + IV surface)",
+   "Local Ollama fallback for offline DCF reasoning",
+   "Persistent eval harness for tool-selection accuracy regression"
+  ],
+  "media": {
+   "kind": "none"
+  },
+  "skills": [
+   "TypeScript",
+   "Claude API",
+   "Ollama"
+  ],
+  "featured": false
+ },
+ {
+  "id": "yolov8-hailo",
+  "name": "YOLOv8 edge inference on Hailo-8L",
+  "track": "cv-ml",
+  "status": "in-progress",
+  "year": "2026",
+  "summary": "YOLOv8n object detection and ByteTrack tracking compiled to the Hailo-8L NPU on a Raspberry Pi 5. Profiling showed the network group being re-activated on every frame; opening it once at startup took throughput from 81 to 145 FPS (640x640, 6.8 ms p50).",
+  "body": [
+   "Starting from an Ultralytics YOLOv8n checkpoint, the model is exported to ONNX and then compiled to a Hailo Executable Format using the Hailo Model Zoo compiler with quantization-aware calibration on a representative COCO subset. The compiled HEF runs entirely on the Hailo-8L AI HAT+ (13 TOPS) over PCIe with NMS on the chip, leaving the CPU free for capture, tracking and drawing.",
+   "The first working pipeline entered the network group activation and opened the inference streams on every frame, to dodge a HAILO_STREAM_NOT_ACTIVATED race. Opening both once at startup, in the right order, took a reproducible 500-frame benchmark from 80.99 to 144.74 FPS (p50 12.06 to 6.84 ms, p95 13.10 to 7.31 ms). A second bug drew every box with x and y swapped; the decoder returns x0,y0,x1,y1 and the drawing code read y0,x0,y1,x1.",
+   "The live pipeline runs capture, inference and tracking on separate threads, infers only frames it has not seen, and updates ByteTrack once per inferred frame so the logged FPS is real throughput. On a USB webcam it ran 60 s at 15.0 FPS with every frame inferred: camera-bound, not NPU-bound."
+  ],
+  "tech": [
+   "YOLOv8",
+   "Python",
+   "Hailo-8L NPU",
+   "HailoRT",
+   "ByteTrack",
+   "Raspberry Pi 5",
+   "OpenCV",
+   "ONNX"
+  ],
+  "outcomes": [
+   "144.74 FPS on the Hailo-8L, up from 80.99 (yolov8n, 640x640)",
+   "6.84 ms p50, 7.31 ms p95 inference latency",
+   "Box-order bug found and fixed (x/y swapped on every detection)",
+   "USB webcam live pipeline: 60 s at 15.0 FPS, camera-bound"
+  ],
+  "next": [
+   "Measure the Pi CSI camera path and tracking on a busy scene",
+   "Record a hero clip of live tracking",
+   "Compile yolov8s.hef and benchmark against yolov8n on the Hailo-8L"
+  ],
+  "media": {
+   "kind": "image",
+   "src": "/projects/yolov8-hailo.svg",
+   "alt": "Pipeline from threaded capture through Hailo-8L inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once",
+   "width": 800,
+   "height": 500
+  },
+  "skills": [
+   "YOLOv8",
+   "Python",
+   "Hailo-8L NPU",
+   "OpenCV",
+   "ONNX",
+   "Raspberry Pi 5"
+  ],
+  "caseStudy": "pi-fleet-edge-ml"
+ },
+ {
+  "id": "edge-defect-detection",
+  "name": "AI HAT + VLM Defect Demo",
+  "track": "cv-ml",
+  "status": "in-progress",
+  "year": "2026",
+  "summary": "Open-vocabulary defect inspection on a Pi 5 + Hailo-8L AI HAT. Florence-2 vision-language model replaces a traditional YOLO fine-tune. prompt it with \"scratch, crack, missing pin\" and it grounds the defect on the part. No labeled dataset required to ship the first demo.",
+  "body": [
+   "The pipeline pivots away from a classic YOLO fine-tune toward open-vocabulary defect grounding with Microsoft Florence-2 base. The DaViT vision tower exports to ONNX and compiles to a Hailo-8L HEF (13 TOPS, AI HAT) so the encoder runs on the NPU while the language head and decoder run on the Pi 5 CPU at roughly 2 to 4 seconds per frame. Well-matched to a defect inspection station rather than a real-time line.",
+   "Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes (\"scratch, crack, chip, missing pin, dent\") and return bounding boxes plus natural-language explanations. A systemd service runs Flask dashboard for interactive image upload, with Docker Compose staging the full inference pipeline. A CPU-only fallback path runs Florence-2 entirely on the Pi 5 CPU if HEF compilation of the vision tower stalls."
+  ],
+  "tech": [
+   "Florence-2 VLM",
+   "Python",
+   "Hailo-8L NPU",
+   "PyTorch",
+   "Flask",
+   "Docker"
+  ],
+  "next": [
+   "Compile Florence-2 DaViT vision tower to Hailo-8L HEF",
+   "Capture a 50-frame MVTec hazelnut subset on the Pi 5 camera rig",
+   "Build a prompt-engineering harness for defect-class wording variants",
+   "Confusion matrix + per-class recall report vs hand-labeled ground truth",
+   "CPU-only Moondream2 fallback path if the Hailo compile stalls"
+  ],
+  "media": {
+   "kind": "none"
+  },
+  "skills": [
+   "Python",
+   "Hailo-8L NPU",
+   "PyTorch",
+   "Docker"
+  ],
+  "caseStudy": "pi-fleet-edge-ml"
+ },
+ {
+  "id": "fpv-robot-cv",
+  "name": "RobotCar, autonomous FPV rover",
+  "track": "robotics",
+  "status": "in-progress",
+  "year": "2026",
+  "summary": "Software and chassis for an autonomous FPV rover: an OpenCV lane-detection pipeline computes steering error, publishes it over MQTT at 30 Hz, and a motor-controller node closes the loop with PID. Seven modules span vision, control, obstacle avoidance, video streaming and a live web UI. The chassis is my own SolidWorks design; the physical build is next.",
+  "body": [
+   "The vision module applies adaptive thresholding and a bird's-eye perspective warp to isolate lane markings, then computes the lane-center offset as a PID error signal. The target platform is a Raspberry Pi with a SunFounder Robot HAT.",
+   "Steering and throttle commands publish to a local MQTT broker at 30 Hz; a motor-controller node converts them to differential PWM through an H-bridge. Additional modules add ultrasonic obstacle avoidance, an MJPEG video stream, and a Flask web UI with live PID-tuning sliders. The codebase is organized into seven production modules. vision, controller, obstacle, streaming, web, car, and config .",
+   "The chassis is a two-wheel differential-drive design built around TT gearmotors. The motor base holds both motors in aligned sockets; a ballcaster rear wheel provides the third contact point for stability.",
+   "A Pi carrier mounts centrally above the motor base, and a modular camera mount points forward for the lane detection pipeline. Parts use print-in-place snap joints for quick iteration."
+  ],
+  "tech": [
+   "Python",
+   "OpenCV",
+   "MQTT",
+   "PID",
+   "SolidWorks",
+   "Mechanical Design",
+   "3D Printing",
+   "Raspberry Pi"
+  ],
+  "outcomes": [
+   "7 software modules: vision, control, obstacle, streaming, web UI",
+   "OpenCV lane detection to MQTT to PID",
+   "Own SolidWorks chassis: motor base, Pi and camera mounts"
+  ],
+  "next": [
+   "Record a full autonomous lap on the marked track",
+   "Fuse ultrasonic + vision for intersection handling",
+   "Log lane-offset error traces for PID tuning"
+  ],
+  "media": {
+   "kind": "none"
+  },
+  "skills": [
+   "Python",
+   "OpenCV",
+   "Raspberry Pi 5"
   ]
  },
  {

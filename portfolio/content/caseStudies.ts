@@ -218,84 +218,39 @@ export const caseStudies = [
   {
     "slug": "pi-fleet-edge-ml",
     "flagship": true,
-    "title": "Twelve-node Pi cluster with edge inference",
-    "subtitle": "Ansible, Hailo-8 NPU, YOLOv8 vision, Prometheus telemetry",
+    "title": "Edge inference on a Raspberry Pi 5",
+    "subtitle": "Hailo-8L NPU, YOLOv8 + ByteTrack, Florence-2 defect demo",
     "period": "2026",
-    "role": "Infrastructure and ML",
-    "summary": "A 12-node Raspberry Pi 4 and Pi 5 fleet provisioned with Ansible, with Prometheus/Grafana observability and a two-node k3s cluster. A Hailo-8 AI HAT runs real-time YOLOv8 detection at 144.7 FPS, and a Florence-2 vision-language defect demo is in progress.",
+    "role": "Computer vision and ML",
+    "summary": "One Raspberry Pi 5 (16 GB) with a Hailo-8L AI HAT+ (13 TOPS). YOLOv8n with ByteTrack runs at 144.7 FPS on the NPU after a profiling fix, and an open-vocabulary defect demo built on Florence-2 is in progress.",
     "outcomes": [
-      {"value": "12", "label": "nodes"},
-      {"value": "26 TOPS", "label": "Hailo-8 NPU"},
-      {"value": "9", "label": "Ansible playbooks"},
-      {"value": "144.7 FPS", "label": "YOLOv8n on the Hailo-8"}
+      {"value": "144.7 FPS", "label": "YOLOv8n on the Hailo-8L"},
+      {"value": "6.84 ms", "label": "p50 inference latency"},
+      {"value": "13 TOPS", "label": "Hailo-8L NPU"},
+      {"value": "1 Pi 5", "label": "16 GB, everything on-device"}
     ],
-    "tech": ["Ansible", "k3s", "Prometheus", "Grafana", "Hailo-8 NPU", "YOLOv8", "Raspberry Pi 4/5", "Docker"],
+    "tech": ["Raspberry Pi 5", "Hailo-8L NPU", "YOLOv8", "ByteTrack", "ONNX", "Florence-2", "Python"],
     "media": {"kind": "none"},
     "chapters": [
       {
-        "id": "pi-fleet",
-        "title": "Infrastructure as code",
-        "problem": [
-          "Running a distributed robotics pipeline requires managing multiple Raspberry Pi units across SSH, Docker images, and configuration files.",
-          "Without infrastructure as code, each node becomes a snowflake and test environments don't mirror production."
-        ],
-        "constraints": [
-          "Raspberry Pi hardware is resource-constrained (4GB to 8GB RAM per node, 2.4 GHz CPU).",
-          "Network isolation on commodity WiFi limits throughput and reliability."
-        ],
-        "built": [
-          "Every node is provisioned from a clean Raspberry Pi OS image using idempotent Ansible roles covering SSH hardening, package installation, static IP assignment, and service deployment.",
-          "Two nodes run a small k3s cluster for container experiments.",
-          "Prometheus scrapes metrics from all nodes and feeds Grafana dashboards for CPU, memory, disk, and network visibility."
-        ],
-        "outcomes": [
-          {"value": "12", "label": "nodes (Pi 4 and Pi 5)"},
-          {"value": "9", "label": "Ansible playbooks"}
-        ]
-      },
-      {
-        "id": "homelab-monitoring",
-        "title": "Observability and alerting",
-        "problem": [
-          "Distributed Pi fleet generates logs and metrics across 12 nodes. Without centralized collection, troubleshooting becomes manual log-digging on each machine.",
-          "Alerts on CPU, memory, or network saturation need to surface quickly to prevent cascade failures."
-        ],
-        "constraints": [
-          "Prometheus and Grafana themselves consume RAM and storage. The stack must run on the same constrained hardware it monitors.",
-          "Alert rules must be specific enough to catch real issues without flooding on false positives."
-        ],
-        "built": [
-          "Prometheus scrapes every node every 15 seconds; file-provisioned Grafana dashboards cover the fleet overview, NAS health, AI HAT metrics and the media server.",
-          "Alert rules fire on a node going down, root disk under 20% free, CPU above 90% and board temperature above 75 °C; Alertmanager sends them to Telegram.",
-          "Loki is deployed as a datasource; shipping logs to it is the next step.",
-          "The whole stack is one Docker Compose file, so a rebuild is a single command."
-        ],
-        "outcomes": [
-          {"value": "Prometheus", "label": "metrics collection"},
-          {"value": "Grafana", "label": "visualization"},
-          {"value": "AlertManager", "label": "firing alerts"},
-          {"value": "12-node visibility", "label": "in one UI"}
-        ]
-      },
-      {
         "id": "yolov8-hailo",
-        "title": "YOLOv8 on Hailo-8 NPU",
+        "title": "YOLOv8 on Hailo-8L NPU",
         "problem": [
           "Real-time object detection on a Raspberry Pi CPU alone is too slow for responsive visual feedback.",
           "Offloading to a GPU adds cost and power consumption. An edge NPU solves this on a Raspberry Pi form factor."
         ],
         "constraints": [
-          "Hailo-8 output format (HEF) requires model compilation with quantization-aware calibration.",
-          "The 26 TOPS compute budget must be shared between inference and any preprocessing."
+          "Hailo-8L output format (HEF) requires model compilation with quantization-aware calibration.",
+          "The 13 TOPS compute budget must be shared between inference and any preprocessing."
         ],
         "built": [
           "Starting from an Ultralytics YOLOv8n checkpoint, the model is exported to ONNX and compiled to Hailo Executable Format with quantization-aware calibration on a representative COCO subset.",
-          "The compiled HEF runs entirely on the Hailo-8 AI HAT+ (26 TOPS) over PCIe, leaving all four CPU cores free for pre and post processing.",
+          "The compiled HEF runs entirely on the Hailo-8L AI HAT+ (13 TOPS) over PCIe, leaving all four CPU cores free for pre and post processing.",
           "The first working pipeline re-entered network group activation and reopened the inference streams on every frame. Opening both once at startup took a 500-frame benchmark from 80.99 to 144.74 FPS, with p50 latency falling from 12.06 to 6.84 ms and p95 from 13.10 to 7.31 ms.",
           "Fixed a drawing bug that swapped x and y on every box, and made the live loop infer only new frames so its FPS is real throughput. A USB webcam ran 60 s at 15.0 FPS with every frame inferred: the camera is the bottleneck, not the NPU."
         ],
         "outcomes": [
-          {"value": "26 TOPS", "label": "Hailo-8 inference"},
+          {"value": "13 TOPS", "label": "Hailo-8L inference"},
           {"value": "144.7 FPS", "label": "yolov8n 640x640, up from 81"},
           {"value": "6.8 ms", "label": "p50 inference latency"},
           {"value": "YOLOv8n", "label": "compiled to HEF"}
@@ -313,7 +268,7 @@ export const caseStudies = [
           "Inference latency must stay under 5 seconds per frame for practical inspection station speed."
         ],
         "built": [
-          "The pipeline pivots from a classic YOLO fine-tune toward open-vocabulary defect grounding with Microsoft Florence-2. The DaViT vision tower exports to ONNX and compiles to a Hailo-8 HEF (26 TOPS, AI HAT) so the encoder runs on the NPU while the language head and decoder run on the Pi 5 CPU at roughly 2 to 4 seconds per frame.",
+          "The pipeline pivots from a classic YOLO fine-tune toward open-vocabulary defect grounding with Microsoft Florence-2. The DaViT vision tower exports to ONNX and compiles to a Hailo-8L HEF (13 TOPS, AI HAT) so the encoder runs on the NPU while the language head and decoder run on the Pi 5 CPU at roughly 2 to 4 seconds per frame.",
           "Well-matched to a defect inspection station rather than a real-time line. Prompts use the `<CAPTION_TO_PHRASE_GROUNDING>` task with defect classes (scratch, crack, chip, missing pin, dent) and return bounding boxes plus natural-language explanations.",
           "A systemd service runs Flask dashboard for interactive image upload, with Docker Compose staging the full inference pipeline.",
           "A CPU-only fallback path runs Florence-2 entirely on the Pi 5 CPU if HEF compilation of the vision tower stalls."
@@ -324,33 +279,9 @@ export const caseStudies = [
           {"value": "2-4 sec/frame", "label": "inference on Pi 5"},
           {"value": "Flask + Docker", "label": "staging pipeline"}
         ]
-      },
-      {
-        "id": "server-rack-enclosure",
-        "title": "Mechanical enclosure",
-        "problem": [
-          "12 Raspberry Pi units need organized mounting, cable routing, and passive cooling in a compact form factor.",
-          "A loose stack overheats and tangles cables. A proper rack provides structure and airflow."
-        ],
-        "constraints": [
-          "Standard racks are too large for a small lab footprint.",
-          "3D-printed plastic adds constraints on load-bearing capacity."
-        ],
-        "built": [
-          "The enclosure is a server-rack-compatible cabinet designed to house all 12 Raspberry Pi 4 and Pi 5 units in a vertical stack.",
-          "The pi4_rack part provides mounting slots for each compute node with airflow channels for passive cooling between each tier.",
-          "Side-wall bases add structural support and cable management channels for Ethernet and power distribution.",
-          "The full assembly includes aluminum mounting rails, power-distribution busbar clips, and preparation for future network switch and storage integration."
-        ],
-        "outcomes": [
-          {"value": "12-node", "label": "vertical stack"},
-          {"value": "Passive cooling", "label": "airflow channels"},
-          {"value": "Cable management", "label": "integrated"},
-          {"value": "Expandable", "label": "for future gear"}
-        ]
       }
     ],
-    "projectIds": ["pi-fleet", "homelab-monitoring", "yolov8-hailo", "edge-defect-detection"]
+    "projectIds": ["yolov8-hailo", "edge-defect-detection"]
   },
   {
     "slug": "plc-controls",

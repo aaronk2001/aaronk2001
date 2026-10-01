@@ -80,7 +80,7 @@ export const certs = [
  "status": "planned",
  "url": "https://www.comptia.org/certifications/linux",
  "year": "2026",
- "note": "Validates the Linux / SRE foundation under the homelab and edge work."
+ "note": "Validates the Linux / SRE foundation under the edge AI work."
  },
  {
  "id": "andrew-ng-ml",
@@ -125,7 +125,7 @@ export const certs = [
  "status": "planned",
  "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
  "year": "2026",
- "note": "Cloud cred for full-stack / devops framing. pairs with the homelab work."
+ "note": "Cloud cred for full-stack / devops framing. pairs with the edge AI and fleet-telemetry work."
  },
  {
  "id": "ros-industrial-foundational",

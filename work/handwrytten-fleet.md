@@ -125,6 +125,6 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ---
 
-**More case studies:** [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Twelve-node Pi cluster with edge inference](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+**More case studies:** [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
 
 [Back to portfolio](../README.md)
