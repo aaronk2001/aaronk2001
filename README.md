@@ -95,15 +95,17 @@ Local-first Monarch-style personal-finance app for spending tracking and insight
 </td>
 <td width="50%" valign="top">
 
-<a href="projects.md#plc-track-desktop-learning-tracker"><img src="assets/projects/plc-track-app.webp" alt="PLC Track week 1 view: objective, vocabulary, lab path and deliverable checklist" width="400"></a>
+<a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="400"></a>
 
-### [PLC Track, desktop learning tracker](projects.md#plc-track-desktop-learning-tracker)
+### [PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)
 
-<sub>2026 | Complete</sub>
+<sub>2026 | In progress</sub>
 
-A Tauri 2 + React desktop app that tracks progress through the controls learning path from a YAML curriculum file.
+A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.
 
-Ships as a desktop .exe<br>YAML curriculum as the single source of truth
+10-package uv monorepo<br>Watcher + API + bot in one event loop
+
+<sub>[Source on GitHub](https://github.com/aaronk2001/polymarked)</sub>
 
 </td>
 </tr>
@@ -147,7 +149,7 @@ Ships as a desktop .exe<br>YAML curriculum as the single source of truth
 | **Controls & Automation** | [Homelab Monitoring Stack](projects.md#homelab-monitoring-stack)<br>[plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tag-io) |
 | **Computer Vision & ML** | [YOLOv8 edge inference on Hailo-8](projects.md#yolov8-edge-inference-on-hailo-8) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo) |
 | **Fabrication** | [Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure) |
-| **Software** | [Ascent](projects.md#ascent-career-tracker) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[PolyMarked](projects.md#polymarked-autonomous-agent) <sub>([code](https://github.com/aaronk2001/polymarked))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation) |
+| **Software** | [Ascent](projects.md#ascent-career-tracker) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation) |
 
 **[Write-ups for all 17 projects](projects.md)**
 

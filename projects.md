@@ -314,34 +314,6 @@ Skill descriptions are embedded once and each request carries only the closest f
 
 </details>
 
-### PolyMarked, autonomous agent
-
-<sub>2026 | In progress</sub>
-
-<img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="480">
-
-A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.
-
-- 10-package uv monorepo
-- Watcher + API + bot in one event loop
-- 262 paper fills in a live supervisor run
-- 16+ unit tests
-- 1,500-event backtest
-- Favorite-longshot edge survives costs only in 0.80-0.92 (+2%/bet out-of-sample)
-
-`Python` `asyncio` `SQLAlchemy` `FastAPI` `SQLite` `uv`
-
-[Source on GitHub](https://github.com/aaronk2001/polymarked)
-
-<details>
-<summary>How it works</summary>
-
-PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into ten packages: core, ingester, scoring, watcher, executor, telegram_bot, api, app, dashboard and llm, communicating through typed schemas.
-
-Async SQLAlchemy and Alembic manage a SQLite (WAL) store; httpx drives concurrent ingestion; a supervisor runs the watcher, a localhost-only FastAPI dashboard, and a long-polling Telegram bot in one event loop with graceful shutdown and a system-tray icon. A paper-trading ledger tracks every fill with risk-cap validation. A scoring engine computes a confidence-weighted 0-100 score with profit factor, Sharpe-like ratio, drawdown, and sample-size calibration.
-
-</details>
-
 ### Local TTS Desktop App
 
 <sub>2026 | Complete</sub>
@@ -414,6 +386,34 @@ Local-first Monarch-style personal-finance app for spending tracking and insight
 The interesting constraint was giving financial advice without letting a model invent numbers. Advice comes from a deterministic rule engine first. the rules produce the claims, the model only phrases them. and the chat coach is grounded on that same rule output through a local qwen2.
 
 5:1.5b on Ollama, falling back to the raw rules whenever the model is unavailable. Around that sit an insights widget, inline tips, a weekly digest, launch nudges, and a settings toggle for every nudge. It ships as a hand-assembled portable Electron build (electron-builder is blocked on this machine by a code-signing symlink), and the packaged binary was verified to detect Ollama at runtime rather than only in dev.
+
+</details>
+
+### PolyMarked, autonomous agent
+
+<sub>2026 | In progress</sub>
+
+<img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="480">
+
+A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.
+
+- 10-package uv monorepo
+- Watcher + API + bot in one event loop
+- 262 paper fills in a live supervisor run
+- 16+ unit tests
+- 1,500-event backtest
+- Favorite-longshot edge survives costs only in 0.80-0.92 (+2%/bet out-of-sample)
+
+`Python` `asyncio` `SQLAlchemy` `FastAPI` `SQLite` `uv`
+
+[Source on GitHub](https://github.com/aaronk2001/polymarked)
+
+<details>
+<summary>How it works</summary>
+
+PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into ten packages: core, ingester, scoring, watcher, executor, telegram_bot, api, app, dashboard and llm, communicating through typed schemas.
+
+Async SQLAlchemy and Alembic manage a SQLite (WAL) store; httpx drives concurrent ingestion; a supervisor runs the watcher, a localhost-only FastAPI dashboard, and a long-polling Telegram bot in one event loop with graceful shutdown and a system-tray icon. A paper-trading ledger tracks every fill with risk-cap validation. A scoring engine computes a confidence-weighted 0-100 score with profit factor, Sharpe-like ratio, drawdown, and sample-size calibration.
 
 </details>
 

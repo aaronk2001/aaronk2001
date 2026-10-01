@@ -23,6 +23,8 @@ export interface Project {
  links?: { label: string; href: string }[]
  caseStudy?: string
  skills?: string[]
+ // true pins a project into Selected work, false keeps a complete one out
+ featured?: boolean
 }
 
 export interface Outcome { value: string; label: string }

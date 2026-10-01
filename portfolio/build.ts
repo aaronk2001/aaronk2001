@@ -121,7 +121,9 @@ function readme() {
       cs.projectIds.every(id => projects.find(p => p.id === id)?.status === 'complete'),
   )
   const covered = new Set(doneStudies.flatMap(cs => cs.projectIds))
-  const doneProjects = shipped.filter(p => p.status === 'complete' && !covered.has(p.id))
+  const doneProjects = shipped.filter(
+    p => !covered.has(p.id) && (p.featured ?? p.status === 'complete'),
+  )
   const selectedIds = new Set([...covered, ...doneProjects.map(p => p.id)])
 
   const work = grid(
@@ -145,7 +147,7 @@ function readme() {
         return [
           pic && `<a href="${href}">${pic}</a>`,
           `### [${p.name}](${href})`,
-          `<sub>${p.year} | Complete</sub>`,
+          `<sub>${p.year} | ${p.status === 'complete' ? 'Complete' : 'In progress'}</sub>`,
           firstSentence(p.summary),
           (p.outcomes ?? []).slice(0, 2).join('<br>'),
           repo && `<sub>[Source on GitHub](${repo})</sub>`,
@@ -165,7 +167,7 @@ function readme() {
     .join('\n\n')
 
   // Everything not in Selected work is unfinished: one compact row per discipline, details live in projects.md.
-  const rest = shipped.filter(p => !selectedIds.has(p.id))
+  const rest = shipped.filter(p => !selectedIds.has(p.id) && p.status !== 'complete')
   const shortName = (p: Project) => p.name.split(/[:,]/)[0].trim()
   const inProgress = (Object.keys(TRACKS) as Track[])
     .map(t => {

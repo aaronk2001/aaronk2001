@@ -432,51 +432,6 @@ export const projects = [
   ]
  },
  {
-  "id": "polymarked",
-  "name": "PolyMarked, autonomous agent",
-  "track": "software",
-  "status": "in-progress",
-  "year": "2026",
-  "summary": "A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.",
-  "body": [
-   "PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into ten packages: core, ingester, scoring, watcher, executor, telegram_bot, api, app, dashboard and llm, communicating through typed schemas.",
-   "Async SQLAlchemy and Alembic manage a SQLite (WAL) store; httpx drives concurrent ingestion; a supervisor runs the watcher, a localhost-only FastAPI dashboard, and a long-polling Telegram bot in one event loop with graceful shutdown and a system-tray icon. A paper-trading ledger tracks every fill with risk-cap validation. A scoring engine computes a confidence-weighted 0-100 score with profit factor, Sharpe-like ratio, drawdown, and sample-size calibration."
-  ],
-  "tech": [
-   "Python",
-   "asyncio",
-   "SQLAlchemy",
-   "FastAPI",
-   "SQLite",
-   "uv"
-  ],
-  "outcomes": [
-   "10-package uv monorepo",
-   "Watcher + API + bot in one event loop",
-   "262 paper fills in a live supervisor run",
-   "16+ unit tests",
-   "1,500-event backtest",
-   "Favorite-longshot edge survives costs only in 0.80-0.92 (+2%/bet out-of-sample)"
-  ],
-  "next": [
-   "PyInstaller .exe packaging",
-   "Expand integration-test coverage",
-   "Structured metrics export from the supervisor"
-  ],
-  "media": {
-   "kind": "image",
-   "src": "/projects/polymarked.webp",
-   "alt": "PolyMarked Dashboard",
-   "width": 800,
-   "height": 500
-  },
-  "skills": [
-   "Python",
-   "SQLite",
-   "Ollama"
-  ]
- },
- {
   "id": "tts-app",
   "name": "Local TTS Desktop App",
   "track": "software",
@@ -686,6 +641,52 @@ export const projects = [
   ]
  },
  {
+  "id": "polymarked",
+  "name": "PolyMarked, autonomous agent",
+  "track": "software",
+  "status": "in-progress",
+  "year": "2026",
+  "summary": "A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.",
+  "body": [
+   "PolyMarked is built as a clean systems-engineering exercise. A uv-workspace monorepo splits the system into ten packages: core, ingester, scoring, watcher, executor, telegram_bot, api, app, dashboard and llm, communicating through typed schemas.",
+   "Async SQLAlchemy and Alembic manage a SQLite (WAL) store; httpx drives concurrent ingestion; a supervisor runs the watcher, a localhost-only FastAPI dashboard, and a long-polling Telegram bot in one event loop with graceful shutdown and a system-tray icon. A paper-trading ledger tracks every fill with risk-cap validation. A scoring engine computes a confidence-weighted 0-100 score with profit factor, Sharpe-like ratio, drawdown, and sample-size calibration."
+  ],
+  "tech": [
+   "Python",
+   "asyncio",
+   "SQLAlchemy",
+   "FastAPI",
+   "SQLite",
+   "uv"
+  ],
+  "outcomes": [
+   "10-package uv monorepo",
+   "Watcher + API + bot in one event loop",
+   "262 paper fills in a live supervisor run",
+   "16+ unit tests",
+   "1,500-event backtest",
+   "Favorite-longshot edge survives costs only in 0.80-0.92 (+2%/bet out-of-sample)"
+  ],
+  "next": [
+   "PyInstaller .exe packaging",
+   "Expand integration-test coverage",
+   "Structured metrics export from the supervisor"
+  ],
+  "media": {
+   "kind": "image",
+   "src": "/projects/polymarked.webp",
+   "alt": "PolyMarked Dashboard",
+   "width": 800,
+   "height": 500
+  },
+  "skills": [
+   "Python",
+   "SQLite",
+   "Ollama"
+  ],
+  "featured": true
+ },
+ {
   "id": "plc-track-app",
   "name": "PLC Track, desktop learning tracker",
   "track": "software",
@@ -718,7 +719,8 @@ export const projects = [
    "TypeScript",
    "Bun",
    "Git"
-  ]
+  ],
+  "featured": false
  },
  {
   "id": "arcade-cabinet",

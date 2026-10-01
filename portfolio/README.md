@@ -7,7 +7,7 @@ The profile README, `projects.md` and `work/*.md` at the repo root are generated
 1. Edit the content in `content/`:
    - `site.ts`: header, stats, about, now, contact
    - `experience.ts`, `skills.ts`, `certs.ts`
-   - `projects.ts`: one entry per project. Set `status: "complete"` to move it into Selected work.
+   - `projects.ts`: one entry per project. Set `status: "complete"` to move it into Selected work, or `featured: true` / `false` to pin one in or keep one out.
    - `caseStudies.ts`: the long-form pages in `work/`
 2. Put images in `../assets/` and reference them as `/projects/<name>.webp` or `/work/<name>.webp`.
    Target size is 800x500 WebP, under 120 KB.
