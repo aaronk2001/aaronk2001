@@ -39,15 +39,15 @@ The work I care most about sits where hardware and software meet. Hardware is th
 </td>
 <td width="50%" valign="top">
 
-<a href="projects.md#ascent-career-tracker"><img src="assets/projects/career-planner.webp" alt="Ascent roadmap view: a robotics and controls learning path with a job-ready skills checklist" width="400"></a>
+<a href="projects.md#ascent-career-os-desktop-app"><img src="assets/projects/career-planner.webp" alt="Ascent dashboard on demo data: countdowns, sprint rings and next goals" width="400"></a>
 
-### [Ascent, career tracker](projects.md#ascent-career-tracker)
+### [Ascent: career OS desktop app](projects.md#ascent-career-os-desktop-app)
 
 <sub>2026 | In progress</sub>
 
-Flask + pywebview desktop app that runs the job search: an hour-by-hour day planner backed by a YAML schedule, application and goal tracking, a skills radar, a local-Ollama resume tailor that emits .docx, and an interactive Gantt aggregating every track.
+A local-first desktop app that runs a job search like an engineering project: a generated daily plan, an application pipeline with follow-up automation, learning tracks, certifications and a portfolio checklist, with a local-LLM assistant.
 
-Single source of truth for the job sprint<br>Local Ollama resume tailor to .docx
+Daily plan generated from live data<br>Kanban pipeline with follow-up automation
 
 <sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
 
@@ -58,7 +58,7 @@ Single source of truth for the job sprint<br>Local Ollama resume tailor to .docx
 
 <a href="projects.md#walrus-local-coding-agent-for-the-terminal"><img src="assets/projects/walrus.webp" alt="Walrus in a terminal, reading a project and asking before it edits" width="400"></a>
 
-### [Walrus, local coding agent for the terminal](projects.md#walrus-local-coding-agent-for-the-terminal)
+### [Walrus: local coding agent for the terminal](projects.md#walrus-local-coding-agent-for-the-terminal)
 
 <sub>2026 | Complete</sub>
 
@@ -71,15 +71,15 @@ A Claude Code-style coding agent for the terminal that runs entirely on local Ol
 </td>
 <td width="50%" valign="top">
 
-<a href="projects.md#local-tts-desktop-app"><img src="assets/projects/tts-app.webp" alt="TTS App" width="400"></a>
+<a href="projects.md#text-to-speech-local-desktop-app-for-windows"><img src="assets/projects/tts-app.webp" alt="TTS App" width="400"></a>
 
-### [Local TTS Desktop App](projects.md#local-tts-desktop-app)
+### [Text-to-Speech: local desktop app for Windows](projects.md#text-to-speech-local-desktop-app-for-windows)
 
 <sub>2026 | Complete</sub>
 
-A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable engines (Supertonic, neural-ONNX Piper, Windows SAPI5), a global clipboard hotkey, and a typed, tested codebase.
+A local-first Windows text-to-speech app: paste text, or press Ctrl+Alt+S anywhere to hear the clipboard.
 
-3 pluggable TTS engines<br>Neural ONNX (Piper) primary
+3 engines: Supertonic, Piper, SAPI5<br>Global Ctrl+Alt+S clipboard reader
 
 <sub>[Source on GitHub](https://github.com/aaronk2001/text-to-speech)</sub>
 
@@ -88,28 +88,28 @@ A local-first, MIT-licensed Windows text-to-speech app in PySide6: pluggable eng
 <tr>
 <td width="50%" valign="top">
 
-<a href="projects.md#mmm-money-hub"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="400"></a>
+<a href="projects.md#mmm-personal-finance-desktop-app"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="400"></a>
 
-### [MMM: money hub](projects.md#mmm-money-hub)
+### [MMM: personal finance desktop app](projects.md#mmm-personal-finance-desktop-app)
 
 <sub>2026 | Complete</sub>
 
-Local-first Monarch-style personal-finance app for spending tracking and insights.
+A local-first personal finance app with a coach that cannot invent numbers: a deterministic rule engine produces every claim, and a small local model only phrases it.
 
-700 tests across 46 files<br>Rule engine grounds every LLM claim
+700 tests across 46 files<br>Rule engine grounds every model claim
 
 </td>
 <td width="50%" valign="top">
 
-<a href="projects.md#polymarked-autonomous-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="400"></a>
+<a href="projects.md#polymarked-polymarket-wallet-scoring-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="400"></a>
 
-### [PolyMarked, autonomous agent](projects.md#polymarked-autonomous-agent)
+### [PolyMarked: Polymarket wallet-scoring agent](projects.md#polymarked-polymarket-wallet-scoring-agent)
 
 <sub>2026 | In progress</sub>
 
-A single-process desktop agent with an event-driven architecture: a uv-workspace monorepo (10 packages) running a wallet watcher, decision engine, FastAPI dashboard, and Telegram bot together under one tray supervisor on a single asyncio event loop.
+A desktop agent that watches Polymarket wallets, scores them, mirrors their trades into a paper book, and runs the one edge that survived out-of-sample testing.
 
-10-package uv monorepo<br>Watcher + API + bot in one event loop
+55 tests, 30 API routes, 17 Telegram commands<br>10 packages under one async supervisor
 
 <sub>[Source on GitHub](https://github.com/aaronk2001/polymarked)</sub>
 
@@ -151,21 +151,21 @@ A single-process desktop agent with an event-driven architecture: a uv-workspace
 
 | Discipline | Projects |
 |---|---|
-| **Robotics** | [6-DOF robot arm](projects.md#6-dof-robot-arm-cad-electronics-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
-| **Controls & Automation** | [plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tag-io) |
-| **Computer Vision & ML** | [YOLOv8 edge inference on Hailo-8L](projects.md#yolov8-edge-inference-on-hailo-8l) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[AI HAT + VLM Defect Demo](projects.md#ai-hat--vlm-defect-demo) |
-| **Fabrication** | [Arcade Cabinet Enclosure](projects.md#arcade-cabinet-enclosure) |
+| **Robotics** | [6-DOF robot arm](projects.md#6-dof-robot-arm-cad-controller-board-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
+| **Controls & Automation** | [plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tags-from-python)<br>[PLC-Controls](projects.md#plc-controls-codesys-factory-io-and-real-opta-hardware) |
+| **Computer Vision & ML** | [YOLOv8 on a Hailo-8L](projects.md#yolov8-on-a-hailo-8l-real-time-detection-on-a-pi-5) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[Florence-2 defect inspection demo](projects.md#florence-2-defect-inspection-demo) |
+| **Fabrication** | [Arcade cabinet](projects.md#arcade-cabinet-solidworks-enclosure) |
 | **Software** | [Phantom](projects.md#phantom-short-form-video-automation) |
 
-**[Write-ups for all 15 projects](projects.md)**
+**[Write-ups for all 16 projects](projects.md)**
 
 ## Skills
 
 **Robotics & Systems:** ROS2, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 5**, MicroPython, PCA9685<br>
-**Computer Vision & ML:** YOLOv8, **OpenCV**, ONNX, Label Studio<br>
-**Controls & Automation:** Studio 5000 / RSLogix, Allen Bradley, EtherNet/IP, Modbus, SCADA<br>
-**Fabrication:** **KiCAD**, **SolidWorks**, Fusion 360, **3D Printing**, OpenSCAD, Sheet Metal<br>
-**Foundations:** **Linux**, **Git**, Docker, Prometheus, Grafana, **Flask**, Next.js, **TypeScript**, Bun, PostgreSQL, **SQLite**, **Claude API**, Ollama
+**Computer Vision & ML:** YOLOv8, **OpenCV**, Hailo-8L NPU, ONNX, PyTorch<br>
+**Controls & Automation:** Arduino Opta / Portenta, CODESYS, EtherNet/IP, Modbus<br>
+**Fabrication:** **KiCAD**, **EasyEDA**, **SolidWorks**, **3D Printing**<br>
+**Foundations:** **Linux**, **Git**, Docker, Prometheus, Grafana, **Flask**, Next.js, **TypeScript**, Bun, **SQLite**, **Claude API**, Ollama
 
 <details>
 <summary><b>Education and certifications</b></summary>

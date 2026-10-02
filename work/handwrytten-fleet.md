@@ -117,7 +117,7 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ## Related projects
 
-- [200+ robot fleet at Handwrytten](../projects.md#200-robot-fleet-at-handwrytten)
+- [Handwrytten: 200+ robot production fleet](../projects.md#handwrytten-200-robot-production-fleet)
 
 ---
 
@@ -125,6 +125,6 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ---
 
-**More case studies:** [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+**More case studies:** [Six-axis robot arm, from CAD to firmware](robot-arm.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC controls: simulated plants, real hardware and a Python tag bridge](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
 
 [Back to portfolio](../README.md)

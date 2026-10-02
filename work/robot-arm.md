@@ -2,83 +2,82 @@
 
 # Six-axis robot arm, from CAD to firmware
 
-**Parametric CAD, Teensy 4.1 controller board, ESP32-S3 firmware, ROS2 kinematics**<br>
+**Parametric CAD, a Teensy 4.1 controller board, ESP32-S3 firmware and ROS2 kinematics**<br>
 <sub>2026 | Design, electronics and firmware</sub>
 
-A 6-axis robot arm taken from parametric CAD through a custom controller board to firmware: closed-loop NEMA-17 steppers on TMC2209 drivers, a Teensy 4.1 controller board, ESP32-S3 firmware and a ROS2 kinematics package. Vision-guided pick-and-place is next.
+A 6-axis robot arm in the design stage, taken from parametric CAD through a custom controller board to firmware and a ROS2 kinematics stack. The physical build is next.
 
-<table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>ROS2 Jazzy</b><br><sub>driver stack</sub></td></tr></table>
+<table><tr><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>3</b><br><sub>controller design reviews</sub></td><td align="center"><b>ROS2 Jazzy</b><br><sub>driver and kinematics</sub></td></tr></table>
 
-`SolidWorks` `Fusion 360` `KiCAD` `Teensy 4.1` `ROS2 Jazzy` `Python` `ESP32-S3`
+`SolidWorks` `Python` `EasyEDA` `KiCad` `Teensy 4.1` `ESP32-S3` `PlatformIO` `ROS2 Jazzy` `NumPy`
 
 ## CAD and mechanical design
 
 **Problem**
 
-- A 3D-printed robot arm needs to balance stiffness, weight, and printability across six joints.
-- Each link carries both its own motors and the load of everything downstream. Joint geometry and material choice directly impact positional accuracy.
+- A printed arm has to balance stiffness, weight and printability across six joints.
+- Each link carries its own motor plus everything downstream, so joint geometry drives positional accuracy.
 
 **Constraints**
 
-- 3D printing in PETG on consumer hardware (Prusa MK4) limits layer adhesion and thermal cycling performance.
-- Every joint must use standard M3 fasteners and heat-set inserts for repeatable assembly.
+- Parts have to print in PETG on a consumer FDM printer.
+- Revisions have to be cheap: changing a link length should not mean redrawing the arm.
 
 **What I built**
 
-- The arm is designed around closed-loop NEMA-17 steppers with TMC2209 drivers, with each link shaped to minimize print-in-place supports while maintaining torsional stiffness.
-- SolidWorks handles primary structural design and FEA stress analysis on high-load joints. Fusion 360 covers organic fillets and export workflows.
-- All joints use captured M3 heat-set inserts for repeatable disassembly. The full assembly is parameterized so link lengths and motor mount offsets can be adjusted without redrawing.
-- The 3D model on the site is posed on the intended UR-style kinematic frames. The current printed V4 stack is a coaxial joint stack.
+- Structural parts in SolidWorks, plus Python scripts that generate each joint and link from one shared dimensions file, exported as 65 STEP files.
+- Link lengths and motor-mount offsets are parameters, so a revision regenerates the parts.
+- Designed around closed-loop NEMA-17 steppers on TMC2209 drivers.
 
-<table><tr><td align="center"><b>6</b><br><sub>axes</sub></td><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>Parametric</b><br><sub>assembly for rapid iteration</sub></td><td align="center"><b>Print-ready</b><br><sub>STL pack with orientations</sub></td></tr></table>
+<table><tr><td align="center"><b>65</b><br><sub>STEP files</sub></td><td align="center"><b>1</b><br><sub>shared dimensions file drives every part</sub></td></tr></table>
 
 ## Controller board
 
 **Problem**
 
-- Coordinating six independent stepper motors requires precise timing, real-time fault detection, and bidirectional communication with high-level controllers.
-- A breadboard of modules adds latency and debug friction compared to a single integrated board.
+- Six steppers need precise step timing, fault detection and a clean link to a higher-level controller.
+- A breadboard of modules adds latency and debug friction compared to one integrated board.
 
 **Constraints**
 
-- The PCB must fit inside the robot arm base without compromising structural integrity.
-- Power delivery for six stepper motors plus microcontroller needs stable 5V and 3.3V rails with thermal headroom.
+- The board has to fit inside the arm base.
+- Six motors plus logic need stable 12 V, 5 V and 3.3 V rails with thermal headroom.
 
 **What I built**
 
 - The V2 board (EasyEDA) puts a Teensy 4.1, six TMC2209 stepper driver channels, CAN, limit-switch inputs and regulated 12 V, 5 V and 3.3 V rails on one board.
-- The V2 engineering change order documents a corrected 5V regulated rail, Teensy 4.1 connection details and pinout, and a dedicated buck-rail power distribution sheet.
-- Three written design reviews cover the Teensy connections, an ESP32-S3 versus Teensy 4.1 comparison, and a final checklist. V3 moves to an ESP32-S3, with the netlist generated from Python (SKiDL) into KiCad.
+- An engineering change order corrected the 5 V rail and documented the Teensy pinout and buck-rail power distribution.
+- Three written design reviews cover the Teensy connections, an ESP32-S3 versus Teensy 4.1 comparison and a final checklist. V3 moves to an ESP32-S3, with the netlist generated from Python (SKiDL) into KiCad.
 
-<table><tr><td align="center"><b>3 rails</b><br><sub>12 V, 5 V, 3.3 V</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>3 design reviews</b><br><sub>with decision trade-offs</sub></td></tr></table>
+<table><tr><td align="center"><b>3 rails</b><br><sub>12 V, 5 V, 3.3 V</sub></td><td align="center"><b>6x TMC2209</b><br><sub>stepper drivers</sub></td><td align="center"><b>3</b><br><sub>written design reviews</sub></td></tr></table>
 
 ## Firmware and ROS2
 
 **Problem**
 
-- Real-time control of six synchronized motors requires modular, maintainable firmware that separates motion control, safety, and communication concerns.
-- External schedulers (like ROS2 trajectory_msgs) need a clean interface to command the arm without fighting over low-level details.
+- Six synchronized motors need firmware that keeps motion, safety and communication separate.
+- Higher-level code needs a clean command interface instead of low-level step details.
 
 **Constraints**
 
-- Firmware must enforce joint limits and detect electrical faults (stalled motors, overcurrent) in real time.
-- ROS2 messaging overhead must not interfere with the stepper pulse timing (microsecond-level determinism).
+- Joint limits and faults have to be enforced in firmware, not trusted to the host.
+- ROS2 messaging must not disturb step timing.
 
 **What I built**
 
-- The firmware is organized into four modules: motion.cpp handles trajectory interpolation and velocity control, safety.cpp enforces joint limits and fault detection, protocol.cpp manages serial command framing, and PROTOCOL.md documents the interfaces.
-- All modules build under PlatformIO targeting the Teensy 4.1, producing a unified binary with no external dependencies beyond the TMC2209 and motor drivers.
-- The ROS2 Jazzy driver stack includes arm_bringup and arm_description packages with launch files and joint_limits.yaml for hardware constraints.
-- Xbox controller and keyboard teleop nodes provide real-time joystick and keystroke input for manual control during commissioning.
+- ESP32-S3 firmware built with PlatformIO, split into motion.cpp (trajectory interpolation and velocity), safety.cpp (joint limits and faults) and protocol.cpp (serial framing), with the protocol written up in PROTOCOL.md.
+- A ROS2 Jazzy workspace with bringup and description packages, launch files and joint_limits.yaml.
+- A kinematics package with DH parameters and a damped least-squares IK solver in NumPy, exposed as a service.
+- Xbox controller and keyboard teleop for commissioning.
 
-<table><tr><td align="center"><b>ROS2 Jazzy</b><br><sub>driver stack</sub></td><td align="center"><b>motion.cpp</b><br><sub>trajectory control</sub></td><td align="center"><b>Xbox and keyboard</b><br><sub>teleop interface</sub></td><td align="center"><b>Microsecond timing</b><br><sub>stepper synchronization</sub></td></tr></table>
+<table><tr><td align="center"><b>ROS2 Jazzy</b><br><sub>workspace</sub></td><td align="center"><b>3</b><br><sub>firmware modules</sub></td><td align="center"><b>Xbox + keyboard</b><br><sub>teleop</sub></td></tr></table>
 
 ## Related projects
 
-- [6-DOF robot arm: CAD, electronics and firmware](../projects.md#6-dof-robot-arm-cad-electronics-and-firmware)
+- [6-DOF robot arm: CAD, controller board and firmware](../projects.md#6-dof-robot-arm-cad-controller-board-and-firmware)
 
 ---
 
-**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC integration and a controls lab](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
+**More case studies:** [Robotic fleet at production scale](handwrytten-fleet.md) | [Edge inference on a Raspberry Pi 5](pi-fleet-edge-ml.md) | [PLC controls: simulated plants, real hardware and a Python tag bridge](plc-controls.md) | [LANL Robotic Glovebox](lanl-glovebox.md)
 
 [Back to portfolio](../README.md)

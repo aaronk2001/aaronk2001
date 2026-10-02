@@ -1,61 +1,58 @@
 [Back to portfolio](../README.md)
 
-# PLC integration and a controls lab
+# PLC controls: simulated plants, real hardware and a Python tag bridge
 
-**Allen Bradley bridge, Modbus, OPC-UA, hardware-free CI**<br>
+**CODESYS and Factory I/O over Modbus TCP, ladder on Arduino Opta, Allen Bradley tags from Python**<br>
 <sub>2026 | Controls</sub>
 
-A Python bridge to Allen Bradley Studio 5000 exposing tags over EtherNet/IP and OPC-UA. A hardware-free controls lab runs PLC ladder logic in Factory I/O simulator with full sensor and actuator simulation for continuous integration.
+IEC 61131-3 logic in a CODESYS SoftPLC driving Factory I/O plants over Modbus TCP, ladder programs on real Arduino Opta and Portenta hardware, and a Python library for Allen Bradley tag I/O.
 
-<table><tr><td align="center"><b>EtherNet/IP + OPC-UA</b><br><sub>one interface</sub></td><td align="center"><b>Simulator</b><br><sub>hardware-free CI</sub></td><td align="center"><b>IEC 61131-3</b><br><sub>OpenPLC on Opta</sub></td><td align="center"><b>Modbus TCP</b><br><sub>station link</sub></td></tr></table>
+<table><tr><td align="center"><b>Modbus TCP</b><br><sub>verified on the wire</sub></td><td align="center"><b>11</b><br><sub>faults debugged and written up</sub></td><td align="center"><b>Opta + Portenta</b><br><sub>real hardware</sub></td><td align="center"><b>EtherNet/IP + OPC-UA</b><br><sub>one Python API</sub></td></tr></table>
 
-`Python` `Allen Bradley Studio 5000` `EtherNet/IP` `OPC-UA` `Modbus TCP` `Factory I/O` `OpenPLC`
+`CODESYS` `IEC 61131-3` `Factory I/O` `Modbus TCP` `OpenPLC` `Arduino Opta` `Python` `pycomm3` `asyncua`
 
-## Allen Bradley tag I/O bridge
-
-**Problem**
-
-- Studio 5000 runs on Windows in the plant but Python analytics and robotics code run on Linux or Raspberry Pi.
-- Pulling PLC tag state requires either expensive gateway hardware or reinventing the wheel with custom socket code.
-
-**Constraints**
-
-- EtherNet/IP packet parsing is proprietary and undocumented. Leveraging existing libraries saves weeks of reverse engineering.
-- Tag reads must be low-latency (under 100 ms) to stay responsive for real-time control loops.
-
-**What I built**
-
-- A Python bridge using the pycomm3 library establishes an EtherNet/IP connection to the Allen Bradley CompactLogix controller.
-- Tag state is published over OPC-UA so both legacy SCADA systems and modern cloud integrations can subscribe.
-- A Modbus TCP shim translates between continuous-process sensor readings (analog scalars, array data) and the discrete 16-bit registers Modbus expects.
-- The bridge runs as a systemd service with automatic reconnect and diagnostic logging for fault isolation.
-
-<table><tr><td align="center"><b>EtherNet/IP</b><br><sub>to Python bridge</sub></td><td align="center"><b>OPC-UA</b><br><sub>publish layer</sub></td><td align="center"><b>Modbus TCP</b><br><sub>legacy compatibility</sub></td><td align="center"><b><100 ms</b><br><sub>tag read latency</sub></td></tr></table>
-
-## Hardware-free controls lab
+## CODESYS and Factory I/O, then real hardware
 
 **Problem**
 
-- Learning PLC programming requires hardware: a real controller, I/O cards, sensors, and actuators. Cost and safety liability block experimentation.
-- Continuous integration for PLC code is nearly impossible without a simulator that tracks state across test runs.
+- Most self-taught PLC work never leaves the simulator, and simulator-only logic hides wiring and protocol faults.
 
 **Constraints**
 
-- A simulator must behave like real hardware: sensor reads must complete in the same cycle time as a real PLC (10-50 ms), and state must persist across rungs.
-- Ladder logic relies on rising/falling edge detection and boolean latch logic that simulators often oversimplify.
+- CODESYS V3.5 and Factory I/O 2.5, no paid PLC hardware beyond the Opta and Portenta.
+- Logic stays IEC 61131-3 so it ports to Allen Bradley later.
 
 **What I built**
 
-- Factory I/O provides a complete plant simulator: conveyor belts, sensors (proximity, photoelectric), pneumatic actuators, and a visual timeline of state changes.
-- Ladder logic runs in Studio 5000 Echo (a free IDE) and connects to Factory I/O over Modbus TCP.
-- A pytest harness logs the simulator state after each rung cycle and compares against expected behavior (e.g., motor on after detect, motor off after timeout).
-- The entire lab (IDE, simulator, test suite) runs in Docker Compose, so any developer can spin up a full environment in one command.
+- A 6-week sprint, one folder per week: toolchain, timers and counters, SFC state machines, function blocks and HMI, a capstone, then hardware.
+- The CODESYS SoftPLC runs as a Modbus TCP server and Factory I/O attaches as the client; the link was verified with raw FC01/FC02 probes.
+- Eleven real faults debugged and written up, including inverted retro-reflective sensor polarity, a 16-coil request against an 8-coil server (exception 02) and a Slave ID mismatch.
+- OpenPLC ladder programs running on an Arduino Opta's relays and a Portenta Machine Control's outputs.
 
-<table><tr><td align="center"><b>Simulator</b><br><sub>Factory I/O + Modbus</sub></td><td align="center"><b>IEC 61131-3</b><br><sub>Studio 5000 Echo</sub></td><td align="center"><b>pytest CI</b><br><sub>automated verification</sub></td><td align="center"><b>Docker Compose</b><br><sub>full reproducibility</sub></td></tr></table>
+<table><tr><td align="center"><b>Modbus TCP</b><br><sub>verified on the wire</sub></td><td align="center"><b>11</b><br><sub>faults written up</sub></td><td align="center"><b>Opta + Portenta</b><br><sub>real hardware</sub></td></tr></table>
+
+## Allen Bradley tags from Python
+
+**Problem**
+
+- Python analytics and robotics code need PLC tag data without gateway hardware or custom socket code.
+
+**Constraints**
+
+- No ControlLogix rack on the desk, so everything has to be testable without one.
+
+**What I built**
+
+- A Python library wrapping pycomm3 (EtherNet/IP) and asyncua (OPC-UA subscriptions) behind one interface for ControlLogix and CompactLogix tags.
+- SQLite tag logging with CSV export, threshold rules that alert to Telegram, and a live CLI dashboard.
+- A simulator that stands in for the PLC so the tests run without hardware. Validation against a physical controller is next.
+
+<table><tr><td align="center"><b>EtherNet/IP + OPC-UA</b><br><sub>one interface</sub></td><td align="center"><b>Simulator</b><br><sub>tests without hardware</sub></td><td align="center"><b>Telegram</b><br><sub>threshold alerts</sub></td></tr></table>
 
 ## Related projects
 
-- [plc-python-bridge, Allen Bradley tag I/O](../projects.md#plc-python-bridge-allen-bradley-tag-io)
+- [PLC-Controls: CODESYS, Factory I/O and real Opta hardware](../projects.md#plc-controls-codesys-factory-io-and-real-opta-hardware)
+- [plc-python-bridge: Allen Bradley tags from Python](../projects.md#plc-python-bridge-allen-bradley-tags-from-python)
 
 ---
 
