@@ -34,7 +34,7 @@ The work I care most about sits where hardware and software meet. Hardware is th
 
 0 to 200+ proprietary handwriting machines, 30,000 letters per day
 
-<b>0 to 200+</b> machines in production<br><b>30,000</b> letters/day, 3x growth
+<b>96%</b> fleet uptime via OEE<br><b>3-person</b> steady-state support team
 
 </td>
 <td width="50%" valign="top">
