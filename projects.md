@@ -213,7 +213,7 @@ The side walls taper to save material while carrying the monitor load, the scree
 
 <img src="assets/projects/career-planner.webp" alt="Ascent dashboard on demo data: countdowns, sprint rings and next goals" width="480">
 
-A local-first desktop app that runs a job search like an engineering project: a generated daily plan, an application pipeline with follow-up automation, learning tracks, certifications and a portfolio checklist, with a local-LLM assistant.
+A local-first desktop app for running a job search: a generated daily plan, an application pipeline with follow-up automation, learning tracks, certifications and a portfolio checklist, with a local-LLM assistant.
 
 - Daily plan generated from live data
 - Kanban pipeline with follow-up automation
@@ -284,7 +284,7 @@ Skill descriptions are embedded once and each request carries only the closest f
 
 <sub>2026 | Complete</sub>
 
-<img src="assets/projects/tts-app.webp" alt="TTS App" width="480">
+<img src="assets/projects/tts-app.webp" alt="Text-to-speech app: text box, rate, pitch and volume sliders, and playback controls" width="480">
 
 A local-first Windows text-to-speech app: paste text, or press Ctrl+Alt+S anywhere to hear the clipboard. Supertonic, Piper and SAPI5 engines; open source (GPL-3.0), no cloud, no telemetry.
 
@@ -338,7 +338,7 @@ Accounts link by logging in inside a real browser window, with no platform API k
 
 <img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="480">
 
-A local-first personal finance app with a coach that cannot invent numbers: a deterministic rule engine produces every claim, and a small local model only phrases it.
+A local-first personal finance app with a rule-based coach: a deterministic engine computes every number, and a small local model only writes the wording.
 
 - 700 tests across 46 files
 - Rule engine grounds every model claim
@@ -359,9 +359,9 @@ Electron and React with a Vite build, SQLite storage, and 700 Vitest tests acros
 
 <sub>2026 | In progress</sub>
 
-<img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="480">
+<img src="assets/projects/polymarked.webp" alt="PolyMarked dashboard in paper mode: portfolio value, P&L and open positions" width="480">
 
-A desktop agent that watches Polymarket wallets, scores them, mirrors their trades into a paper book, and runs the one edge that survived out-of-sample testing. Live trading is locked behind config.
+A desktop agent that watches Polymarket wallets, scores them, mirrors their trades into a paper book, and runs the one strategy that held up in out-of-sample testing. Live trading is locked behind config.
 
 - 55 tests, 30 API routes, 17 Telegram commands
 - 10 packages under one async supervisor

@@ -4,7 +4,7 @@
 
 **Robotics and Automation Engineer** | Tempe, AZ
 
-I took a fleet of robotic handwriting machines from zero to 200+ units.
+I helped scale a fleet of robotic handwriting machines from zero to 200+ units.
 
 **[Resume](assets/resume.pdf)** &nbsp;|&nbsp; **[LinkedIn](https://www.linkedin.com/in/aaron-karsten)**
 
@@ -14,19 +14,19 @@ I took a fleet of robotic handwriting machines from zero to 200+ units.
 
 ## About
 
-I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and ran the telemetry that keeps it all in production.
+I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and set up the fleet telemetry.
 
-My background spans the full stack of physical engineering: from SolidWorks CAD and KiCAD PCB design to YOLOv8 computer vision on edge hardware (Hailo-8L, Raspberry Pi 5) and PLC programming in Codesys and on Arduino Opta. I’m currently adding welding to that list. Phase 1 MIG is underway.
+Outside work I build across the stack: SolidWorks CAD, KiCAD PCBs, PLC programs in CODESYS and on Arduino Opta, and YOLOv8 vision on a Raspberry Pi 5 with a Hailo-8L. I also write desktop software in Python and TypeScript, and I'm learning MIG welding.
 
-The work I care most about sits where hardware and software meet. Hardware is the harder thing to fake, and the discipline that keeps software honest. My Handwrytten role ended in September 2026, so I’m looking for the next one. Robotics, controls, or automation engineering, in the Phoenix metro or remote.
+My Handwrytten role ended in September 2026. I'm looking for robotics, controls or automation engineering roles in the Phoenix metro or remote.
 
-## Selected work
+## Engineering
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<a href="work/handwrytten-fleet.md"><img src="assets/work/diagram-fleet.svg" alt="Fleet autonomy diagram" width="400"></a>
+<a href="work/handwrytten-fleet.md"><img src="assets/work/diagram-fleet.svg" alt="Fleet control loop: cloud job queue and barcode scan feed a Python control app on each machine, which drives the writing mechanism and reports status to AWS" width="400"></a>
 
 ### [Robotic fleet at production scale](work/handwrytten-fleet.md)
 
@@ -39,79 +39,81 @@ The work I care most about sits where hardware and software meet. Hardware is th
 </td>
 <td width="50%" valign="top">
 
-<a href="projects.md#ascent-career-os-desktop-app"><img src="assets/projects/career-planner.webp" alt="Ascent dashboard on demo data: countdowns, sprint rings and next goals" width="400"></a>
+<a href="work/plc-controls.md"><img src="assets/work/diagram-plc.svg" alt="CODESYS SoftPLC talking Modbus TCP to Factory I/O, and OpenPLC ladder running on Arduino Opta and Portenta Machine Control" width="400"></a>
 
-### [Ascent: career OS desktop app](projects.md#ascent-career-os-desktop-app)
+### [PLC controls](work/plc-controls.md)
 
-<sub>2026 | In progress</sub>
+<sub>2026 | Controls | In progress</sub>
 
-A local-first desktop app that runs a job search like an engineering project: a generated daily plan, an application pipeline with follow-up automation, learning tracks, certifications and a portfolio checklist, with a local-LLM assistant.
+CODESYS and Factory I/O over Modbus TCP, ladder on Arduino Opta, Allen Bradley tags from Python
 
-Daily plan generated from live data<br>Kanban pipeline with follow-up automation
-
-<sub>[Source on GitHub](https://github.com/aaronk2001/ascent-career-os)</sub>
+<b>11</b> faults debugged and written up<br><b>Opta + Portenta</b> real hardware
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-<a href="projects.md#walrus-local-coding-agent-for-the-terminal"><img src="assets/projects/walrus.webp" alt="Walrus in a terminal, reading a project and asking before it edits" width="400"></a>
+<a href="work/pi-fleet-edge-ml.md"><img src="assets/work/diagram-edge.svg" alt="Pi 5 and Hailo-8L pipeline from camera to YOLOv8n to ByteTrack, with throughput rising from 81 to 145 FPS after the fix" width="400"></a>
 
-### [Walrus: local coding agent for the terminal](projects.md#walrus-local-coding-agent-for-the-terminal)
+### [Edge inference on a Raspberry Pi 5](work/pi-fleet-edge-ml.md)
 
-<sub>2026 | Complete</sub>
+<sub>2026 | Computer vision and ML | In progress</sub>
 
-A Claude Code-style coding agent for the terminal that runs entirely on local Ollama models: 11 built-in tools, skills, subagents and MCP, with the default qwen3:1.7b fitting in 4 GB of VRAM.
+Hailo-8L NPU, YOLOv8 + ByteTrack, Florence-2 defect demo
 
-11 built-in tools, skills, subagents and MCP<br>Tool-call repair makes 1.7B models usable
+<b>144.7 FPS</b> YOLOv8n on the Hailo-8L<br><b>6.84 ms</b> p50 inference latency
+
+</td>
+<td width="50%" valign="top">
+
+<a href="work/lanl-glovebox.md"><img src="assets/work/diagram-lanl.svg" alt="Glovebox workflow: SolidWorks workcell, RoboDK validation and URScript routines, plus flight-stick teleoperation through a Python bridge to the UR5e and its digital twin" width="400"></a>
+
+### [LANL Robotic Glovebox](work/lanl-glovebox.md)
+
+<sub>Aug 2023 to Apr 2024 | Project Manager, 3-person team</sub>
+
+UR5e glovebox automation with a flight-stick digital twin
+
+<b>100%</b> project milestones delivered<br><b>6-DOF</b> UR5e workcell
+
+</td>
+</tr>
+</table>
+
+## Software
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+<a href="projects.md#walrus-local-coding-agent-for-the-terminal"><img src="assets/projects/walrus.webp" alt="Walrus in a terminal, reading a project and asking before it edits" width="260"></a>
+
+**[Walrus](projects.md#walrus-local-coding-agent-for-the-terminal)**<br><sub>local coding agent for the terminal</sub>
+
+A Claude Code-style coding agent for the terminal that runs entirely on local Ollama models.
 
 <sub>[Source on GitHub](https://github.com/aaronk2001/walrus)</sub>
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
-<a href="projects.md#text-to-speech-local-desktop-app-for-windows"><img src="assets/projects/tts-app.webp" alt="TTS App" width="400"></a>
+<a href="projects.md#text-to-speech-local-desktop-app-for-windows"><img src="assets/projects/tts-app.webp" alt="Text-to-speech app: text box, rate, pitch and volume sliders, and playback controls" width="260"></a>
 
-### [Text-to-Speech: local desktop app for Windows](projects.md#text-to-speech-local-desktop-app-for-windows)
+**[Text-to-Speech](projects.md#text-to-speech-local-desktop-app-for-windows)**<br><sub>local desktop app for Windows</sub>
 
-<sub>2026 | Complete</sub>
-
-A local-first Windows text-to-speech app: paste text, or press Ctrl+Alt+S anywhere to hear the clipboard.
-
-3 engines: Supertonic, Piper, SAPI5<br>Global Ctrl+Alt+S clipboard reader
+A local-first Windows text-to-speech app.
 
 <sub>[Source on GitHub](https://github.com/aaronk2001/text-to-speech)</sub>
 
 </td>
-</tr>
-<tr>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
-<a href="projects.md#mmm-personal-finance-desktop-app"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="400"></a>
+<a href="projects.md#mmm-personal-finance-desktop-app"><img src="assets/projects/mmm-money-hub.webp" alt="MMM overview dashboard running on built-in sample data: coach insights, runway, net worth and cash flow" width="260"></a>
 
-### [MMM: personal finance desktop app](projects.md#mmm-personal-finance-desktop-app)
+**[MMM](projects.md#mmm-personal-finance-desktop-app)**<br><sub>personal finance desktop app</sub>
 
-<sub>2026 | Complete</sub>
-
-A local-first personal finance app with a coach that cannot invent numbers: a deterministic rule engine produces every claim, and a small local model only phrases it.
-
-700 tests across 46 files<br>Rule engine grounds every model claim
-
-</td>
-<td width="50%" valign="top">
-
-<a href="projects.md#polymarked-polymarket-wallet-scoring-agent"><img src="assets/projects/polymarked.webp" alt="PolyMarked Dashboard" width="400"></a>
-
-### [PolyMarked: Polymarket wallet-scoring agent](projects.md#polymarked-polymarket-wallet-scoring-agent)
-
-<sub>2026 | In progress</sub>
-
-A desktop agent that watches Polymarket wallets, scores them, mirrors their trades into a paper book, and runs the one edge that survived out-of-sample testing.
-
-55 tests, 30 API routes, 17 Telegram commands<br>10 packages under one async supervisor
-
-<sub>[Source on GitHub](https://github.com/aaronk2001/polymarked)</sub>
+A local-first personal finance app with a rule-based coach.
 
 </td>
 </tr>
@@ -152,20 +154,18 @@ A desktop agent that watches Polymarket wallets, scores them, mirrors their trad
 | Discipline | Projects |
 |---|---|
 | **Robotics** | [6-DOF robot arm](projects.md#6-dof-robot-arm-cad-controller-board-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
-| **Controls & Automation** | [plc-python-bridge](projects.md#plc-python-bridge-allen-bradley-tags-from-python)<br>[PLC-Controls](projects.md#plc-controls-codesys-factory-io-and-real-opta-hardware) |
-| **Computer Vision & ML** | [YOLOv8 on a Hailo-8L](projects.md#yolov8-on-a-hailo-8l-real-time-detection-on-a-pi-5) <sub>([code](https://github.com/aaronk2001/yolov8-hailo-pi5))</sub><br>[Florence-2 defect inspection demo](projects.md#florence-2-defect-inspection-demo) |
 | **Fabrication** | [Arcade cabinet](projects.md#arcade-cabinet-solidworks-enclosure) |
-| **Software** | [Phantom](projects.md#phantom-short-form-video-automation) |
+| **Software** | [Ascent](projects.md#ascent-career-os-desktop-app) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation)<br>[PolyMarked](projects.md#polymarked-polymarket-wallet-scoring-agent) <sub>([code](https://github.com/aaronk2001/polymarked))</sub> |
 
 **[Write-ups for all 16 projects](projects.md)**
 
 ## Skills
 
-**Robotics & Systems:** ROS2, **Python**, C++, **UR5e / URScript**, **Raspberry Pi 5**, MicroPython, PCA9685<br>
-**Computer Vision & ML:** YOLOv8, **OpenCV**, Hailo-8L NPU, ONNX, PyTorch<br>
+**Robotics & Systems:** ROS2, Python, C++, UR5e / URScript, Raspberry Pi 5, MicroPython, PCA9685<br>
+**Computer Vision & ML:** YOLOv8, OpenCV, Hailo-8L NPU, ONNX, PyTorch<br>
 **Controls & Automation:** Arduino Opta / Portenta, CODESYS, EtherNet/IP, Modbus<br>
-**Fabrication:** **KiCAD**, **EasyEDA**, **SolidWorks**, **3D Printing**<br>
-**Foundations:** **Linux**, **Git**, Docker, Prometheus, Grafana, **Flask**, Next.js, **TypeScript**, Bun, **SQLite**, **Claude API**, Ollama
+**Fabrication:** KiCAD, EasyEDA, SolidWorks, 3D Printing<br>
+**Foundations:** Linux, Git, Docker, Prometheus, Grafana, Flask, Next.js, TypeScript, Bun, SQLite, Claude API, Ollama
 
 <details>
 <summary><b>Education and certifications</b></summary>
@@ -179,12 +179,6 @@ A desktop agent that watches Polymarket wallets, scores them, mirrors their trad
 | [Practical Deep Learning for Coders](https://course.fast.ai) | fast.ai | In progress |
 
 </details>
-
-## Now (September 2026)
-
-- **CODESYS + Factory I/O controls sprint:** ladder and ST against simulated plants
-- **V3 ARM controller PCB:** SKiDL to KiCad netlist, ESP32-S3 motor drive
-- **Edge ML on Hailo-8L:** YOLOv8 + VLM defect inspection (13 TOPS)
 
 ## Contact
 

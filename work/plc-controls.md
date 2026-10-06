@@ -5,6 +5,8 @@
 **CODESYS and Factory I/O over Modbus TCP, ladder on Arduino Opta, Allen Bradley tags from Python**<br>
 <sub>2026 | Controls</sub>
 
+<p align="center"><img src="../assets/work/diagram-plc.svg" alt="CODESYS SoftPLC talking Modbus TCP to Factory I/O, and OpenPLC ladder running on Arduino Opta and Portenta Machine Control" width="720"></p>
+
 IEC 61131-3 logic in a CODESYS SoftPLC driving Factory I/O plants over Modbus TCP, ladder programs on real Arduino Opta and Portenta hardware, and a Python library for Allen Bradley tag I/O.
 
 <table><tr><td align="center"><b>Modbus TCP</b><br><sub>verified on the wire</sub></td><td align="center"><b>11</b><br><sub>faults debugged and written up</sub></td><td align="center"><b>Opta + Portenta</b><br><sub>real hardware</sub></td><td align="center"><b>EtherNet/IP + OPC-UA</b><br><sub>one Python API</sub></td></tr></table>

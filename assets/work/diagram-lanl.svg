@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 525" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6e7681"/></marker></defs>
+  <rect x="1" y="1" width="838" height="523" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <text x="40" y="62" fill="#86a8c8" font-size="20" font-weight="600" letter-spacing="2">LANL ROBOTIC GLOVEBOX</text>
+  <text x="40" y="94" fill="#8b949e" font-size="20">ASU capstone, 3-person team</text>
+  <rect x="30" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="145" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">SolidWorks</text>
+  <text x="145" y="218" text-anchor="middle" fill="#8b949e" font-size="20">workcell design</text>
+  <rect x="305" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="420" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">RoboDK</text>
+  <text x="420" y="218" text-anchor="middle" fill="#8b949e" font-size="20">motion validated</text>
+  <rect x="580" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="695" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">URScript</text>
+  <text x="695" y="218" text-anchor="middle" fill="#8b949e" font-size="20">task routines</text>
+  <line x1="262" y1="190" x2="301" y2="190" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="537" y1="190" x2="576" y2="190" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="30" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="145" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Flight stick</text>
+  <text x="145" y="368" text-anchor="middle" fill="#8b949e" font-size="20">operator input</text>
+  <rect x="305" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="420" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Python bridge</text>
+  <text x="420" y="368" text-anchor="middle" fill="#8b949e" font-size="20">stick to arm</text>
+  <rect x="580" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5"/>
+  <text x="695" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">UR5e + twin</text>
+  <text x="695" y="368" text-anchor="middle" fill="#8b949e" font-size="20">6-DOF, simulated</text>
+  <line x1="262" y1="340" x2="301" y2="340" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="537" y1="340" x2="576" y2="340" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="30" y1="440" x2="810" y2="440" stroke="#30363d" stroke-width="2"/>
+  <text x="40" y="490" fill="#e6edf3" font-size="22" font-weight="600">8 months, 100% of milestones</text>
+  <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">sponsored by Los Alamos</text>
+</svg>

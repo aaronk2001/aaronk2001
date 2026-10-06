@@ -5,6 +5,8 @@
 **UR5e glovebox automation with a flight-stick digital twin**<br>
 <sub>Aug 2023 to Apr 2024 | Project Manager, 3-person team, ASU capstone sponsored by Los Alamos National Laboratory</sub>
 
+<p align="center"><img src="../assets/work/diagram-lanl.svg" alt="Glovebox workflow: SolidWorks workcell, RoboDK validation and URScript routines, plus flight-stick teleoperation through a Python bridge to the UR5e and its digital twin" width="720"></p>
+
 An 8-month LANL-sponsored capstone automating glovebox operations with a 6-DOF UR5e. I managed the 3-person team and built the teleoperation layer: a flight-stick digital twin driving the physical arm through a Python bridge.
 
 <table><tr><td align="center"><b>100%</b><br><sub>project milestones delivered</sub></td><td align="center"><b>6-DOF</b><br><sub>UR5e workcell</sub></td><td align="center"><b>PM</b><br><sub>led 3-person team</sub></td></tr></table>

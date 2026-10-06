@@ -13,7 +13,7 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ## Robotic fleet ramp to 200+ units
 
-<p align="center"><img src="../assets/work/diagram-fleet.svg" alt="Fleet autonomy diagram" width="720"></p>
+<p align="center"><img src="../assets/work/diagram-fleet.svg" alt="Fleet control loop: cloud job queue and barcode scan feed a Python control app on each machine, which drives the writing mechanism and reports status to AWS" width="720"></p>
 
 **Problem**
 
