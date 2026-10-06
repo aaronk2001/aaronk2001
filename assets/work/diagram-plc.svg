@@ -1,31 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 525" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
-  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6e7681"/></marker></defs>
-  <rect x="1" y="1" width="838" height="523" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 525" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="CODESYS SoftPLC talking Modbus TCP to Factory I/O, and OpenPLC ladder running on Arduino Opta and Portenta Machine Control">
+<title>CODESYS SoftPLC talking Modbus TCP to Factory I/O, and OpenPLC ladder running on Arduino Opta and Portenta Machine Control</title>
+<style>
+
+.flow { stroke-dasharray: 7 7; animation: flow 1s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -14; } }
+.pulse { animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.35; } }
+.led { animation: led 1.6s steps(1) infinite; }
+@keyframes led { 50% { opacity: 0.25; } }
+.fill { transform-box: fill-box; transform-origin: left; animation: fill 6s ease-out infinite; }
+@keyframes fill { 0% { transform: scaleX(0); } 30%, 100% { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6e7681"/></marker>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#21262d"/></pattern>
+  <radialGradient id="glow" cx="0.2" cy="0" r="0.9"><stop offset="0" stop-color="#86a8c8" stop-opacity="0.18"/><stop offset="1" stop-color="#86a8c8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="1" y="1" width="838" height="523" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+<rect x="1" y="1" width="838" height="523" rx="14" fill="url(#dots)"/>
+<rect x="1" y="1" width="838" height="523" rx="14" fill="url(#glow)"/>
   <text x="40" y="62" fill="#86a8c8" font-size="20" font-weight="600" letter-spacing="2">PLC CONTROLS LAB</text>
   <text x="40" y="94" fill="#8b949e" font-size="20">Simulated plants first, then real hardware</text>
-  <rect x="30" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5"/>
+  <rect x="30" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5" class="pulse"/>
   <text x="145" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">CODESYS</text>
-  <text x="145" y="218" text-anchor="middle" fill="#8b949e" font-size="20">SoftPLC, IEC 61131-3</text>
+  <text x="145" y="220" text-anchor="middle" fill="#8b949e" font-size="20">SoftPLC, IEC 61131-3</text>
   <rect x="305" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Modbus TCP</text>
-  <text x="420" y="218" text-anchor="middle" fill="#8b949e" font-size="20">server to client</text>
+  <text x="420" y="220" text-anchor="middle" fill="#8b949e" font-size="20">server to client</text>
   <rect x="580" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Factory I/O</text>
-  <text x="695" y="218" text-anchor="middle" fill="#8b949e" font-size="20">simulated plants</text>
-  <line x1="262" y1="190" x2="301" y2="190" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)" marker-start="url(#arr)"/>
-  <line x1="537" y1="190" x2="576" y2="190" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)" marker-start="url(#arr)"/>
-  <rect x="30" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5"/>
+  <text x="695" y="220" text-anchor="middle" fill="#8b949e" font-size="20">simulated plants</text>
+  <line x1="262" y1="190" x2="301" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <line x1="537" y1="190" x2="576" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)" marker-start="url(#arr)"/>
+  <rect x="30" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5" class="pulse"/>
   <text x="145" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">OpenPLC</text>
-  <text x="145" y="368" text-anchor="middle" fill="#8b949e" font-size="20">ladder programs</text>
+  <text x="145" y="370" text-anchor="middle" fill="#8b949e" font-size="20">ladder programs</text>
   <rect x="305" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Arduino Opta</text>
-  <text x="420" y="368" text-anchor="middle" fill="#8b949e" font-size="20">relay outputs</text>
+  <text x="420" y="370" text-anchor="middle" fill="#8b949e" font-size="20">relay outputs</text>
   <rect x="580" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Portenta MC</text>
-  <text x="695" y="368" text-anchor="middle" fill="#8b949e" font-size="20">machine outputs</text>
-  <line x1="262" y1="340" x2="301" y2="340" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
-  <line x1="537" y1="340" x2="576" y2="340" stroke="#6e7681" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="695" y="370" text-anchor="middle" fill="#8b949e" font-size="20">machine outputs</text>
+  <line x1="262" y1="340" x2="301" y2="340" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
+  <line x1="537" y1="340" x2="576" y2="340" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="30" y1="440" x2="810" y2="440" stroke="#30363d" stroke-width="2"/>
+
   <text x="40" y="490" fill="#e6edf3" font-size="22" font-weight="600">11 faults debugged and written up</text>
   <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">link verified on the wire</text>
 </svg>

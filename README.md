@@ -1,16 +1,6 @@
-<img src="assets/aaron-portrait.jpg" alt="Aaron Karsten" width="190" align="right">
+<img src="assets/banner.svg" alt="Aaron Karsten, Robotics and Automation Engineer, Tempe, AZ. 200+ machines in production, 30,000 letters per day, 96% fleet uptime (OEE), 10 h to 3.5 h mean time to repair." width="100%">
 
-# Aaron Karsten
-
-**Robotics and Automation Engineer** | Tempe, AZ
-
-I helped scale a fleet of robotic handwriting machines from zero to 200+ units.
-
-**[Resume](assets/resume.pdf)** &nbsp;|&nbsp; **[LinkedIn](https://www.linkedin.com/in/aaron-karsten)**
-
-<br clear="right">
-
-<table><tr><td align="center"><b>200+</b><br><sub>machines in production</sub></td><td align="center"><b>30,000</b><br><sub>letters per day</sub></td><td align="center"><b>96%</b><br><sub>fleet uptime (OEE)</sub></td><td align="center"><b>10 h to 3.5 h</b><br><sub>mean time to repair</sub></td></tr></table>
+<p align="center"><a href="assets/resume.pdf"><b>Resume</b></a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/aaron-karsten"><b>LinkedIn</b></a> &nbsp;|&nbsp; <a href="projects.md"><b>All projects</b></a></p>
 
 ## About
 
@@ -121,6 +111,8 @@ A local-first personal finance app with a rule-based coach.
 
 ## Experience
 
+<img src="assets/timeline.svg" alt="Timeline: B.S.E. Robotics at Arizona State, graduated Dec 2024. LANL glovebox capstone Aug 2023 to Apr 2024. Handwrytten intern Sep 2023 to Jun 2024, promoted to Robotics Engineer II, through Sep 2026." width="100%">
+
 ### Robotics Engineer II
 **Handwrytten** | Sep 2023 to Sep 2026<br><sub>Promoted from Robotics Engineer Intern (Sep 2023 to Jun 2024) in 10 months</sub>
 
@@ -161,11 +153,18 @@ A local-first personal finance app with a rule-based coach.
 
 ## Skills
 
+<img src="assets/skills.svg" alt="Skills by discipline, listed as text below" width="100%">
+
+<details>
+<summary><b>Skills as text</b></summary>
+
 **Robotics & Systems:** ROS2, Python, C++, UR5e / URScript, Raspberry Pi 5, MicroPython, PCA9685<br>
 **Computer Vision & ML:** YOLOv8, OpenCV, Hailo-8L NPU, ONNX, PyTorch<br>
 **Controls & Automation:** Arduino Opta / Portenta, CODESYS, EtherNet/IP, Modbus<br>
 **Fabrication:** KiCAD, EasyEDA, SolidWorks, 3D Printing<br>
 **Foundations:** Linux, Git, Docker, Prometheus, Grafana, Flask, Next.js, TypeScript, Bun, SQLite, Claude API, Ollama
+
+</details>
 
 <details>
 <summary><b>Education and certifications</b></summary>
@@ -174,6 +173,7 @@ A local-first personal finance app with a rule-based coach.
 |---|---|---|
 | [BSE Robotics Engineering](https://engineering.asu.edu/robotics/) | Arizona State University | 2024 |
 | [UR Academy Certification](https://academy.universal-robots.com) | Universal Robots | 2023 |
+| [MATLAB Fundamentals](https://matlabacademy.mathworks.com/details/matlab-fundamentals/mlbe) | MathWorks | 2024 |
 | [Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) | Google | In progress |
 | [Rockwell Automation Training](https://www.rockwellautomation.com/en-us/training.html) | Rockwell Automation | In progress |
 | [Practical Deep Learning for Coders](https://course.fast.ai) | fast.ai | In progress |

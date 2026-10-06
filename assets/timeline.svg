@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="Timeline: B.S.E. Robotics at Arizona State, graduated Dec 2024. LANL glovebox capstone Aug 2023 to Apr 2024. Handwrytten intern Sep 2023 to Jun 2024, promoted to Robotics Engineer II, through Sep 2026.">
+<title>Timeline: B.S.E. Robotics at Arizona State, graduated Dec 2024. LANL glovebox capstone Aug 2023 to Apr 2024. Handwrytten intern Sep 2023 to Jun 2024, promoted to Robotics Engineer II, through Sep 2026.</title>
+<style>
+
+.bar { transform-box: fill-box; transform-origin: left; animation: grow 9s ease-out infinite; }
+@keyframes grow { 0% { transform: scaleX(0); } 22%, 100% { transform: scaleX(1); } }
+.pin { opacity: 0; animation: pin 9s infinite; }
+@keyframes pin { 0%, 20% { opacity: 0; } 26%, 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .pin { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6e7681"/></marker>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#21262d"/></pattern>
+  <radialGradient id="glow" cx="0.2" cy="0" r="0.9"><stop offset="0" stop-color="#86a8c8" stop-opacity="0.18"/><stop offset="1" stop-color="#86a8c8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="1" y="1" width="1198" height="328" rx="14" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+<rect x="1" y="1" width="1198" height="328" rx="14" fill="url(#dots)"/>
+<rect x="1" y="1" width="1198" height="328" rx="14" fill="url(#glow)"/>
+
+<text x="40" y="44" fill="#86a8c8" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="18" letter-spacing="3">TIMELINE</text>
+<line x1="250" y1="70" x2="250" y2="268" stroke="#30363d" stroke-dasharray="3 6"/>
+<text x="250" y="296" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="17">2023</text>
+<line x1="477.5" y1="70" x2="477.5" y2="268" stroke="#30363d" stroke-dasharray="3 6"/>
+<text x="477.5" y="296" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="17">2024</text>
+<line x1="705" y1="70" x2="705" y2="268" stroke="#30363d" stroke-dasharray="3 6"/>
+<text x="705" y="296" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="17">2025</text>
+<line x1="932.5" y1="70" x2="932.5" y2="268" stroke="#30363d" stroke-dasharray="3 6"/>
+<text x="932.5" y="296" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="17">2026</text>
+<line x1="1160" y1="70" x2="1160" y2="268" stroke="#30363d" stroke-dasharray="3 6"/>
+<text x="1160" y="296" text-anchor="middle" fill="#8b949e" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="17">2027</text>
+<text x="698.0416666666667" y="115" fill="#86a8c8" font-size="16" class="pin" style="animation-delay:0.4s">Graduated Dec 2024</text>
+<text x="40" y="108" fill="#e6edf3" font-size="20" font-weight="600">Arizona State</text>
+<text x="40" y="130" fill="#8b949e" font-size="16">B.S.E. Robotics</text>
+<rect x="250" y="92" width="436.04166666666674" height="34" rx="8" fill="#3d4a5c" class="bar" style="animation-delay:0s"/>
+<text x="262" y="115" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0s">B.S.E. Robotics Engineering</text>
+
+<text x="40" y="170" fill="#e6edf3" font-size="20" font-weight="600">Los Alamos x ASU</text>
+<text x="40" y="192" fill="#8b949e" font-size="16">capstone, PM</text>
+<rect x="382.70833333333337" y="154" width="151.66666666666663" height="34" rx="8" fill="#5b7590" class="bar" style="animation-delay:0.25s"/>
+<text x="394.70833333333337" y="177" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0.25s">UR5e glovebox</text>
+
+<text x="40" y="232" fill="#e6edf3" font-size="20" font-weight="600">Handwrytten</text>
+<text x="40" y="254" fill="#8b949e" font-size="16">robotics</text>
+<rect x="401.66666666666663" y="216" width="170.6250000000001" height="34" rx="8" fill="#5b7590" class="bar" style="animation-delay:0.5s"/>
+<text x="413.66666666666663" y="239" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0.5s">Intern</text>
+<rect x="572.2916666666667" y="216" width="511.8749999999998" height="34" rx="8" fill="#86a8c8" class="bar" style="animation-delay:1s"/>
+<text x="584.2916666666667" y="239" fill="#0d1117" font-size="17" font-weight="600" class="pin" style="animation-delay:1s">Robotics Engineer II: fleet 0 to 200+</text>
+<g class="pin" style="animation-delay:0.8s"><circle cx="572.2916666666667" cy="58" r="5" fill="#86a8c8"/><text x="582.2916666666667" y="64" fill="#86a8c8" font-size="16">Promoted in 10 months</text></g>
+<g class="pin" style="animation-delay:0.8s"><circle cx="1084.1666666666665" cy="58" r="5" fill="#86a8c8"/><text x="1094.1666666666665" y="64" fill="#86a8c8" font-size="16">Role ended</text></g>
+</svg>
