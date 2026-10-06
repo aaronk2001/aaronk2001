@@ -28,25 +28,25 @@
   <text x="145" y="220" text-anchor="middle" fill="#8b949e" font-size="20">SoftPLC, IEC 61131-3</text>
   <rect x="305" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Modbus TCP</text>
-  <text x="420" y="220" text-anchor="middle" fill="#8b949e" font-size="20">server to client</text>
+  <text x="420" y="220" text-anchor="middle" fill="#8b949e" font-size="20">Server to client</text>
   <rect x="580" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Factory I/O</text>
-  <text x="695" y="220" text-anchor="middle" fill="#8b949e" font-size="20">simulated plants</text>
+  <text x="695" y="220" text-anchor="middle" fill="#8b949e" font-size="20">Simulated plants</text>
   <line x1="262" y1="190" x2="301" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)" marker-start="url(#arr)"/>
   <line x1="537" y1="190" x2="576" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)" marker-start="url(#arr)"/>
   <rect x="30" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5" class="pulse"/>
   <text x="145" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">OpenPLC</text>
-  <text x="145" y="370" text-anchor="middle" fill="#8b949e" font-size="20">ladder programs</text>
+  <text x="145" y="370" text-anchor="middle" fill="#8b949e" font-size="20">Ladder programs</text>
   <rect x="305" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Arduino Opta</text>
-  <text x="420" y="370" text-anchor="middle" fill="#8b949e" font-size="20">relay outputs</text>
+  <text x="420" y="370" text-anchor="middle" fill="#8b949e" font-size="20">Relay outputs</text>
   <rect x="580" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Portenta MC</text>
-  <text x="695" y="370" text-anchor="middle" fill="#8b949e" font-size="20">machine outputs</text>
+  <text x="695" y="370" text-anchor="middle" fill="#8b949e" font-size="20">Machine outputs</text>
   <line x1="262" y1="340" x2="301" y2="340" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="537" y1="340" x2="576" y2="340" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="30" y1="440" x2="810" y2="440" stroke="#30363d" stroke-width="2"/>
 
   <text x="40" y="490" fill="#e6edf3" font-size="22" font-weight="600">11 faults debugged and written up</text>
-  <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">link verified on the wire</text>
+  <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">Link verified on the wire</text>
 </svg>

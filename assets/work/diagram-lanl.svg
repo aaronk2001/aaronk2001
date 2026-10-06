@@ -25,21 +25,21 @@
   <text x="40" y="94" fill="#8b949e" font-size="20">ASU capstone, 3-person team</text>
   <rect x="30" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="145" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">SolidWorks</text>
-  <text x="145" y="220" text-anchor="middle" fill="#8b949e" font-size="20">workcell design</text>
+  <text x="145" y="220" text-anchor="middle" fill="#8b949e" font-size="20">Workcell design</text>
   <rect x="305" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">RoboDK</text>
-  <text x="420" y="220" text-anchor="middle" fill="#8b949e" font-size="20">motion validated</text>
+  <text x="420" y="220" text-anchor="middle" fill="#8b949e" font-size="20">Motion validated</text>
   <rect x="580" y="140" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="184" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">URScript</text>
-  <text x="695" y="220" text-anchor="middle" fill="#8b949e" font-size="20">task routines</text>
+  <text x="695" y="220" text-anchor="middle" fill="#8b949e" font-size="20">Task routines</text>
   <line x1="262" y1="190" x2="301" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="537" y1="190" x2="576" y2="190" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <rect x="30" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="145" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Flight stick</text>
-  <text x="145" y="370" text-anchor="middle" fill="#8b949e" font-size="20">operator input</text>
+  <text x="145" y="370" text-anchor="middle" fill="#8b949e" font-size="20">Operator input</text>
   <rect x="305" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="420" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Python bridge</text>
-  <text x="420" y="370" text-anchor="middle" fill="#8b949e" font-size="20">stick to arm</text>
+  <text x="420" y="370" text-anchor="middle" fill="#8b949e" font-size="20">Stick to arm</text>
   <rect x="580" y="290" width="230" height="100" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5" class="pulse"/>
   <text x="695" y="334" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">UR5e + twin</text>
   <text x="695" y="370" text-anchor="middle" fill="#8b949e" font-size="20">6-DOF, simulated</text>
@@ -48,5 +48,5 @@
   <line x1="30" y1="440" x2="810" y2="440" stroke="#30363d" stroke-width="2"/>
 
   <text x="40" y="490" fill="#e6edf3" font-size="22" font-weight="600">8 months, 100% of milestones</text>
-  <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">sponsored by Los Alamos</text>
+  <text x="800" y="490" text-anchor="end" fill="#8b949e" font-size="20">Sponsored by Los Alamos</text>
 </svg>

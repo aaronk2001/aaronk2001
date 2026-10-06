@@ -25,21 +25,21 @@
   <text x="40" y="94" fill="#8b949e" font-size="20">Same software on every machine</text>
   <rect x="30" y="140" width="230" height="110" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="145" y="189" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Cloud job queue</text>
-  <text x="145" y="225" text-anchor="middle" fill="#8b949e" font-size="20">pulled over WiFi</text>
+  <text x="145" y="225" text-anchor="middle" fill="#8b949e" font-size="20">Pulled over WiFi</text>
   <rect x="30" y="290" width="230" height="110" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="145" y="339" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Barcode scan</text>
-  <text x="145" y="375" text-anchor="middle" fill="#8b949e" font-size="20">one scan starts a job</text>
+  <text x="145" y="375" text-anchor="middle" fill="#8b949e" font-size="20">One scan starts a job</text>
   <rect x="305" y="140" width="230" height="260" rx="12" fill="#161b22" stroke="#86a8c8" stroke-width="2.5" class="pulse"/>
   <text x="420" y="234" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Python</text>
   <text x="420" y="266" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">control app</text>
-  <text x="420" y="302" text-anchor="middle" fill="#8b949e" font-size="20">multi-threaded</text>
-  <text x="420" y="330" text-anchor="middle" fill="#8b949e" font-size="20">autonomous jobs</text>
+  <text x="420" y="302" text-anchor="middle" fill="#8b949e" font-size="20">Multi-threaded</text>
+  <text x="420" y="330" text-anchor="middle" fill="#8b949e" font-size="20">Autonomous jobs</text>
   <rect x="580" y="140" width="230" height="110" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="189" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">Pen + paper</text>
-  <text x="695" y="225" text-anchor="middle" fill="#8b949e" font-size="20">writing mechanism</text>
+  <text x="695" y="225" text-anchor="middle" fill="#8b949e" font-size="20">Writing mechanism</text>
   <rect x="580" y="290" width="230" height="110" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2"/>
   <text x="695" y="339" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="600">AWS status</text>
-  <text x="695" y="375" text-anchor="middle" fill="#8b949e" font-size="20">live OEE tracking</text>
+  <text x="695" y="375" text-anchor="middle" fill="#8b949e" font-size="20">Live OEE tracking</text>
   <line x1="262" y1="195" x2="301" y2="195" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="262" y1="345" x2="301" y2="345" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>
   <line x1="537" y1="195" x2="576" y2="195" stroke="#6e7681" stroke-width="2.5" class="flow" marker-end="url(#arr)"/>

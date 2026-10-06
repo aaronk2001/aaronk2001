@@ -37,12 +37,12 @@
 <text x="262" y="115" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0s">B.S.E. Robotics Engineering</text>
 
 <text x="40" y="170" fill="#e6edf3" font-size="20" font-weight="600">Los Alamos x ASU</text>
-<text x="40" y="192" fill="#8b949e" font-size="16">capstone, PM</text>
+<text x="40" y="192" fill="#8b949e" font-size="16">Capstone, PM</text>
 <rect x="382.70833333333337" y="154" width="151.66666666666663" height="34" rx="8" fill="#5b7590" class="bar" style="animation-delay:0.25s"/>
 <text x="394.70833333333337" y="177" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0.25s">UR5e glovebox</text>
 
 <text x="40" y="232" fill="#e6edf3" font-size="20" font-weight="600">Handwrytten</text>
-<text x="40" y="254" fill="#8b949e" font-size="16">robotics</text>
+<text x="40" y="254" fill="#8b949e" font-size="16">Robotics</text>
 <rect x="401.66666666666663" y="216" width="170.6250000000001" height="34" rx="8" fill="#5b7590" class="bar" style="animation-delay:0.5s"/>
 <text x="413.66666666666663" y="239" fill="#e6edf3" font-size="17" font-weight="600" class="pin" style="animation-delay:0.5s">Intern</text>
 <rect x="572.2916666666667" y="216" width="511.8749999999998" height="34" rx="8" fill="#86a8c8" class="bar" style="animation-delay:1s"/>
