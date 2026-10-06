@@ -73,7 +73,7 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ## PLC-based automated QA machines
 
-<p align="center"><img src="../assets/work/diagram-plc-qa.svg" alt="PLC QA machine diagram" width="720"></p>
+<p align="center"><img src="../assets/work/diagram-plc-qa.svg" alt="Automated inspection machine: letters feed a PLC that sequences them under YOLO vision inspection, passing to packaging or failing to rework" width="720"></p>
 
 **Problem**
 
@@ -95,7 +95,7 @@ Handwrytten describes its fleet as the largest of its kind in the world (granted
 
 ## Fleet telemetry and OEE system
 
-<p align="center"><img src="../assets/work/diagram-telemetry.svg" alt="Telemetry pipeline diagram" width="720"></p>
+<p align="center"><img src="../assets/work/diagram-telemetry.svg" alt="Fleet telemetry: 200+ machines report live status over WiFi to AWS, an SQL pipeline computes OEE, and Prometheus with Grafana alerts on faults" width="720"></p>
 
 **Problem**
 
