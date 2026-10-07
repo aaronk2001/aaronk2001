@@ -346,6 +346,8 @@ A local-first personal finance app with a rule-based coach: a deterministic engi
 
 `Electron` `React` `JavaScript` `Vite` `SQLite` `Vitest` `Ollama`
 
+[Source on GitHub](https://github.com/aaronk2001/mmm-app)
+
 <details>
 <summary>How it works</summary>
 

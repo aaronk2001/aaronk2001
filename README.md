@@ -105,6 +105,8 @@ A local-first Windows text-to-speech app.
 
 A local-first personal finance app with a rule-based coach.
 
+<sub>[Source on GitHub](https://github.com/aaronk2001/mmm-app)</sub>
+
 </td>
 </tr>
 </table>
