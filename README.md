@@ -1,10 +1,10 @@
-<img src="assets/banner.svg" alt="Aaron Karsten, Robotics and Automation Engineer, Tempe, AZ. 200+ machines in production, 30,000 letters per day, 96% fleet uptime (OEE), 10 h to 3.5 h mean time to repair." width="100%">
+<img src="assets/banner.svg" alt="Aaron Karsten, Robotics and Automation Engineer, Scottsdale, AZ. 200+ machines in production, 30,000 letters per day, 96% fleet uptime (OEE), 10 h to 3.5 h mean time to repair." width="100%">
 
 <p align="center"><a href="assets/resume.pdf"><b>Resume</b></a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/aaron-karsten"><b>LinkedIn</b></a> &nbsp;|&nbsp; <a href="projects.md"><b>All projects</b></a></p>
 
 ## About
 
-I’m a robotics engineer based in Tempe, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and set up the fleet telemetry.
+I’m a robotics engineer based in Scottsdale, Arizona. At Handwrytten I helped scale a fleet of proprietary robotic handwriting machines from 0 to 200+ units producing 30,000 letters a day. I built the automated inspection machines, shipped custom PCBs, and set up the fleet telemetry.
 
 Outside work I build across the stack: SolidWorks CAD, KiCAD PCBs, PLC programs in CODESYS and on Arduino Opta, and YOLOv8 vision on a Raspberry Pi 5 with a Hailo-8L. I also write desktop software in Python and TypeScript, and I'm learning MIG welding.
 
@@ -149,7 +149,7 @@ A local-first personal finance app with a rule-based coach.
 |---|---|
 | **Robotics** | [6-DOF robot arm](projects.md#6-dof-robot-arm-cad-controller-board-and-firmware)<br>[RobotCar](projects.md#robotcar-autonomous-fpv-rover) |
 | **Fabrication** | [Arcade cabinet](projects.md#arcade-cabinet-solidworks-enclosure) |
-| **Software** | [Ascent](projects.md#ascent-career-os-desktop-app) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation)<br>[PolyMarked](projects.md#polymarked-polymarket-wallet-scoring-agent) <sub>([code](https://github.com/aaronk2001/polymarked))</sub> |
+| **Software** | [Ascent](projects.md#ascent-career-os-desktop-app) <sub>([code](https://github.com/aaronk2001/ascent-career-os))</sub><br>[Phantom](projects.md#phantom-short-form-video-automation)<br>[PolyMarked](projects.md#polymarked-prediction-market-odds-tracker) <sub>([code](https://github.com/aaronk2001/polymarked))</sub> |
 
 **[Write-ups for all 16 projects](projects.md)**
 
@@ -160,7 +160,7 @@ A local-first personal finance app with a rule-based coach.
 <details>
 <summary><b>Skills as text</b></summary>
 
-**Robotics & Systems:** ROS2, Python, C++, UR5e / URScript, Raspberry Pi 5, MicroPython, PCA9685<br>
+**Robotics & Systems:** ROS 2 (Jazzy, hands-on), Python, C++, UR5e / URScript, Raspberry Pi 5, MicroPython, PCA9685<br>
 **Computer Vision & ML:** YOLOv8, OpenCV, Hailo-8L NPU, ONNX, PyTorch<br>
 **Controls & Automation:** Arduino Opta / Portenta, CODESYS, EtherNet/IP, Modbus<br>
 **Fabrication:** KiCAD, EasyEDA, SolidWorks, 3D Printing<br>
@@ -184,4 +184,4 @@ A local-first personal finance app with a rule-based coach.
 
 ## Contact
 
-Tempe, AZ. Open to robotics, controls and automation roles, Phoenix metro or remote. Reach me on [LinkedIn](https://www.linkedin.com/in/aaron-karsten), or read the [Resume](assets/resume.pdf).
+Scottsdale, AZ. Open to robotics, controls and automation roles, Phoenix metro or remote. Reach me on [LinkedIn](https://www.linkedin.com/in/aaron-karsten), or read the [Resume](assets/resume.pdf).

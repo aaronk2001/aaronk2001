@@ -7,7 +7,7 @@
 
 <p align="center"><img src="../assets/work/diagram-edge.svg" alt="Pi 5 and Hailo-8L pipeline from camera to YOLOv8n to ByteTrack, with throughput rising from 81 to 145 FPS after the fix" width="720"></p>
 
-One Raspberry Pi 5 (16 GB) with a Hailo-8L AI HAT+ (13 TOPS). YOLOv8n with ByteTrack runs at 144.7 FPS on the NPU after a profiling fix, and an open-vocabulary defect demo built on Florence-2 is in progress.
+One Raspberry Pi 5 (16 GB) with a Hailo-8L AI HAT+ (13 TOPS). YOLOv8n runs at 144.7 FPS on the Hailo-8L NPU (6.8 ms p50) after a profiling fix; the live webcam pipeline with ByteTrack runs at the camera's 15 FPS. An open-vocabulary defect demo built on Florence-2 is in progress.
 
 <table><tr><td align="center"><b>144.7 FPS</b><br><sub>YOLOv8n on the Hailo-8L</sub></td><td align="center"><b>6.84 ms</b><br><sub>p50 inference latency</sub></td><td align="center"><b>13 TOPS</b><br><sub>Hailo-8L NPU</sub></td><td align="center"><b>1 Pi 5</b><br><sub>16 GB, everything on-device</sub></td></tr></table>
 

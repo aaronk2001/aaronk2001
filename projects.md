@@ -143,7 +143,7 @@ The weeks run from toolchain, timers and counters through SFC state machines and
 
 <img src="assets/projects/yolov8-hailo.svg" alt="Pipeline from threaded capture through Hailo-8L inference, NMS decode and ByteTrack, with throughput measured at 80.99 FPS before and 144.74 FPS after activating the network group once" width="480">
 
-YOLOv8n detection and ByteTrack tracking on a Raspberry Pi 5 with a Hailo-8L NPU. A profiling fix took throughput from 81 to 145 FPS (640x640, 6.8 ms p50).
+YOLOv8n detection and ByteTrack tracking on a Raspberry Pi 5 with a Hailo-8L NPU. YOLOv8n runs at 144.7 FPS on the NPU (640x640, 6.8 ms p50), up from 81 after a profiling fix; the live webcam pipeline with ByteTrack runs at the camera's 15 FPS.
 
 - 144.74 FPS on the Hailo-8L, up from 80.99 (yolov8n, 640x640)
 - 6.84 ms p50, 7.31 ms p95 inference latency
@@ -357,13 +357,13 @@ Electron and React with a Vite build, SQLite storage, and 700 Vitest tests acros
 
 </details>
 
-### PolyMarked: Polymarket wallet-scoring agent
+### PolyMarked: prediction-market odds tracker
 
 <sub>2026 | In progress</sub>
 
 <img src="assets/projects/polymarked.webp" alt="PolyMarked dashboard in paper mode: portfolio value, P&L and open positions" width="480">
 
-A desktop agent that watches Polymarket wallets, scores them, mirrors their trades into a paper book, and runs the one strategy that held up in out-of-sample testing. Live trading is locked behind config.
+A desktop agent that tracks Polymarket prediction-market odds and the wallets trading them, scores those wallets with a custom Smart Score engine, and paper-trades their moves. Nothing trades live without a manual approval step: the owner opts each wallet in from an owner-only Telegram bot, and live mode is locked to config.
 
 - 55 tests, 30 API routes, 17 Telegram commands
 - 10 packages under one async supervisor
